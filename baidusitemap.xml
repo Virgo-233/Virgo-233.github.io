@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://blog.timelless.xyz/vlmcsd.html</loc>
+    <lastmod>2018-06-24T06:22:40.795Z</lastmod>
+    <data>
+        <display>
+        <title>KMS</title>
+        <pubTime>2018-06-06T13:11:44.000Z</pubTime>
+        
+        <tag>教程</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="https://blog.timelless.xyz/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.timelless.xyz/mentohust.html</loc>
     <lastmod>2018-06-22T04:21:28.000Z</lastmod>
     <data>
@@ -104,29 +124,9 @@
         <title>路由器使用百度云远程下载</title>
         <pubTime>2018-06-13T11:38:46.000Z</pubTime>
         
-        <tag>路由器</tag>
-         
         <tag>OpenWrt</tag>
          
-         
-           
-             
-              <breadCrumb title="教程" url="https://blog.timelless.xyz/categories/%E6%95%99%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.timelless.xyz/vlmcsd.html</loc>
-    <lastmod>2018-06-06T14:19:12.000Z</lastmod>
-    <data>
-        <display>
-        <title>KMS</title>
-        <pubTime>2018-06-06T13:11:44.000Z</pubTime>
-        
-        <tag>教程</tag>
+        <tag>路由器</tag>
          
          
            
