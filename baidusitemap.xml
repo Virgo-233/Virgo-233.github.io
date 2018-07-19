@@ -4,13 +4,15 @@
 
     
   <url>
-    <loc>https://blog.timelless.xyz/posts/6117bda9.html</loc>
-    <lastmod>2018-07-19T21:14:59.174Z</lastmod>
+    <loc>https://blog.timelless.xyz/posts/343b8a35.html</loc>
+    <lastmod>2018-07-19T21:35:23.977Z</lastmod>
     <data>
         <display>
-        <title>LOVE</title>
-        <pubTime>2018-07-11T07:56:08.000Z</pubTime>
+        <title>KMS</title>
+        <pubTime>2018-06-06T13:11:44.000Z</pubTime>
         
+        <tag>OpenWrt</tag>
+         
          
            
         </display>
@@ -146,23 +148,6 @@
              
               <breadCrumb title="教程" url="https://blog.timelless.xyz/categories/%E6%95%99%E7%A8%8B/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.timelless.xyz/posts/343b8a35.html</loc>
-    <lastmod>2018-07-02T20:42:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>KMS</title>
-        <pubTime>2018-06-06T13:11:44.000Z</pubTime>
-        
-        <tag>OpenWrt</tag>
-         
-         
-           
         </display>
     </data>
     </url>
