@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[VOL-2162]]></title>
+    <url>%2Fposts%2F3ba37e62.html</url>
+    <content type="text"><![CDATA[会枯黄的阔叶也悲伤。永远绿着的针叶也悲伤。有些人的爱，是温带的阔叶，饱满的时候可以成荫，枯萎的时候面目全非。如果是我，大概会选针叶树的爱，因为我怕变了颜色，蜷曲了姿态，你就会找不到我。VOL.2162摄影 | Ahmet Ali Agir7Sep. 2018]]></content>
+      <categories>
+        <category>One•一个</category>
+      </categories>
+      <tags>
+        <tag>摘抄</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[VOL-2160]]></title>
+    <url>%2Fposts%2Fd5ad1f4e.html</url>
+    <content type="text"><![CDATA[所谓恋爱不过是通过另外一个人的视角来“校准”自己。一个人的时候总会觉得抱歉，总会觉得自己很糟糕，总会忘了自己到底什么样。一个好的爱人是会耐心帮你一点点对焦的人，一段好的爱情是“把我的眼睛借给你，来看看你到底有多好。”VOL.2160摄影 | Floris Jan Roelof5Sep. 2018]]></content>
+      <categories>
+        <category>One•一个</category>
+      </categories>
+      <tags>
+        <tag>摘抄</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[VOL-2158]]></title>
+    <url>%2Fposts%2Ff05bc4bf.html</url>
+    <content type="text"><![CDATA[所谓断舍离，是将握在手里会怦然心动的东西留下。VOL.2158摄影 | 桂林大河3Sep. 2018]]></content>
+      <categories>
+        <category>One•一个</category>
+      </categories>
+      <tags>
+        <tag>摘抄</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[VOL-2149]]></title>
     <url>%2Fposts%2F9e47c568.html</url>
     <content type="text"><![CDATA[朋友以上，恋人未满，既是恋情的起点，又是恋情的终点。VOL.2149摄影 | 邓云25Aug. 2018]]></content>
@@ -24,7 +57,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[湖工大官网输出 RSS 内容]]></title>
+    <title><![CDATA[任意网站输出 RSS 内容]]></title>
     <url>%2Fposts%2F46992fc.html</url>
     <content type="text"><![CDATA[RSS（Really Simple Syndication）简易信息聚合。RSS 对于阅读信息非常方便，而且没有其他干扰，只有纯粹的阅读。大多数内容提供者都不太喜欢 RSS 因为它并不会带来更多收益，因而 RSS 现在有点小众。RSS 用户大多苦于许多网站并不提供 RSS 订阅，这时候就需要其它工具来制作 RSS。我用的是 Feed43。打开需要制作 RSS 内容的页面，并在 Feed43 上新建一个源在 Feed43 中加载内容页面，并获取源码。将网址复制下来，并粘贴到 Feed43 的对应选框中。后面的 Encoding 代表网页编码方式，正常情况下留空就行，Feed43 会自动选择。点击 Reload，就会在下面的选框中看到当前网页的源代码了.找到内容所在 HTML 字段规律。这步完全是找规律，不用担心会不会 HTML。滚动鼠标找到内容所在区域。复制其中的一段源码，留做下一步备用。这步就是把相似的源码复制一份，需要注意几个问题。源码中会包含多篇文章，只用复制一篇的就行。复制的部分根据你的 RSS 需求考虑。如标题、发布时间、作者等。HTML 语言标记符号是成对的，复制时要复制全。如 &lt;h3&gt;标题&lt;/h3&gt;、&lt;div&gt;xxxxx&lt;/div&gt; 等等。最终我复制了一个包含时间及标题的字段。如下所示1&lt;li id="line_u16_5"&gt;&lt;span&gt;[07-20]&lt;/span&gt;&lt;a href="http://www.hut.edu.cn/info/1046/2194.htm" title="我校河西校区道路、楼宇、景观等正式重新命名的通知"&gt;我校河西校区道路、楼宇、景观等正式重新命名的通知&lt;/a&gt;&lt;i style="color:#f00;"&gt;[图]&lt;/i&gt;&lt;/li&gt;将特定的源码字段变成通用源码字段。这一步将上面复制的源码粘贴到「Item (repeatable) Search Pattern」选框中，「Global Search Pattern」留空即可。接下来就是精简源码。将标题、链接，时间等变化的字段删去用 {\%} (去掉\) 代替。将固定且多余的字段删去用 {*} 代替。注意，源码中有换行的地方均需要添加 {*}。点击 Extract，如果左下方显示 » OK (N items found)，则代表成功了。看一看抓取到的内容是否有格式错误的地方。如果没有抓取到内容，或者有格式错误，则需要继续仔细调整。如上图所示，每一篇文章的标题、链接、摘要、时间都已经成功抓取了。完善 RSS 源格式。接下来，就是完善 RSS 订阅源格式。如下图所示，上半部分主要是填写 RSS 信息，包括名称和描述，相信大家很好理解。上一部分中变化的部分会以 {\%+数字} (去掉\) 标示出来。这个 {\%+数字} (去掉\) 是通用标示符。例如 {\%1} (去掉\) 是所有通知的时间,{\%2} (去掉\) 是文章源地址，{\%3} (去掉\) 是通知标题。只需要将这几个标识符填在对应位置即可。预览并使用。到了这里，基本上宣布大功告成了。点击 Preview 预览一下，预览没有问题就可以用 RSS 软件进行订阅了。二次编辑如果对显示效果不满意还可以浏览器访问 http://www.feed43.com/feed.html?name=xxxxxxxx （其中xxxx为订阅地址后面那一串数字）进行修改。为防止他人随意修改还可设置修改时验证密码。全文输出我使用的是 feedocean 将 Feed43 生成的 rss 地址粘贴即可生成全文输出订阅源。最终效果使用的软件为 inoreader。]]></content>
       <categories>
@@ -91,7 +124,7 @@
   <entry>
     <title><![CDATA[路由器使用百度云远程下载]]></title>
     <url>%2Fposts%2Fcfb7bd2a.html</url>
-    <content type="text"><![CDATA[在酷安看见 BaiduPCS-Go (一个命令行界面的百度网盘客户端）,当时只是在手机上体验了下就删掉了。不久前弄了个工控板，第一次接触这个，以为能实现 路由器+NAS+小主机 结果 CPU 不支持虚拟化，虽然也能使用虚拟机，但只能使用 32 位系统，性能损失太大。就只装了一个 OpenWrt。这样配置就有点太奢侈了，95% 以上的性能都处于闲置状态，至少对于校园宽带环境的我来说太奢侈。对群晖的功能有点眼馋，所以想着能不能在 OpenWrt 上实现部分群晖的功能。比如远程下载，私有云存储等。经过一番折腾使用 Frp+BaiduPCS-Go+smaba 也算勉强实现了。Frp：一款开源的内网穿透工具，选它的主要原因是配置简单，有很多免费分享的服务器。BaiduPCS-Go：仿 Linux shell 文件处理命令的百度网盘命令行客户端.今天的主角就是它了。smaba： 用来进行文件共享。也可使用其他同类软件。BaiduPCS-Go 使用方法很简单，作者提供了编译好的二进制文件，直接去 realease 页面下载对应架构文件就行。下载后解压，将 BaiduPCS-Go 复制到任意文件夹下即可。使用时须进行登录。常规登录百度帐号支持在线验证绑定的手机号或邮箱,命令：BaiduPCS-Go login使用百度 BDUSS 来登录百度帐号关于 获取百度 BDUSS ，命令：BaiduPCS-Go login -bduss=&lt;BDUSS&gt;可使用 BaiduPCS-Go -h 查看帮助。目前 BaiduPCS-Go 支持 多线程下载，上传，离线下载等功能，这里我只介绍下下载，更多使用方法可以查看项目 Readme 文档。使用 ssh 连接路由器，切换到存放 BaiduPCS-Go 的目录，我为了方便使用将文件重命名为 B ，如果是手动下载上传到路由器的还得注意文件权限，如果运行时出现 permission dead 就是无权限，可运行 chmod 0777 ./B 也可在 winscp 里更改。首次运行需要登录才能使用，登录后可先输入 h 查看帮助其他的一些文件处理命令与 linux 一样，如 mv 是移动，cp 是复制，ls 列出当前目录等等。下载文件或目录BaiduPCS-Go download &lt;网盘文件或目录的路径1&gt; &lt;文件或目录2&gt; &lt;文件或目录3&gt; ... BaiduPCS-Go d &lt;网盘文件或目录的路径1&gt; &lt;文件或目录2&gt; &lt;文件或目录3&gt; ...可选参数123456789--test 测试下载, 此操作不会保存文件到本地--ow overwrite, 覆盖已存在的文件--status 输出所有线程的工作状态--save 将下载的文件直接保存到当前工作目录--saveto value 将下载的文件直接保存到指定的目录-x 为文件加上执行权限, (windows系统无效)--share 以分享文件的方式获取下载链接来下载--locate 以获取直链的方式来下载-p value 指定下载线程数支持多个文件或目录的下载.下载的文件默认保存到 程序所在目录 的 download/ 目录, 支持设置指定目录, 重名的文件会自动跳过!使用 ./B config set -savedir /mnt/sdb1可设置下载目录。这样就可以下载了。我用的是默认的 100 线程，下载速度还可以，如果闲速度不满意可适当提高线程数.当然高线程也会吃更多配置。下载完可直接使用 smaba 共享，使用 fooview 进行播放。搭配 frp 将 smaba ，ssh 穿透到外网即可实现远程下载。注意：将路由器 ssh 及 smaba 暴露到外网有一定风险]]></content>
+    <content type="text"><![CDATA[在酷安看见 BaiduPCS-Go (一个命令行界面的百度网盘客户端）,当时只是在手机上体验了下就删掉了。不久前弄了个工控板，第一次接触这个，以为能实现 路由器+NAS+小主机 结果 CPU 不支持虚拟化，虽然也能使用虚拟机，但只能使用 32 位系统，性能损失太大。就只装了一个 OpenWrt。这样配置就有点太奢侈了，95% 以上的性能都处于闲置状态，至少对于校园宽带环境的我来说太奢侈。对群晖的功能有点眼馋，所以想着能不能在 OpenWrt 上实现部分群晖的功能。比如远程下载，私有云存储等。经过一番折腾使用 Frp+BaiduPCS-Go+smaba 也算勉强实现了。Frp：一款开源的内网穿透工具，选它的主要原因是配置简单，有很多免费分享的服务器。BaiduPCS-Go：仿 Linux shell 文件处理命令的百度网盘命令行客户端.今天的主角就是它了。smaba： 用来进行文件共享。也可使用其他同类软件。BaiduPCS-Go 使用方法很简单，作者提供了编译好的二进制文件，直接去 realease 页面下载对应架构文件就行。下载后解压，将 BaiduPCS-Go 复制到任意文件夹下即可。使用时须进行登录。常规登录百度帐号支持在线验证绑定的手机号或邮箱,命令：BaiduPCS-Go login使用百度 BDUSS 来登录百度帐号关于 获取百度 BDUSS ，命令：BaiduPCS-Go login -bduss=&lt;BDUSS&gt;可使用 BaiduPCS-Go -h 查看帮助。目前 BaiduPCS-Go 支持 多线程下载，上传，离线下载等功能，这里我只介绍下下载，更多使用方法可以查看项目 Readme 文档。使用 ssh 连接路由器，切换到存放 BaiduPCS-Go 的目录，我为了方便使用将文件重命名为 B ，如果是手动下载上传到路由器的还得注意文件权限，如果运行时出现 permission dead 就是无权限，可运行 chmod 0777 ./B 也可在 winscp 里更改。首次运行需要登录才能使用，登录后可先输入 h 查看帮助其他的一些文件处理命令与 linux 一样，如 mv 是移动，cp 是复制，ls 列出当前目录等等。下载文件或目录BaiduPCS-Go download &lt;网盘文件或目录的路径1&gt; &lt;文件或目录2&gt; &lt;文件或目录3&gt; ... BaiduPCS-Go d &lt;网盘文件或目录的路径1&gt; &lt;文件或目录2&gt; &lt;文件或目录3&gt; ...可选参数12345678910#/system/bin/sh --test 测试下载, 此操作不会保存文件到本地 --ow overwrite, 覆盖已存在的文件 --status 输出所有线程的工作状态 --save 将下载的文件直接保存到当前工作目录 --saveto value 将下载的文件直接保存到指定的目录 -x 为文件加上执行权限, (windows系统无效) --share 以分享文件的方式获取下载链接来下载 --locate 以获取直链的方式来下载 -p value 指定下载线程数支持多个文件或目录的下载.下载的文件默认保存到 程序所在目录 的 download/ 目录, 支持设置指定目录, 重名的文件会自动跳过!使用 ./B config set -savedir /mnt/sdb1可设置下载目录。这样就可以下载了。我用的是默认的 100 线程，下载速度还可以，如果闲速度不满意可适当提高线程数.当然高线程也会吃更多配置。下载完可直接使用 smaba 共享，使用 fooview 进行播放。搭配 frp 将 smaba ，ssh 穿透到外网即可实现远程下载。注意：将路由器 ssh 及 smaba 暴露到外网有一定风险]]></content>
       <categories>
         <category>路由器</category>
       </categories>
