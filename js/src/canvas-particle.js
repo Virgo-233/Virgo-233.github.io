@@ -70,16 +70,16 @@ var CanvasParticle = (function(){
 	// 设置canvas大小
 	function canvasSize(canvas){
 		// 获取窗口的宽高
-		// canvas.width = window.innerWeight || document.documentElement.clientWidth || document.body.clientWidth;
-		// canvas.height = window.innerWeight || document.documentElement.clientHeight || document.body.clientHeight;
+		 canvas.width = window.innerWeight || document.documentElement.clientWidth || document.body.clientWidth;
+		 canvas.height = window.innerWeight || document.documentElement.clientHeight || document.body.clientHeight;
 
 		// 获取特定div的宽高
-		var width = document.getElementById("content").style.width;
-		var height = document.getElementById("content").style.height;
-		width = parseInt(width);
-		height = parseInt(height);
-		canvas.width = width || window.innerWeight || document.documentElement.clientWidth || document.body.clientWidth;
-		canvas.height = height || window.innerWeight || document.documentElement.clientHeight || document.body.clientHeight;
+		//var width = document.getElementById("content").style.width;
+		//var height = document.getElementById("content").style.height;
+		//width = parseInt(width);
+		//height = parseInt(height);
+		//canvas.width = width || window.innerWeight || document.documentElement.clientWidth || document.body.clientWidth;
+		//canvas.height = height || window.innerWeight || document.documentElement.clientHeight || document.body.clientHeight;
 	}
 
 	// 画点
