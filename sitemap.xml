@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.timelless.xyz/about/index.html</loc>
+    
+    <lastmod>2018-09-10T07:11:03.825Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.timelless.xyz/posts/59e5d8b8.html</loc>
+    
+    <lastmod>2018-09-10T07:03:40.186Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.timelless.xyz/posts/343b8a35.html</loc>
+    
+    <lastmod>2018-09-10T06:57:02.886Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.timelless.xyz/links/index.html</loc>
     
     <lastmod>2018-09-09T10:46:42.869Z</lastmod>
@@ -23,16 +44,16 @@
   </url>
   
   <url>
-    <loc>https://blog.timelless.xyz/posts/343b8a35.html</loc>
+    <loc>https://blog.timelless.xyz/posts/cfb7bd2a.html</loc>
     
-    <lastmod>2018-09-08T03:15:43.332Z</lastmod>
+    <lastmod>2018-09-08T03:13:41.345Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.timelless.xyz/posts/cfb7bd2a.html</loc>
+    <loc>https://blog.timelless.xyz/posts/d5ad1f4e.html</loc>
     
-    <lastmod>2018-09-08T03:13:41.345Z</lastmod>
+    <lastmod>2018-09-08T01:22:32.180Z</lastmod>
     
   </url>
   
@@ -45,13 +66,6 @@
   
   <url>
     <loc>https://blog.timelless.xyz/posts/f05bc4bf.html</loc>
-    
-    <lastmod>2018-09-08T01:22:32.180Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.timelless.xyz/posts/d5ad1f4e.html</loc>
     
     <lastmod>2018-09-08T01:22:32.180Z</lastmod>
     
@@ -86,13 +100,6 @@
   </url>
   
   <url>
-    <loc>https://blog.timelless.xyz/about/index.html</loc>
-    
-    <lastmod>2018-07-25T04:01:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.timelless.xyz/posts/9e7b6f05.html</loc>
     
     <lastmod>2018-07-25T03:47:18.000Z</lastmod>
@@ -110,13 +117,6 @@
     <loc>https://blog.timelless.xyz/posts/13b1ea83.html</loc>
     
     <lastmod>2018-07-09T10:47:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.timelless.xyz/posts/59e5d8b8.html</loc>
-    
-    <lastmod>2018-07-04T05:31:08.000Z</lastmod>
     
   </url>
   
