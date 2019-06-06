@@ -1,0 +1,288 @@
+// Custom styles.
+code {
+    color: #ff7600;
+}
+// 文章```代码块顶部样式
+.highlight figcaption {
+    margin: 0em;
+    padding: 0.5em;
+    border-bottom: 1px solid #e9e9e9;
+}
+.highlight figcaption a {
+    color: rgb(80, 115, 184);
+}
+
+// 主页文章
+ .post {
+   margin-top: 60px;
+  }
+// 文章圆角
+.post-block {
+    border-radius: 5px;
+}
+#posts>article+article .post-block {
+    border-radius: 5px;
+}
+//热评文章
+.ds-top-threads li a {
+    padding-left: 5px;
+    transition: border-width 0.2s linear 0s, color 0.2s linear 0s;
+    border-bottom: none;
+}
+.ds-top-threads li a:hover {
+    border-left: 8px solid #4d768c;
+}
+//首页尾部样式
+.footer {
+    background: none;
+    font-size: 16px;
+}
+.footer-inner {
+    font-family: 'Comic Sans MS','Playball';
+    text-align: center;
+    color: rgb(80, 115, 184);
+}
+//一言
+#lwlhitokoto {
+    color: rgb(243, 112, 85);
+    }
+
+// 文章标题字体
+.posts-expand .post-title {
+    font-size: 26px;
+    font-weight: 700;
+}
+// 文章标题动态效果
+.posts-expand .post-title-link::before {
+    background-image: linear-gradient(90deg, #a166ab 0%, #ef4e7b 25%, #f37055 50%, #ef4e7b 75%, #a166ab 100%);
+}
+// 文章内链接文本样式
+.post-body a{
+    border-bottom: none;
+  &:hover {
+    border-bottom: 1px solid #fc6423;
+  }
+}
+
+// 页面底部页码
+.pagination {
+    background: rgba(255, 255, 255, 0);
+    box-shadow: none;
+}
+.pagination .page-number.current {
+    border-radius: 100%;
+}
+.pagination .next, .pagination .page-number, .pagination .prev {
+    margin-bottom: 10px;
+    border: none;
+}
+// 文章元数据（meta）留白更改
+.posts-expand .post-meta {
+    margin: 10px 0px 20px 0px;
+}
+// [Read More]按钮样式
+.post-button .btn {
+    font-size: 15px;
+    box-shadow: inset 0px 0px 10px 0px #aaaaaa;
+}
+.post-button .btn:hover {
+    color: #fff;
+    background-image: linear-gradient(90deg, #a166ab 0%, #ef4e7b 25%, #f37055 50%, #ef4e7b 75%, #a166ab 100%);
+}
+//相关文章
+.popular-posts-header {
+    margin-top: 0px;
+}
+.post-body .note {
+    margin-bottom: 5px;
+}
+// 文章底部的tags
+.posts-expand .post-tags {
+    margin-top: 0px;
+}
+.posts-expand .post-tags a {
+    border-bottom: none;
+    margin-right: 0px;
+    padding: 0px 5px;
+    border-radius: 5px;
+}
+.posts-expand .post-tags a:hover {
+    background: #eee;
+}
+// 文章底部留白更改
+.post-widgets {
+    margin-top: 0px;
+}
+// 文章底部页面跳转
+.post-nav-item a {
+    font-weight: bold;
+}
+.post-nav-item a:hover {
+    font-weight: bold;
+}
+// 文章内标题样式（左边的竖线）
+//.post-body h2, h3, h4, h5, h6 {
+//    border-left: 4px solid rgb(161, 102, 171);
+//    margin-left: -36px;
+//    padding-left: 32px;
+//}
+// 右下角返回顶部按钮样式
+.back-to-top {
+    line-height: 1.5;
+    right: 10px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px #aaaaaa;
+}
+.back-to-top.back-to-top-on {
+    bottom: 10px;
+}
+//侧栏
+.menu .menu-item a {
+    color: rgb(80, 115, 184);
+}
+.menu .menu-item a:hover {
+    color: rgb(161, 102, 171);
+}
+.header-inner {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+// 侧栏站点描述
+.site-description {
+    font-family: 'Seaweed Script'
+    letter-spacing: 5px;
+    font-weight: bold;
+    margin-left: 13px;
+}
+// 侧栏站点文章、分类、标签
+.site-state-item {
+    padding: 0px 15px;
+    border-left: 1.5px solid rgb(161, 102, 171);
+}
+// 侧栏社交链接
+.links-of-author {
+    margin-top: 0px;
+}
+links-of-author-item .exturl, .links-of-author-item a {
+    padding: 0 20px;
+}
+
+// 侧栏超链接样式
+.sidebar a {
+    color: #1a2a3a
+    border-bottom: none;
+}
+.sidebar a:hover {
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(161, 102, 171);
+}
+// 文章页侧栏
+.sidebar-inner {
+    border-radius: 5px;
+}
+// 时间轴左边线条
+.posts-collapse::after {
+    margin-left: -2px;
+    background-image: linear-gradient(180deg,#f79533 0,#f37055 15%,#ef4e7b 30%,#a166ab 44%,#5073b8 58%,#1098ad 72%,#07b39b 86%,#6dba82 100%);
+}
+// 时间轴文章标题
+.posts-collapse .post-title a {
+    color: #0593d3;
+}
+.posts-collapse .post-title a:hover {
+    color: #fc6423;
+}
+// 时间轴文章标题底部虚线
+.posts-collapse .post-header:hover {
+    border-bottom-color: rgb(161, 102, 171);
+}
+// 本地搜索框
+.local-search-popup .search-icon, .local-search-popup .popup-btn-close {
+    color: rgb(247, 149, 51);
+}
+.local-search-popup .popup-btn-close {
+    border-left: none;
+}
+
+/* 设置滚动条的样式 */
+/* 参考https://segmentfault.com/a/1190000003708894 */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+    background: #eee;
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #ccc;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(247, 149, 51);
+}
+// 自定义emoji样式
+img#github-emoji {
+    margin: 0px;
+    padding: 0px;
+    display: inline !important;
+    vertical-align: text-bottom;
+    border: none;
+    cursor: text;
+    box-shadow: none;
+}
+// 归档页十二生肖
+.chinese-zodiac {
+    float: right;
+}
+@font-face {
+  font-family: 'chinese-zodiac';
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/gh/cxyzzz/assets@18.09.23/fonts/chinese-zodiac.eot');
+  src: url('https://cdn.jsdelivr.net/gh/cxyzzz/assets@18.09.23/fonts/chinese-zodiac.eot') format('embedded-opentype'),
+       url('https://cdn.jsdelivr.net/gh/cxyzzz/assets@18.09.23/fonts/chinese-zodiac.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/gh/cxyzzz/assets@18.09.23/fonts/chinese-zodiac.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.symbolic-animals {
+  display: inline-block;
+  font: normal normal normal 14px/1 chinese-zodiac;
+  font-size: 70px;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-dragon:before { content: '\e806'; }
+.icon-tiger:before { content: '\e809'; }
+.icon-pig:before { content: '\e810'; }
+.icon-horse:before { content: '\e813'; }
+.icon-rat:before { content: '\e816'; }
+.icon-goat:before { content: '\e818'; }
+.icon-snake:before { content: '\e820'; }
+.icon-ox:before { content: '\e822'; }
+.icon-dog:before { content: '\e825'; }
+.icon-rabbit:before { content: '\e826'; }
+.icon-monkey:before { content: '\e829'; }
+.icon-rooster:before { content: '\e82f'; }
+
+div#days {
+    font-size: small;
+    color: coral;
+}
+
+//valine评论背景
+#veditor {
+    background-image: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/comment-bg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: rgba(255,255,255,0);
+    resize: vertical;
+}
