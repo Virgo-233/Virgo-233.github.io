@@ -43,7 +43,7 @@ ps: LEDE 默认不开启无线网卡，可使用网线连电脑，访问 192.168
    `echo option force_space >> /etc/opkg.conf` 也可在网页端进行修改。
 在网页端可以看见 / 分区和 /overlay 变大了，如果 /  分区没变可以插着优盘重启后应会成功挂载。
 我的是 16g 的内存卡，分了个 128M 的分区出来，可以看到两个分区都正常挂载了，并且成功将 128M 的分区扩展到内部存储。
-![fstab](https://ww1.sinaimg.cn/large/ec245efdgy1fqc7o9xpvxj211y0kg41c.jpg)
+![fstab](https://i.loli.net/2019/06/08/5cfb5c6be26e029890.jpg)
 到此品胜云座充的折腾告一段落，接下来就是进行软件方面的设置了。
 
 <div class="note success"><p>2018/6/19 更新：openwrt固件</p></div> 链接: <https://pan.baidu.com/s/1MqWci4ElhyytjqgCj9GnFw> 密码: `7ckw`

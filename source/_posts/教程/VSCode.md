@@ -3,12 +3,12 @@ title: VS Code 配置 C 和 C++ 环境
 abbrlink: d5ae7f1b
 date: 2018-09-18 22:18:05
 ---
-<img src="https://ws1.sinaimg.cn/large/ec245efdgy1fvdy17v0ugj208c08caa1.jpg" height="170" width="200"/>
+<img src="https://i.loli.net/2019/06/08/5cfb5b335d21412318.jpg" height="170" width="200"/>
 <!--more-->
 Visual Studio Code (简称 VS Code/VSC)是一款免费开源的代码编辑器，支持几乎所有的主流开发语言，有语法高亮、智能代码补全、自定义热键、符号自动补全、代码片段、代码对比 Diff、GIT 等特性，支持插件扩展。软件支持 Windows、Mac 以及 Linux。
 
 官网：<https://code.visualstudio.com/>
-![vscode](https://ws1.sinaimg.cn/large/ec245efdgy1fvdxszx4ddj211y0kg0wf.jpg)
+![vscode](https://i.loli.net/2019/06/08/5cfb5b61c8e8413483.jpg)
 
 ## 环境准备
 
@@ -19,14 +19,14 @@ VS Code 可在官网下载，其只是一个编辑器并不是 IDE，不含编�
 - MinGW-w64: <https://sourceforge.net/projects/mingw-w64/> 直接点 Download 即可。
 
 下载好后安装，添加环境变量时选第二项，安装位置选个你能找到的，后面会用到。
-![llvm](https://ws1.sinaimg.cn/large/ec245efdgy1fvdyydd4qzj20dz0a2aau.jpg)
+![llvm](https://i.loli.net/2019/06/08/5cfb5b33bb73768144.jpg)
 
 安装完了以后可能会弹出 cmd 说 MSVC integration install failed。这个是因为 Clang 默认使用的是 msvc 的工具链，而我们选择的工具链是 MinGW，所以就不用管这个提示。
 
 MinGW随便装哪，Architecture 选 x86_64，装好以后把东西全部复制到 Clang的文件夹里去，他们会无冲突合并。同样，不做这一步也行，下面的配置里路径就自己改，还要手动把 MinGW 的 bin 文件夹加到 path 中，因为MinGW 不会自己加。至于为什么既要装 Clang 又要装 MinGW，是因为 Clang 没有头文件。然后就可以把 MinGW 删了（Uninstall.exe）。不建议安装多个MinGW，如果你安装了其他 IDE 需要注意把其他的 MinGW 从环境变量中去掉；也可以自己把他们的编译器设为 Clang。因为几乎所有的轻量级 IDE 用的都是MinGW 或 TDM-GCC，它们不制造编译器，只是打包了一个。ps:MinGW 安装时需要在线下载，可能需要科学上网。
 
 弄好后可打开 CMD 输入 clang -v 和 gcc -v 应该显示图中内容（版本号不同没事）。如果没有显示就是环境没配置好，可以手动添加到 path （如何配置请自行百度），也可重复上面的操作。
-![test](https://ws1.sinaimg.cn/large/ec245efdgy1fvdzcoe60lj20ol0hkjse.jpg)
+![test](https://i.loli.net/2019/06/08/5cfb5b33e542735446.jpg)
 
 ## 配置 VS Code
 
