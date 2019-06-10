@@ -550,7 +550,7 @@ quicklink:
   enable: true
 
   # Quicklink (quicklink.umd.js script) is loaded on demand
-  # Add `quicklink: true` in Front Matter of the page or post you need
+  # Add `quicklink: true` in Front-matter of the page or post you need
   # Home page and archive page can be controlled through home and archive options below
   home: true
   archive: true
@@ -1084,11 +1084,11 @@ vendors:
   velocity: //cdnjs.loli.net/ajax/libs/velocity/1.2.1/velocity.min.js
   velocity_ui: //cdnjs.loli.net/ajax/libs/velocity/1.2.1/velocity.ui.min.js
 
-  # Internal version: 4.6.2
+  # Internal version: 4.7.0
   # See: https://fontawesome.com
   # Example:
   # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css
-  # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css
+  # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
   fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css
 
   # Internal version: 2.10.4
