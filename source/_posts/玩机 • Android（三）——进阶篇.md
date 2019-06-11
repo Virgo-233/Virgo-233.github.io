@@ -4,8 +4,6 @@ tags: Android
 abbrlink: 40e3c7df
 date: 2018-12-23 14:20:56
 ---
-<img src="https://i.loli.net/2018/10/27/5bd428f849cf9.png" alt="IMG_20181027_165204.png" height="300" width="440"/>
-<!--more-->
 
 - [玩机 • Android（一）——应用篇](https://hoshizora.tw/posts/9e7b6f05.html)
 - [玩机 • Android（二）——ROOT 篇](https://hoshizora.tw/posts/fab8c3b3.html)
