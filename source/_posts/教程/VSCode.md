@@ -3,8 +3,6 @@ title: VS Code 配置 C 和 C++ 环境
 abbrlink: d5ae7f1b
 date: 2018-09-18 22:18:05
 ---
-<img src="https://i.loli.net/2019/06/08/5cfb5b335d21412318.jpg" height="170" width="200"/>
-<!--more-->
 Visual Studio Code (简称 VS Code/VSC)是一款免费开源的代码编辑器，支持几乎所有的主流开发语言，有语法高亮、智能代码补全、自定义热键、符号自动补全、代码片段、代码对比 Diff、GIT 等特性，支持插件扩展。软件支持 Windows、Mac 以及 Linux。
 
 官网：<https://code.visualstudio.com/>
