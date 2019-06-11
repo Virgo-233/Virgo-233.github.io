@@ -163,10 +163,10 @@ css_minifier:
 
 pwa:
   manifest:
-    path: /manifest.json
+    path: manifest.json
     body:
       name: Chen - Blog
-      short_name: Virgo
+      short_name: Hoshizora
       icons:
         - src: images/virgo.png
           sizes: 192x192
