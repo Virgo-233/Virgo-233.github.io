@@ -94,12 +94,12 @@
     {% endif %}
   </div>
 
-      <script src="https://cdn.jsdelivr.net/gh/cxyzzz/assets@18.09/libs/active-power-mode.min.js"></script>
-      <script>
-      POWERMODE.colorful = true; // 火花各种颜色
-      POWERMODE.shake = false; // 关闭打字屏幕颤抖效果
-      document.body.addEventListener('input', POWERMODE);
-      </script>
+  <script src="https://cdn.jsdelivr.net/gh/cxyzzz/assets@18.09/libs/active-power-mode.min.js"></script>
+  <script>
+  POWERMODE.colorful = true; // 火花各种颜色
+  POWERMODE.shake = false; // 关闭打字屏幕颤抖效果
+  document.body.addEventListener('input', POWERMODE);
+  </script>
 
   {% include '_scripts/vendors.swig' %}
   {% include '_scripts/commons.swig' %}

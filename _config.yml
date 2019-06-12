@@ -13,7 +13,7 @@ timezone:
 
 # URL 链接设置
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://blog.timelless.xyz
+url: https://cxyzzz.gtihub.io
 root: /
 permalink: posts/:abbrlink.html #:title.html
 permalink_defaults: posts/:title.html
@@ -80,8 +80,7 @@ plugins:
     hexo-generator-sitemap
     hexo-generator-baidu-sitemap
         
-# Deployment 这里设置了Git获
-#这里一定要注意不要写错了，否则部署到Github上会出问题
+# Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
 - type: git
@@ -163,7 +162,7 @@ css_minifier:
 
 pwa:
   manifest:
-    path: manifest.json
+    path: /manifest.json
     body:
       name: Chen - Blog
       short_name: Hoshizora
@@ -182,9 +181,9 @@ pwa:
     routes:
       - pattern: !!js/regexp /hm.baidu.com/
         strategy: networkOnly
-      - pattern: !!js/regexp /cdn.jsdelivr.net/
+      - pattern: !!js/regexp /app-router.leancloud.cn/
         strategy: networkOnly
-      - pattern: !!js/regexp /cdnjs.loli.net/
+      - pattern: !!js/regexp /busuanzi.ibruce.info/
         strategy: networkOnly
       - pattern: !!js/regexp /.*\.(js|css|jpg|jpeg|png|gif)$/
         strategy: cacheFirst
