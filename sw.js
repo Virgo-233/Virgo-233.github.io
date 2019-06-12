@@ -40,9 +40,9 @@ toolbox.options = {"networkTimeoutSeconds":5};
 
 toolbox.router.any(/hm.baidu.com/, toolbox.networkOnly);
 
-toolbox.router.any(/cdn.jsdelivr.net/, toolbox.networkOnly);
+toolbox.router.any(/app-router.leancloud.cn/, toolbox.networkOnly);
 
-toolbox.router.any(/cdnjs.loli.net/, toolbox.networkOnly);
+toolbox.router.any(/busuanzi.ibruce.info/, toolbox.networkOnly);
 
 toolbox.router.any(/.*\.(js|css|jpg|jpeg|png|gif)$/, toolbox.cacheFirst);
 
