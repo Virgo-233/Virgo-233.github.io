@@ -6,7 +6,7 @@ date: 2019-07-16 22:22:05
 先来两张效果图：
 ![Screenshot_2019-07-16-20-25-42-875_bin.mt.plus.png](https://i.loli.net/2019/07/16/5d2dc2896ef0e90595.png)
 ![Screenshot_2019-07-16-20-14-53-809_com.termux.png](https://i.loli.net/2019/07/16/5d2dc289cbdc671568.png)
-　　不久前了解到了 [rclone](https://rclone.org/) 这个东西，rclone  是一个支持在多个网盘及存储服务同步文件和文件夹的命令行程序，使用 GO 语言编写。支持的服务列表可以在官网查看，像微软的 Onedrive 、谷歌的 GDrive 、阿里云对象存储以及支持 FTP、webdav 等协议的存储服务都支持，基本上覆盖了常见的存储服务提供商。使用 rclone 可以很方便的管理网盘。
+　　不久前了解到了 [rclone](https://rclone.org/) 这个东西，rclone  是一个支持在多个网盘及存储服务同步文件和文件夹的命令行程序，使用 GO 语言编写。支持的服务列表可以在官网查看，像微软的 Onedrive 、谷歌的 GDrive 、阿里云对象存储以及支持 FTP、webdav 等协议的存储服务都支持，基本上覆盖了常见的存储服务提供商。使用 rclone 可以很方便的进行管理。
 　　当然今天要说的是 rclone 的挂载功能，rclone 可以将网盘挂载到本地当做磁盘使用。rclone 挂载需要 fusermount 这个程序，在 PC 端很简单，一条命令就安装好了，但在手机端需要自行编译arm 架构的。我在网上找到个能用的 fusermount ，挂载成功了，但只能运行挂载命令的程序才可以访问，这样没有很大意义，后面就放弃了。最近 magisk 仓库更新了个 [rclone-mount](https://github.com/Magisk-Modules-Repo/com.piyushgarg.rclone) 模块，将 rclone、fusermount都提供了，并且写好了挂载脚本，作者解释了只能运行挂载命令的程序才能访问的原因。
 　　使用模块需要先安装 magisk，并且由于 Android 系统限制，必须使用 root 权限才能挂载。magisk 安装这里就不多说了，我另一篇文章有介绍。因为模块目前有个 bug 如果没有找到 rclone.conf 文件模块在刷入时会卡住，如果是之前没用过 rclone 的需要先去创建 /sdcard/.rclone/rclone.conf 文件，这样就不会卡在模块安装界面了。安装完模块后接下来是配置 rclone，rclone 用法百度有很多教程，这里我简单说下。
 　　首先要有一个 rclone 支持的网盘，比如 Onedrive，由于需要运行命令，所以需要用到终端，这里我用的是 Termux（推荐），使用其它终端也可以。
