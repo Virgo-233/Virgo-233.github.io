@@ -1,5 +1,5 @@
 ---
-title: HUT-Email 注册登录及部分 EDU 邮箱可用福利
+title: HUT-Email 登录及部分 EDU 邮箱可用福利
 abbrlink: f5125d59
 categories:
   - 教程
