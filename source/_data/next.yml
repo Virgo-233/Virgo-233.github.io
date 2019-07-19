@@ -1148,9 +1148,9 @@ vendors:
   disqusjs_css:
 
 # Assets
-css: //cdn.jsdelivr.net/gh/cxyzzz/cxyzzz.github.io@19.7.19/css
-js: //cdn.jsdelivr.net/gh/cxyzzz/cxyzzz.github.io@19.7.19/js
-images: //cdn.jsdelivr.net/gh/cxyzzz/cxyzzz.github.io@19.7.19/images
+css: //cdn.jsdelivr.net/gh/cxyzzz/CDN@0.0/css
+js: //cdn.jsdelivr.net/gh/cxyzzz/CDN@0.0/js
+images: //cdn.jsdelivr.net/gh/cxyzzz/CDN@0.0/images
 
 # 文章末尾添加“本文结束”标记
 passage_end_tag:
