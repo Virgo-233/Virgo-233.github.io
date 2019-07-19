@@ -6,18 +6,16 @@ title:
   schedule: 日程表
 menu:
   home: 首页
-  one: One·一个
-  photo: 图集
   archives: 归档
   categories: 分类
   tags: 标签
   about: 关于
   search: 搜索
   schedule: 日程表
-  sitemap: 站点地图
-  commonweal: 公益 404
   booklist: 书单
   movielist: 影单
+  sitemap: 站点地图
+  commonweal: 公益 404
 sidebar:
   overview: 站点概览
   toc: 文章目录
@@ -33,7 +31,7 @@ post:
   untitled: 未命名
   sticky: 置顶
   toc_empty: 此文章未包含目录
-  views: 热度
+  views: 阅读次数
   comments_count: 评论数
   related_posts: 相关文章
   copy_button: 复制
@@ -44,13 +42,12 @@ post:
     link: 本文链接
     license_title: 版权声明
     license_content: "本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"
-  recommended_posts: 推荐文章
 page:
   totally: 共有
   tags: 标签
 footer:
-  powered: "Powered by %s"
-  theme: Theme
+  powered: "由 %s 强力驱动"
+  theme: 主题
   total_views: 总访问量
   total_visitors: 总访客量
 counter:
@@ -90,7 +87,6 @@ reward:
   wechatpay: 微信支付
   alipay: 支付宝
   bitcoin: 比特币
-gitmentbutton: 显示 Gitment 评论
 accessibility:
   nav_toggle: 切换导航栏
   prev_page: 上一页
