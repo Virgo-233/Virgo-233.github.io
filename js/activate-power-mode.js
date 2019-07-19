@@ -1,4 +1,4 @@
-(function webpackUniversalModuleDefinition(root, factory) {
+<html><head></head><body>(function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
@@ -163,41 +163,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var rect = canvas.getBoundingClientRect();
 	    for (var i = 0; i < particles.length; ++i) {
 	        var particle = particles[i];
-	        if (particle.alpha <= 0.1) continue;
-	        particle.velocity.y += 0.075;
-	        particle.x += particle.velocity.x;
-	        particle.y += particle.velocity.y;
-	        particle.alpha *= 0.96;
-	        context.globalAlpha = particle.alpha;
-	        context.fillStyle = particle.color;
-	        context.fillRect(
-	            Math.round(particle.x - 1.5) - rect.left,
-	            Math.round(particle.y - 1.5) - rect.top,
-	            3, 3
-	        );
-	        rendered = true;
-	    }
-	    if(rendered){
-	        requestAnimationFrame(loop);
-	    }else{
-	        rendering = false;
-	    }
-	}
-
-	module.exports = POWERMODE;
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-	/* jshint browser: true */
-
-	(function () {
-
-	// The properties that we copy into a mirrored div.
-	// Note that some browsers, such as Firefox,
-	// do not concatenate properties, i.e. padding-top, bottom etc. -> padding,
+	        if (particle.alpha <= 1 3 0.1) continue; particle.velocity.y +="0.075;" particle.x particle.y particle.alpha *="0.96;" context.globalalpha="particle.alpha;" context.fillstyle="particle.color;" context.fillrect( math.round(particle.x - 1.5) rect.left, math.round(particle.y rect.top, 3, ); rendered="true;" } if(rendered){ requestanimationframe(loop); }else{ rendering="false;" module.exports="POWERMODE;" *** }), (function(module, exports) { jshint browser: true (function () the properties that we copy into a mirrored div. note some browsers, such as firefox, do not concatenate properties, i.e. padding-top, bottom etc.> padding,
 	// so we have to do every single property specifically.
 	var properties = [
 	  'direction',  // RTL support
@@ -322,3 +288,22 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ ])
 });
 ; 
+</span><!--=--><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>

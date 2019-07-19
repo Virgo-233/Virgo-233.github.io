@@ -1,4 +1,4 @@
-var CanvasParticle = (function(){
+<html><head></head><body>var CanvasParticle = (function(){
 	function getElementByTag(name){
 		return document.getElementsByTagName(name);
 	}
@@ -114,10 +114,10 @@ var CanvasParticle = (function(){
 	// 边界处理
 	function borderPoint(point, canvas){
 		var p = point;
-		if(point.x <= 0 || point.x >= canvas.element.width){
+		if(point.x <= 0 || point.x>= canvas.element.width){
 			p.vx = -p.vx;
 			p.x += p.vx;
-		}else if(point.y <= 0 || point.y >= canvas.element.height){
+		}else if(point.y <= 0 || point.y>= canvas.element.height){
 			p.vy = -p.vy;
 			p.y += p.vy;
 		}else{
@@ -143,39 +143,22 @@ var CanvasParticle = (function(){
 					dist = Math.round(canvas.points[i].x - canvas.points[j].x) * Math.round(canvas.points[i].x - canvas.points[j].x) +
 							Math.round(canvas.points[i].y - canvas.points[j].y) * Math.round(canvas.points[i].y - canvas.points[j].y);
 					// 两点距离小于吸附距离，而且小于最大连接数，则画线
-					if(dist <= canvas.config.dist && canvas.points[i].max_conn <canvas.config.max_conn){
-						canvas.points[i].max_conn++;
-						// 距离越远，线条越细，而且越透明
-						context.lineWidth = 0.5 - dist / canvas.config.dist;
-						context.strokeStyle = "rgba("+ canvas.config.stroke + ","+ (1 - dist / canvas.config.dist) +")"
-						context.beginPath();
-						context.moveTo(canvas.points[i].x, canvas.points[i].y);
-						context.lineTo(canvas.points[j].x, canvas.points[j].y);
-						context.stroke();
-
-					}
-				}
-			}
-			// 如果鼠标进入画布
-			// point to mouse
-			if(mouse){
-				dist = Math.round(canvas.points[i].x - mouse.x) * Math.round(canvas.points[i].x - mouse.x) +
-						Math.round(canvas.points[i].y - mouse.y) * Math.round(canvas.points[i].y - mouse.y);
-				// 遇到鼠标吸附距离时加速，直接改变point的x，y值达到加速效果
-				if(dist > canvas.config.dist && dist <= canvas.config.e_dist){
-					canvas.points[i].x = canvas.points[i].x + (mouse.x - canvas.points[i].x) / 20;
-					canvas.points[i].y = canvas.points[i].y + (mouse.y - canvas.points[i].y) / 20;
-				}
-				if(dist <= canvas.config.e_dist){
-					context.lineWidth = 1;
-					context.strokeStyle = "rgba("+ canvas.config.stroke + ","+ (1 - dist / canvas.config.e_dist) +")";
-					context.beginPath();
-					context.moveTo(canvas.points[i].x, canvas.points[i].y);
-					context.lineTo(mouse.x, mouse.y);
-					context.stroke();
-				}
-			}
-		}
-	}
-	return canvasInit;
-})();
+					if(dist <= canvas.config.dist && canvas.points[i].max_conn <canvas.config.max_conn){ canvas.points[i].max_conn++; 距离越远，线条越细，而且越透明 context.linewidth="0.5" - dist canvas.config.dist; context.strokestyle="rgba(" + canvas.config.stroke ","+ (1 canvas.config.dist) +")" context.beginpath(); context.moveto(canvas.points[i].x, canvas.points[i].y); context.lineto(canvas.points[j].x, canvas.points[j].y); context.stroke(); } 如果鼠标进入画布 point to mouse if(mouse){ mouse.x) * math.round(canvas.points[i].x math.round(canvas.points[i].y mouse.y) mouse.y); 遇到鼠标吸附距离时加速，直接改变point的x，y值达到加速效果 if(dist> canvas.config.dist && dist <!--=--><!--=--><!--=--></canvas.config.max_conn){><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
