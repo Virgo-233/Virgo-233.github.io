@@ -1,3 +1,4 @@
+
 language: node_js # 设置语言
 
 node_js: 10.16.0 # 设置相应版本
@@ -24,10 +25,10 @@ after_script:
     - cd ../
     - mv .deploy_git/.git/ ./public/
     - cd ./public
-    - git config --global user.name ${GIT_NAME}
-    - git config --global user.email ${GIT_EMAIL}
+    - git config user.name $GIT_NAME
+    - git config user.email $GIT_EMAIL
     - git add .
-    - git commit -m "Travis CI Auto Builder $(date +%F' '%T) With Build $TRAVIS_BUILD_NUMBER"
+    - git commit -m "Travis CI Auto Builder $(date +%F' '%T)"
     - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
     - git push --force --quiet "https://Virgo-233:${CODING_TOKEN}@${CODING_REF}" master:master
 
@@ -37,8 +38,8 @@ env:
         - GH_REF: github.com/cxyzzz/cxyzzz.github.io.git
         - COGING_REF: git.coding.net/Virgo-233/Virgo-233.git
 
- notifications:
- email:
+notifications:
+email:
   recipients:
     - $GIT_EMAIL
   on_success: change # default: change
