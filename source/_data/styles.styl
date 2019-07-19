@@ -16,12 +16,17 @@ code {
  .post {
    margin-top: 60px;
   }
-// 文章圆角
-.post-block {
-    border-radius: 5px;
-}
-#posts>article+article .post-block {
-    border-radius: 5px;
+//文章页卡片
+.post-block, #posts > article + article .post-block {
+  margin-top: 5px;
+  margin-bottom: 18px;
+  margin-left: 5px; 
+  border-radius: 8px;
+  
+  @media (max-width: 767px) {
+    padding: 25px 0 15px !important;
+    margin: 0 15px 20px;
+  }
 }
 //热评文章
 .ds-top-threads li a {
@@ -107,7 +112,7 @@ code {
     border-bottom: none;
     margin-right: 0px;
     padding: 0px 5px;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 .posts-expand .post-tags a:hover {
     background: #eee;
@@ -137,7 +142,7 @@ code {
     padding-left: 5px;
     padding-top: 2.5px;
     padding-bottom: 2.5px;
-    border-radius: 5px;
+    border-radius: 8px;
     box-shadow: 0px 0px 10px 0px #aaaaaa;
 }
 .back-to-top.back-to-top-on {
@@ -151,8 +156,8 @@ code {
     color: rgb(161, 102, 171);
 }
 .header-inner {
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    margin-top: 5px;
+    border-radius: 8px;
 }
 // 侧栏站点描述
 .site-description {
@@ -191,7 +196,8 @@ links-of-author-item .exturl, .links-of-author-item a {
 }
 // 文章页侧栏
 .sidebar-inner {
-    border-radius: 5px;
+    margin-top: 10px;
+    border-radius: 8px;
 }
 // 时间轴左边线条
 .posts-collapse::after {
@@ -216,7 +222,46 @@ links-of-author-item .exturl, .links-of-author-item a {
 .local-search-popup .popup-btn-close {
     border-left: none;
 }
+//分类页样式
+@media (max-width: 767px) {
+  .category-all-page .category-list-item {
+    margin: 5px 40px;
+  }
+}
+@media (min-width: 767px) {
+  .category-all-page .category-list-item {
+    margin-left: 15px;
+  }
+  ul.category-list {
+    text-align:center;
+  }
+  li.category-list-item  {
+    display: inline-block;
+  }
+  li.category-list-item a {
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: 0.2s ease-out;
+    padding: 10px 15px;
+    background: #649ab6;
+    color: #fff
+    border-bottom: none;
+    border-radius: 15px;
+    line-height: 4;
+    word-break: keep-all;
 
+    &:hover {
+    text-decoration: none;
+    -webkit-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    -moz-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+  }
+  .category-all-page .category-list {
+    padding-top: 10px;
+  }
+}
 /* 设置滚动条的样式 */
 /* 参考https://segmentfault.com/a/1190000003708894 */
 ::-webkit-scrollbar {
@@ -229,7 +274,7 @@ links-of-author-item .exturl, .links-of-author-item a {
 }
 /* 滚动条滑块 */
 ::-webkit-scrollbar-thumb {
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: #ccc;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -284,7 +329,16 @@ div#days {
     font-size: small;
     color: coral;
 }
+//评论区
+.comments{
+  margin-left: 5px;
+  border-radius: 8px;
 
+  @media (max-width: 767px) {
+    padding: 15px;
+    margin: 0 15px 20px;
+  }
+}
 //valine评论背景
 #veditor {
     background-image: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/comment-bg.png);
