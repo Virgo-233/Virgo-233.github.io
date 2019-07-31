@@ -26,7 +26,7 @@ ROOT 的原理其实是通过系统漏洞或官方后门将 SU 可执行文件�
 
 SuperSU 分 systemless 和 xbin 两种模式，systemless 模式不更该 /system 而是在 /data 目录创建一个 img 文件，在系统启动是加载此文件，好处是不破坏系统，坏处是授权响应慢，可能会因为 SuperSU APP 后台被杀死而无法授权；xbin 模式为将文件写入 /system ，SuperSU APP 将会安装在 /system 目录，需手动对 boot 打补丁，不然会卡开机界面，优点是授权响应快，恢复出厂设置仍能保留 ROOT ，缺点是会破坏系统完整性。官网下载的卡刷包会自动判断使用哪种模式因而不用担心用错。
 
-卡刷包可在官网下载，进入 Recovery 刷入即可。有时候可能会遇见刷入后桌面不显示 SuperSU APP ，此时可打开拨号程序输入 \*#\*#1234#\*#\* ，同理输入这个也可以在桌面隐藏 SuperSU APP。
+卡刷包可在官网下载，进入 Recovery 刷入即可。有时候可能会遇见刷入后桌面不显示 SuperSU APP ，此时可打开拨号程序输入 `*#*#1234#*#*` ，同理输入这个也可以在桌面隐藏 SuperSU APP。
 
 ### Magisk
 
