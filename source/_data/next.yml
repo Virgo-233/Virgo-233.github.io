@@ -151,8 +151,8 @@ baidu_push: true
 # External url should start with http:// or https://
 menu:
   home: / || home
-  tags: /tags/ || tags
-  categories: /categories/ || th
+  # tags: /tags/ || tags
+  # categories: /categories/ || th
   archives: /archives/ || archive
   booklist: https://www.notion.so/hoshizora/d447dd5baeda4628a9aa48514b3a4d15 || book
   movielist: https://www.notion.so/hoshizora/6a1d1b45074e4230ab449c29b5a57ffa || film
@@ -326,7 +326,7 @@ symbols_count_time:
   wpm: 275
 
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
-tag_icon: false
+tag_icon: true
 
 # Wechat Subscriber
 wechat_subscriber:
@@ -415,7 +415,7 @@ text_align:
   mobile: justify
 
 # Reduce padding / margin indents on devices with narrow width.
-mobile_layout_economy: true
+mobile_layout_economy: false
 
 # Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
 android_chrome_color: "#eee"
