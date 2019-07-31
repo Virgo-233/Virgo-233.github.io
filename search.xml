@@ -17,55 +17,11 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[VOL-2225]]></title>
-    <url>%2Fposts%2Fc3ed909c.html</url>
-    <content type="text"><![CDATA[我允许自己笑，也允许自己哭；允许自己快乐，也允许自己哀伤；我允许我爱你，同样，也允许你不爱我。这么想，我觉得好受多了，你看世界还有一点点在我手上。VOL.2225插画 | 朱宝元9Nov. 2018 document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
-      <categories>
-        <category>One•一个</category>
-      </categories>
-      <tags>
-        <tag>摘抄</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[玩机 • Android（二）——ROOT 篇]]></title>
     <url>%2Fposts%2Ffab8c3b3.html</url>
     <content type="text"><![CDATA[接上一篇 玩机 • Android（一）——应用篇Root (Android)首先来了解一下 ROOT 是什么：Root 是 Android 系统的一个术语，它使得用户可以获取 Android 操作系统的超级用户权限。Root 能够帮助用户越过手机制造商的限制，得以卸载本身预装的程序，或运行需要系统权限的动作。Android 系统的 Root 与苹果 iOS 系统的越狱类似。———摘自维基百科简单点说就是当你拥有了 ROOT 权限你才能对你的手机想干嘛就干嘛。当然权利越大责任也越大，也意味着会面对更大的风险。因为 ROOT 是非官方行为，所以很多手机产商对 ROOT 后的手机不提供免费维修服务。现在大多数手机均加入了分区保护，未解锁 Bootloader 的情况下无法进行 ROOT 或刷机操作。ROOT 的原理其实是通过系统漏洞或官方后门将 SU 可执行文件复制到 Android 系统的 /system 分区下。为了让用户使用 ROOT 权限，防止手机上任意软件获取 ROOT 权限还需安装一个权限管理软件进行管理。目前主流的超级权限管理工具非 Magisk 和 SuperSU 莫属了。还有如 MIUI、Flyme 以及部分类原生系统自带 ROOT。获取 ROOT获取 ROOT 权限大致有三种方法。一是通过系统漏洞或官方后门通过软件获取，一是直接在刷机包中内置，再就是通过 Recovery 刷入特定的刷机包。最后一种方法应该是用的最广泛也是最简单的了。使用 Recovery 获取 ROOT 需要第三方 Recovery，有 Bootloader 锁的手机还需先解锁。第三方 Recovery 有 TWRP、CWM 等。前面说过 超级权限管理工具有 Magisk 和 SuperSU，它们均提供了对应的卡刷包，刷入即可获取 ROOT 权限。其中 Magisk 并不仅仅只有 ROOT 管理功能，具体将在第三篇中介绍。SuperSU官网: http://www.supersu.com/SuperSU 分 systemless 和 xbin 两种模式，systemless 模式不更该 /system 而是在 /data 目录创建一个 img 文件，在系统启动是加载此文件，好处是不破坏系统，坏处是授权响应慢，可能会因为 SuperSU APP 后台被杀死而无法授权；xbin 模式为将文件写入 /system ，SuperSU APP 将会安装在 /system 目录，需手动对 boot 打补丁，不然会卡开机界面，优点是授权响应快，恢复出厂设置仍能保留 ROOT ，缺点是会破坏系统完整性。官网下载的卡刷包会自动判断使用哪种模式因而不用担心用错。卡刷包可在官网下载，进入 Recovery 刷入即可。有时候可能会遇见刷入后桌面不显示 SuperSU APP ，此时可打开拨号程序输入 *#*#1234#*#* ，同理输入这个也可以在桌面隐藏 SuperSU APP。MagiskMagiskManager: https://magiskmanager.com/XDA： https://forum.xda-developers.com/apps/magiskGithub： https://github.com/topjohnwu/Magisk/releasesMagisk 是一个台湾同胞开发的应用软件，其主要功能是不修改 /system 实现修改的效果，自带了 ROOT 管理。与 SuperSU 一样，需下载卡刷包刷入。卡刷包可在上面三个链接中下载到，也可以直接安装 Magisk Manager APP，然后在 APP 中下载卡刷包。Magisk 与 SuperSU 并不兼容（实际上是因为两个都会修改同一个地方)如果已经刷了 SuperSU 再刷 Magisk 时会出错，此时去 SuperSU 设置中清除 SuperSU 即可（也可以刷入官方 boot）。最后还是那句话：权利越大，责任越大。如果你不清楚你在干什么那么最好不要授权应用 ROOT 权限。当然也没必要对手机 ROOT 后的安全问题太过担心，只要注意授权管理软件的授权提示不乱给软件权限就没事。 document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
       <tags>
         <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[VOL.2208]]></title>
-    <url>%2Fposts%2Fc8caf473.html</url>
-    <content type="text"><![CDATA[如果事后就后悔当时应该做别的选择，就表示不论选哪一条路都会得到相同的结果。VOL.2208插画 | 艾凝Vicki23Oct. 2018 document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
-      <categories>
-        <category>One•一个</category>
-      </categories>
-      <tags>
-        <tag>摘抄</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[VOL.2188]]></title>
-    <url>%2Fposts%2F255c022.html</url>
-    <content type="text"><![CDATA[关于我们最后一次交集，应该是在别人的谈论里。VOL.2188摄影 | Ryuu3Oct. 2018 document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
-      <categories>
-        <category>One•一个</category>
-      </categories>
-      <tags>
-        <tag>摘抄</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[VOL.2184]]></title>
-    <url>%2Fposts%2Fbe38c09.html</url>
-    <content type="text"><![CDATA[一生是由很多很小的心动构成的。多到万家灯火，每扇窗都是我未能传达到的牵挂，小到雨水惊蛰，一个人仍然能够感到惊讶。VOL.2184插画 | 实力姬29Sep. 2018 document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
-      <categories>
-        <category>One•一个</category>
-      </categories>
-      <tags>
-        <tag>摘抄</tag>
       </tags>
   </entry>
   <entry>
@@ -75,61 +31,6 @@
       <categories>
         <category>教程</category>
       </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[VOL.2162]]></title>
-    <url>%2Fposts%2F3ba37e62.html</url>
-    <content type="text"><![CDATA[会枯黄的阔叶也悲伤。永远绿着的针叶也悲伤。有些人的爱，是温带的阔叶，饱满的时候可以成荫，枯萎的时候面目全非。如果是我，大概会选针叶树的爱，因为我怕变了颜色，蜷曲了姿态，你就会找不到我。VOL.2162摄影 | Ahmet Ali Agir7Sep. 2018 document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
-      <categories>
-        <category>One•一个</category>
-      </categories>
-      <tags>
-        <tag>摘抄</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[VOL.2158]]></title>
-    <url>%2Fposts%2Ff05bc4bf.html</url>
-    <content type="text"><![CDATA[所谓断舍离，是将握在手里会怦然心动的东西留下。VOL.2158摄影 | 桂林大河3Sep. 2018 document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
-      <categories>
-        <category>One•一个</category>
-      </categories>
-      <tags>
-        <tag>摘抄</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[VOL.2149]]></title>
-    <url>%2Fposts%2F9e47c568.html</url>
-    <content type="text"><![CDATA[朋友以上，恋人未满，既是恋情的起点，又是恋情的终点。VOL.2149摄影 | 邓云25Aug. 2018 document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
-      <categories>
-        <category>One•一个</category>
-      </categories>
-      <tags>
-        <tag>摘抄</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[爱情要怎么开口]]></title>
-    <url>%2Fposts%2F6804f093.html</url>
-    <content type="text"><![CDATA[我不知道爱情要怎么开口便一直端坐着距离她很远直到她离去突然恍惚也许爱情曾经很真心地来过是我没及时煽动爱的翅膀夕雅y-诗的海‖爱情要怎么开口 - 简书 document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
-      <categories>
-        <category>诗与远方</category>
-      </categories>
-      <tags>
-        <tag>摘抄</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[VOL.2121]]></title>
-    <url>%2Fposts%2F8166900c.html</url>
-    <content type="text"><![CDATA[所谓安慰，就像人快要落水时抓住的稻草。人是有一点点安慰就会牢牢抓住的动物，不管这安慰有多扎手、有多虚弱，不顾一切抓住任何可以救命的东西。但是你要清楚，你只是快要溺水，而不是那根稻草有多可贵。等你调整好了，你就不需要这根稻草了。VOL.2121插画 | 武芃28Jul. 2018 document.querySelectorAll('.github-emoji') .forEach(el => { if (!el.dataset.src) { return; } const img = document.createElement('img'); img.style = 'display:none !important;'; img.src = el.dataset.src; img.addEventListener('error', () => { img.remove(); el.style.color = 'inherit'; el.style.backgroundImage = 'none'; el.style.background = 'none'; }); img.addEventListener('load', () => { img.remove(); }); document.body.appendChild(img); });]]></content>
-      <categories>
-        <category>One•一个</category>
-      </categories>
-      <tags>
-        <tag>摘抄</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[玩机 • Android（一）——应用篇]]></title>
