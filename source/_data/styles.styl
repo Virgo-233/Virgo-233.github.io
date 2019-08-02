@@ -8,19 +8,6 @@ code {
     padding: 0.5em;
     border-bottom: 1px solid #e9e9e9;
 }
-.highlight figcaption a {
-    color: rgb(80, 115, 184);
-}
-
-// 主页文章
- .post {
-   margin-top: 60px;
-  }
-//文章页卡片
-.post-block, #posts > article + article .post-block {
-    margin-top: 5px;
-    border-radius: 8px;
-}
 //热评文章
 .ds-top-threads li a {
     padding-left: 5px;
@@ -38,11 +25,11 @@ code {
 .footer-inner {
     font-family: 'Comic Sans MS','Playball';
     text-align: center;
-    color: rgb(80, 115, 184);
+    color: #4b5cc4;
 }
 //一言
 #lwlhitokoto {
-    color: rgb(243, 112, 85);
+    color: #fc6423;
 }
 // 文章标题字体
 .posts-expand .post-title {
@@ -60,7 +47,6 @@ code {
     border-bottom: 1px solid #fc6423;
   }
 }
-
 // 页面底部页码
 .pagination {
     background: rgba(255, 255, 255, 0);
@@ -99,15 +85,6 @@ code {
 .posts-expand .post-tags {
     margin-top: 0px;
 }
-.posts-expand .post-tags a {
-    border-bottom: none;
-    margin-right: 0px;
-    padding: 0px 5px;
-    border-radius: 8px;
-}
-.posts-expand .post-tags a:hover {
-    background: #eee;
-}
 // 文章底部留白更改
 .post-widgets {
     margin-top: 0px;
@@ -133,11 +110,7 @@ code {
     padding-left: 5px;
     padding-top: 2.5px;
     padding-bottom: 2.5px;
-    border-radius: 8px;
     box-shadow: 0px 0px 10px 0px #aaaaaa;
-}
-.back-to-top.back-to-top-on {
-    bottom: 10px;
 }
 //手机页面菜单图标
 .btn-bar {
@@ -146,16 +119,9 @@ code {
 .site-nav-toggle {
     top: 30%;
 }
-//侧栏
-.menu .menu-item a {
-    color: rgb(80, 115, 184);
-}
-.menu .menu-item a:hover {
-    color: rgb(161, 102, 171);
-}
+//侧栏上半部分
 .header-inner {
     margin-top: 5px;
-    border-radius: 8px;
 }
 // 侧栏站点描述
 .site-meta {
@@ -186,18 +152,18 @@ links-of-author-item .exturl, .links-of-author-item a {
 }
 // 侧栏超链接样式
 .sidebar a {
-    color: #1a2a3a
     border-bottom: none;
-}
-.sidebar a:hover {
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-    border-bottom-color: rgb(161, 102, 171);
+    color:#4b5cc4;
+    
+    &:hover {
+        color:#fc6423;
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+    }
 }
 // 文章页侧栏
 .sidebar-inner {
     margin-top: 10px;
-    border-radius: 8px;
 }
 // 时间轴左边线条
 .posts-collapse::after {
@@ -206,13 +172,6 @@ links-of-author-item .exturl, .links-of-author-item a {
 }
 .page-archive .posts-collapse::after {
     background: linear-gradient(180deg,#f79533 0,#f37055 15%,#ef4e7b 30%,#a166ab 44%,#5073b8 58%,#1098ad 72%,#07b39b 86%,#6dba82 100%);
-}
-// 时间轴文章标题
-.posts-collapse .post-title a {
-    color: #0593d3;
-}
-.posts-collapse .post-title a:hover {
-    color: #fc6423;
 }
 // 时间轴文章标题底部虚线
 .posts-collapse .post-header:hover {
@@ -225,46 +184,6 @@ links-of-author-item .exturl, .links-of-author-item a {
 .local-search-popup .popup-btn-close {
     border-left: none;
 }
-//分类页样式
-@media (max-width: 767px) {
-  .category-all-page .category-list-item {
-    margin: 5px 40px;
-  }
-}
-@media (min-width: 767px) {
-  .category-all-page .category-list-item {
-    margin-left: 15px;
-  }
-  ul.category-list {
-    text-align:center;
-  }
-  li.category-list-item  {
-    display: inline-block;
-  }
-  li.category-list-item a {
-    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: 0.2s ease-out;
-    padding: 10px 15px;
-    background: #649ab6;
-    color: #fff
-    border-bottom: none;
-    border-radius: 15px;
-    line-height: 4;
-    word-break: keep-all;
-
-    &:hover {
-    text-decoration: none;
-    -webkit-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    -moz-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    }
-  }
-  .category-all-page .category-list {
-    padding-top: 10px;
-  }
-}
 /* 设置滚动条的样式 */
 /* 参考https://segmentfault.com/a/1190000003708894 */
 ::-webkit-scrollbar {
@@ -276,12 +195,8 @@ links-of-author-item .exturl, .links-of-author-item a {
     background: #eee;
 }
 /* 滚动条滑块 */
-::-webkit-scrollbar-thumb {
-    border-radius: 8px;
-    background-color: #ccc;
-}
 ::-webkit-scrollbar-thumb:hover {
-    background-color: rgb(247, 149, 51);
+    background-color: #fc6423;
 }
 // 自定义emoji样式
 img#github-emoji {
@@ -335,7 +250,6 @@ div#days {
 //评论区
 .comments{
   margin-left: 5px;
-  border-radius: 8px;
 
   @media (max-width: 767px) {
     padding: 15px;
@@ -351,7 +265,6 @@ div#days {
     background-color: rgba(255,255,255,0);
     resize: vertical;
 }
-
 //valine 评论输入框选中
 input:focus, textarea:focus {
     border: 1px solid #008deb;
@@ -359,7 +272,6 @@ input:focus, textarea:focus {
     -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(82,168,236,0.6);
     box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(82,168,236,0.6);
 }
-
 // 图片边框阴影
 img {
     border-radius: 10px;

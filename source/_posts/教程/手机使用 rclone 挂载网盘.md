@@ -3,6 +3,16 @@ title: 手机使用 rclone 挂载网盘
 abbrlink: 2a60e472
 date: 2019-07-16 22:22:05
 ---
+{% note success %}
+### 2019.08.02 更新
+作者更新了两个版本，v1.5 支持绑定到 /sdcard/cloud/ 了，在配置目录创建 `.bindsd` 文件启用，另外加入了网络检测，检测地址为 google.com ，需自行解决网络问题。v1.6 (当前版本) `.*.parame` 配置文件中增加了`ADD_PARAMS`和`REPLACE_PARAMS`用于添加和替换 rclone 挂载参数； 添加了一个 `.blobal.param` 配置文件用于修改全局参数，REANME 中只写了 `NETCHK_ADDR`和`BINDPOINT`用于修改网络检测地址和挂载点，还可以修改其他的配置项修改默认值，但目前并不是很完善，部分默认参数无法修改。
+{% endnote %}
+
+{% note info %}
+### 提示
+1. 使用模块前建议先仔细阅读模块说明（README），这个模块并不是装上就能用的。
+2. 所有 param 文件中最后必须空一行，不然无法识别最后一行
+{% endnote %}
 
 先来两张效果图：
 ![Screenshot_2019-07-16-20-25-42-875_bin.mt.plus.png](https://i.loli.net/2019/07/16/5d2dc2896ef0e90595.png)

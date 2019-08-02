@@ -8,6 +8,13 @@ categories:
 abbrlink: 13b1ea83
 date: 2018-04-14 12:20:00
 ---
+
+{%note success %}
+#### 2018/6/19 更新：openwrt 固件
+链接: <https://pan.baidu.com/s/1MqWci4ElhyytjqgCj9GnFw> 密码: `7ckw`
+![op](https://ws1.sinaimg.cn/large/ec245efdgy1fsguadvf4xj211y0kgmzo.jpg)
+{% endnote %}
+
 去年在基安看见的一个[帖子](http://www.right.com.cn/forum/forum.php?mod=viewthread&tid=209145&fromguid=hot&extra=&mobile=2)，品胜云座充的拆机板，看了下可以刷 open-wrt 以及 Tp-link WR703n 的包还有 usb 接口就入手了三块板子。到手后就全刷了 u-boot 刷了个 open-wrt 后就放抽屉里吃灰了。后面翻出来几次装了 mentohust 能登录学校的锐捷后就又吃灰了。 最近因为在弄主路由 k2 的内网穿透，接触到了 opkg 包管理器，突然想到了吃灰的云座充。回到寝室就刷了 wr703n 的 LEDE。接着就是弄 usb 挂载以及存储空间的扩展。
 
 ps: LEDE 默认不开启无线网卡，可使用网线连电脑，访问 192.168.1.1 打开无线网卡。若要桥接则要打开 DHCP ，只作 Ap 可不设置，默认静态 ip。
@@ -45,6 +52,3 @@ ps: LEDE 默认不开启无线网卡，可使用网线连电脑，访问 192.168
 我的是 16g 的内存卡，分了个 128M 的分区出来，可以看到两个分区都正常挂载了，并且成功将 128M 的分区扩展到内部存储。
 ![fstab](https://i.loli.net/2019/06/08/5cfb5c6be26e029890.jpg)
 到此品胜云座充的折腾告一段落，接下来就是进行软件方面的设置了。
-
-<div class="note success"><p>2018/6/19 更新：openwrt固件</p></div> 链接: <https://pan.baidu.com/s/1MqWci4ElhyytjqgCj9GnFw> 密码: `7ckw`
-![op](https://ws1.sinaimg.cn/large/ec245efdgy1fsguadvf4xj211y0kgmzo.jpg)

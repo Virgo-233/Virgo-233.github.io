@@ -1153,9 +1153,9 @@ vendors:
   canvas_ribbon:
 
 # Assets
-css: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.7.31/css
-js: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.7.31/js
-images: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.7.31/images
+css: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.2/css
+js: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.2/js
+images: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.2/images
 
 # 文章末尾添加“本文结束”标记
 passage_end_tag:

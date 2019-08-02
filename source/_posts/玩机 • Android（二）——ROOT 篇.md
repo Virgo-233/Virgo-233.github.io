@@ -10,7 +10,7 @@ date: 2018-10-27 13:15:56
 
 ## Root (Android)
 
-首先来了解一下 ROOT 是什么：{% cq %}Root 是 Android 系统的一个术语，它使得用户可以获取 Android 操作系统的超级用户权限。Root 能够帮助用户越过手机制造商的限制，得以卸载本身预装的程序，或运行需要系统权限的动作。Android 系统的 Root 与苹果 iOS 系统的越狱类似。———摘自维基百科{% endcq %}
+首先来了解一下 ROOT 是什么：{% blockquote wikipedia https://zh.wikipedia.org/zh-hans/ROOT_(Android) ROOT_(Android) %}Root 是 Android 系统的一个术语，它使得用户可以获取 Android 操作系统的超级用户权限。Root 能够帮助用户越过手机制造商的限制，得以卸载本身预装的程序，或运行需要系统权限的动作。Android 系统的 Root 与苹果 iOS 系统的越狱类似。{% endblockquote %}
 
 简单点说就是当你拥有了 ROOT 权限你才能对你的手机想干嘛就干嘛。当然权利越大责任也越大，也意味着会面对更大的风险。因为 ROOT 是非官方行为，所以很多手机产商对 ROOT 后的手机不提供免费维修服务。现在大多数手机均加入了分区保护，未解锁 Bootloader 的情况下无法进行 ROOT 或刷机操作。
 
