@@ -77,7 +77,7 @@ Xposed 框架是一款可以在不修改 APK 的情况下（修改系统）影�
 
 - 安装
   
-  <div class="note danger"><p>安装时确保已解锁 Bootloader 、拥有 ROOT 权限。</p>
+  安装时确保已解锁 Bootloader 、拥有 ROOT 权限。
   下载 [Xposed Installer](https://www.coolapk.com/apk/de.robv.android.xposed.installer) 安装后打开，先下载卸载包以防出问题后可以卸载。然后点击安装，Install 和 Install via recovery 都差不多，一个是下载后直接安装一个要手动进 REC 卡刷。
   
   注：Xposed 兼容性最好的是原生类原生之类的 ROM。国产 UI 可能会卡开机。虽然最新版兼容性已经很好了，但在 MIUI 上还是会出现主题无法修改状态栏样式（SolarWarez 针对 MIUI 发布了修改版，可以完美使用，但已不再更新，目前只支持 Android 6.0 及以下系统）的问题。作者也表示不会针对 MIUI 等进行特别优化。目前 Xposed 最高支持 sdk27 即 Android 8.1。

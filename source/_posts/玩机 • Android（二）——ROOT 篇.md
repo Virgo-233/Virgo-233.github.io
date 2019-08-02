@@ -4,9 +4,6 @@ tags: Android
 abbrlink: fab8c3b3
 date: 2018-10-27 13:15:56
 ---
-<img src="https://i.loli.net/2018/10/27/5bd426631e6dc.png" alt="IMG_20181027_164504.png" height="200" width="340"/>
-<!--more-->
-接上一篇　<a herf="https://blog.timelless.xyz/posts/9e7b6f05.html" >玩机 • Android（一）——应用篇 </a>
 
 ## Root (Android)
 
