@@ -5,7 +5,7 @@ date: 2019-07-16 22:22:05
 ---
 {% note success %}
 ### 2019.08.02 更新
-作者更新了两个版本，v1.5 支持绑定到 /sdcard/cloud/ 了，在配置目录创建 `.bindsd` 文件启用，另外加入了网络检测，检测地址为 google.com ，需自行解决网络问题。v1.6 (当前版本) `.*.parame` 配置文件中增加了`ADD_PARAMS`和`REPLACE_PARAMS`用于添加和替换 rclone 挂载参数； 添加了一个 `.blobal.param` 配置文件用于修改全局参数，REANME 中只写了 `NETCHK_ADDR`和`BINDPOINT`用于修改网络检测地址和挂载点，还可以修改其他的配置项修改默认值，但目前并不是很完善，部分默认参数无法修改。
+作者更新了两个版本，v1.5 支持绑定到 /sdcard/cloud/ 了，在配置目录创建 `.bindsd` 文件启用，另外加入了网络检测，检测地址为 google.com ，需自行解决网络问题。v1.6 (当前版本) `.*.parame` 配置文件中增加了`ADD_PARAMS`和`REPLACE_PARAMS`用于添加和替换 rclone 挂载参数； 添加了一个 `.blobal.param` 配置文件用于修改全局参数，README 中只写了 `NETCHK_ADDR`和`BINDPOINT`用于修改网络检测地址和挂载点，还可以添加其他的值，但目前并不是很完善，部分默认参数无法修改。
 {% endnote %}
 
 {% note info %}
