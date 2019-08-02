@@ -1,4 +1,4 @@
-<html><head></head><body>function show_date_time(){
+function show_date_time(){
 window.setTimeout("show_date_time()", 1000);
 BirthDay=new Date("05/20/2017 17:21:00");
 today=new Date();
@@ -34,4 +34,4 @@ if (i<script>
             });
             document.body.appendChild(img);
           });
-      </script></body></html>
+      </script>

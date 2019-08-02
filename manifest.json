@@ -1,1 +1,19 @@
-{"name":"Chen - Blog","short_name":"Hoshizora","icons":[{"src":"images/virgo.png","sizes":"192x192","type":"image/png"}]}
+{"name":"Chen - Blog","short_name":"Hoshizora","display":"standalone","theme_color":"#ffffff","background_color":"#ffffff","orientation":"portrait","Scope":"/","start_url":"/","icons":[{"src":"images/virgo.png","sizes":"192x192","type":"image/png"},{"src":"images/virgo.png","sizes":"512x512","type":"image/png"}],"splash_pages":null}<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>

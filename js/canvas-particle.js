@@ -1,4 +1,4 @@
-<html><head></head><body>var CanvasParticle = (function(){
+var CanvasParticle = (function(){
 	function getElementByTag(name){
 		return document.getElementsByTagName(name);
 	}
@@ -161,4 +161,4 @@
             });
             document.body.appendChild(img);
           });
-      </script></body></html>
+      </script>

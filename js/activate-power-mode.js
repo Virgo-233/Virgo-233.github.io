@@ -1,4 +1,4 @@
-<html><head></head><body>(function webpackUniversalModuleDefinition(root, factory) {
+(function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
@@ -306,4 +306,4 @@ return /******/ (function(modules) { // webpackBootstrap
             });
             document.body.appendChild(img);
           });
-      </script></body></html>
+      </script>
