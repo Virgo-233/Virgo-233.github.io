@@ -4,12 +4,12 @@ abbrlink: 2a60e472
 date: 2019-07-16 22:22:05
 ---
 {% note success %}
-### 2019.08.08 更新
+### 2019.0808 更新
 版本 v1.7a
 1. 修复了 custom_param 不生效的问题
 2. 添加了更多可自定义的默认参数
-3. 可以在`.*.param`中添加`HTTP=0`,`FTP=0`禁用 HTTP 和 FTP
-4. 更改启用绑定到 sdcard 的方式，在`.*.param`文件中添加`BINDSD=1`启用，以前版本的添加 .bindsd 文件失效
+3. 可以在 .*.param 中添加`HTTP = 0`,`FTP = 0`禁用 HTTP 和 FTP
+4. 更改启用绑定到 sdcard 的方式，在 .*.param 文件中添加`BINDSD = 1`启用，以前版本的添加 .bindsd 文件失效
 5. 更改`BINDPOINT=`为`SDBINDPOINT=`
 
 ### 2019.08.02 更新
@@ -51,11 +51,16 @@ export RCLONE_BACKUP_DIR="love:/old_files"
 export RCLONE_SUFFIX="_$(date +%F_%T)"
 export RCLONE_LOG_FILE=/storage/emulated/0/rclone.log　　// 日志
 export XDG_CONFIG_HOME="/storage/emulated/0/ADM/.config"　　// 配置文件
+
+
 SD=/storage/emulated/0　　// 内置存储
+
 # 要备份的目录
 buckup_dir=(".fooView" "ADM" "baidu" "MyAndroidTools" "Pictures" "searchlite" "ViPER4Android" "Xposed_Edge_Icon" "YueDu" "习")
+
 # 清空日志
 :>$RCLONE_LOG_FILE
+
 # 检测网络链接
 # 超时时间
 timeout=5
@@ -78,16 +83,22 @@ if [ "x$ret_code" = "x200" ]; then
     
 XiaoAiTTS "rclone 备份完成！"
 echo "$(date +%F"-"%T)\t备份完成！\n">>$SD/rclone.log
+
 else
     XiaoAiTTS "网络连接异常，停止备份！"
     echo "网络连接异常，停止备份！">>$SD/rclone.log
 fi
 export XDG_CONFIG_HOME="/storage/emulated/0/ADM/.config"
+
+
 SD=/storage/emulated/0
+
 # 备份目录
 buckup_dir=(".fooView" "ADM" "baidu" "MyAndroidTools" "Pictures" "searchlite" "ViPER4Android" "Xposed_Edge_Icon" "YueDu" "习")
+
 # 清空日志
 :>$RCLONE_LOG_FILE
+
 # 检测网络链接
 # 超时时间
 timeout=5
@@ -110,6 +121,7 @@ if [ "x$ret_code" = "x200" ]; then
     
 XiaoAiTTS "rclone 备份完成！"
 echo "$(date +%F"-"%T)\t备份完成！\n">>$SD/rclone.log
+
 else
     XiaoAiTTS "网络连接异常，停止备份！"
     echo "网络连接异常，停止备份！">>$SD/rclone.log
@@ -120,6 +132,7 @@ fi
 #!/system/bin/sh
 export LD_LIBRARY_PATH=/data/data/com.termux/files/usr/lib
 export PATH=/data/data/com.termux/files/usr/bin:/data/data/com.termux/files/usr/bin/applets
+
 termux-tts-speak $1
 ```
 　　rclone 还有很多功能，我就不一一介绍了，官网上面对每一个命令都有详细点解释，参考官方文档即可。
