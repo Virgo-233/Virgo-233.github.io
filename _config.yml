@@ -28,6 +28,7 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render: 
   - '*.html' 
+  - '*.json'
 
 
 # Writing 文章
