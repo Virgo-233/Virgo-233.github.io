@@ -286,9 +286,6 @@ offline:
   staticFileGlobs:
 #    - public/**/*.{js,html,css,png,jpg,jpeg,gif,svg,json,xml,eot,ttf,woff,woff2}
     - public/posts/*
-    - public/fonts/chinese-zodiac.woff2
-    - public/about/index.html
-    - public/manifest.json
   stripPrefix: public
   verbose: false
   runtimeCaching:
