@@ -10,7 +10,7 @@ date: 2019-07-16 22:22:05
 2. 添加了更多可自定义的默认参数
 3. 可以在`.*.param`中添加`HTTP=0`,`FTP=0`禁用 HTTP 和 FTP
 4. 更改启用绑定到 sdcard 的方式，在`.*.param`文件中添加`BINDSD=1`启用，以前版本的添加 .bindsd 文件失效
-5. 更改`BINDPOINT=`为`SDBINDPOINT=`
+5. 更改`BINDPOINT=`为`SDBINDPOINT=`，默认为/sdcard/Cloud/$REMOTE,要更改可在`.*.param`文件中添加`SDBINDPOINT=xx`,xx为要绑定的 /sdcard 下的目录名（直接填目录名，不需要路径）
 
 ### 2019.08.02 更新
 作者更新了两个版本，v1.5 支持绑定到 /sdcard/cloud/ 了，在配置目录创建 `.bindsd` 文件启用，另外加入了网络检测，检测地址为 google.com ，需自行解决网络问题。v1.6 (当前版本) `.*.parame` 配置文件中增加了`ADD_PARAMS`和`REPLACE_PARAMS`用于添加和替换 rclone 挂载参数； 添加了一个 `.blobal.param` 配置文件用于修改全局参数，README 中只写了 `NETCHK_ADDR`和`BINDPOINT`用于修改网络检测地址和挂载点，还可以添加其他的值，但目前并不是很完善，部分默认参数无法修改。
