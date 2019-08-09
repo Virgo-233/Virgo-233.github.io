@@ -4,6 +4,11 @@ abbrlink: 2a60e472
 date: 2019-07-16 22:22:05
 ---
 {% note success %}
+### 2019.08.09 更新
+版本 v1.7.b
+1. 添加网络检测开关，默认启用，可在`.global.param`文件中添加`NETCHK=0`关闭
+2. 修复当某一 remote 启用绑定到 sdcard 时在其后面所有的 remote 默认启用绑定到 sdcard 的 bug
+
 ### 2019.08.08 更新
 版本 v1.7a
 1. 修复了 custom_param 不生效的问题
