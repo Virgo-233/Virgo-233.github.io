@@ -6,7 +6,7 @@ type: "about"
 ![812b6fd675ed057f73ffd1e922b0b473.jpg](https://i.loli.net/2018/10/11/5bbf51c00c223.jpg)
 
 <center>通信工程大二狗一枚,喜欢捣鼓手机和路由器，对计算机很感兴趣。<div id="days"></div>
-<script type="text/javascript" src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@19.7.19a/js/blog-time.js"></script></center><p align="right">by ChenXinYu </br>2017.12.05</p>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@19.7.19a/js/blog-time.js"></script></center><p align="right">by 𝓒𝓱𝓮𝓷𝓧𝓲𝓷𝓨𝓾 </br>2017.12.05</p>
 
 <style>
 .snowfall-flakes{animation:sakura 1s linear 0s infinite;}
