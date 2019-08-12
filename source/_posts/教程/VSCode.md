@@ -7,6 +7,7 @@ Visual Studio Code (简称 VS Code/VSC)是一款免费开源的代码编辑器�
 
 官网：<https://code.visualstudio.com/>
 ![vscode](https://i.loli.net/2019/06/08/5cfb5b61c8e8413483.jpg)
+<!-- more -->
 
 ## 环境准备
 

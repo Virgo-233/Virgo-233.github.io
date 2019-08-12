@@ -7,6 +7,8 @@ abbrlink: 2443be7d
 date: 2018-06-21 20:07:41
 ---
 使用 [Mentohust](https://baike.baidu.com/item/mentohust/11049624) 代替锐捷进行认证。mentohust 有多个平台，此处只讲在路由器上使用。大多数第三方固件均已集成了 Mentohust，如果没有集成的话可自行安装。不想用第三方固件或者不会刷固件可以购买极路由，官方自带锐捷认证。
+<!-- more -->
+
 使用 mentohust 需要安装三个软件包，libpcap.ipk、luci-app-mentohust.ipk、mentohust.ipk。其中 luci-app-mentohust.ipk 为 web 管理，可不安装。mentohust.ipk 包也可直接使用 mentohust 二进制包使用命令行运行。软件包需要对应路由器 cpu 架构，此处不提供文件，需自行解决，若实在找不到可在评论留言，我有时间会帮忙编译。
 
 部分项目地址：

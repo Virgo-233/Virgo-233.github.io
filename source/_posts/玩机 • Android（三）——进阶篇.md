@@ -9,6 +9,7 @@ date: 2018-12-23 14:20:56
 - [玩机 • Android（二）——ROOT 篇](https://hoshizora.tw/posts/fab8c3b3.html)
 
 Android 有两个模式：Recovery 和 Bootloader，也叫卡刷模式和线刷模式（部分手机可能不一样，功能都差不多）。
+<!-- more -->
 
 ## Bootloader
   
