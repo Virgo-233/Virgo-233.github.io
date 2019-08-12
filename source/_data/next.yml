@@ -151,8 +151,8 @@ baidu_push: true
 # External url should start with http:// or https://
 menu:
   home: / || home
-  # tags: /tags/ || tags
-  # categories: /categories/ || th
+  tags: /tags/ || tags
+  categories: /categories/ || th
   archives: /archives/ || archive
   about: /about/ || user
   #schedule: /schedule/ || calendar

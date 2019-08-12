@@ -55,6 +55,9 @@ MinGW随便装哪，Architecture 选 x86_64，装好以后把东西全部复制�
 
 #### 配置 c_cpp_properties.json
 
+<details>
+<summary>点击查看文件详细信息</summary>
+
 ```json
 {
     "configurations": [
@@ -101,10 +104,14 @@ MinGW随便装哪，Architecture 选 x86_64，装好以后把东西全部复制�
     "version": 4
 }
 ```
+</details>
 
 可参考 [Microsoft/vscode-cpptools](https://github.com/Microsoft/vscode-cpptools/blob/master/Documentation/LanguageServer/MinGW.md) 如果没有合并 LLVM 和 MinGW 则 compilerPath 需要改成 MinGW gcc.exe 的路径。Windows 的路径是反斜杠需要使用两个反斜杠来转义，直接使用斜杠也行。includePath 和 browse 中的 path 均为头文件所在路径。ps:偶尔可能会出现提示找不到头文件但能正常编译运行。
 
 #### 配置 launch.json
+
+<details>
+<summary>点击查看文件详细信息</summary>
 
 ```json
 // https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md
@@ -160,7 +167,12 @@ MinGW随便装哪，Architecture 选 x86_64，装好以后把东西全部复制�
 }
 ```
 
+</details>
+
 #### 配置 tasks.json
+
+<details>
+<summary>点击查看文件详细信息</summary>
 
 ```json
 // https://code.visualstudio.com/docs/editor/tasks
@@ -218,7 +230,12 @@ MinGW随便装哪，Architecture 选 x86_64，装好以后把东西全部复制�
 }
 ```
 
+</details>
+
 #### 配置 settings.json
+
+<details>
+<summary>点击查看文件详细信息</summary>
 
 ```json
 {
@@ -295,9 +312,13 @@ MinGW随便装哪，Architecture 选 x86_64，装好以后把东西全部复制�
 }
 ```
 
+</details>
+
 建议放置在工作区设置。
 
 另附个人设置：
+<details>
+<summary>点击查看文件详细信息</summary>
 
 ```json
 {
@@ -328,6 +349,8 @@ MinGW随便装哪，Architecture 选 x86_64，装好以后把东西全部复制�
     "git.ignoreMissingGitWarning": true,
 }
 ```
+
+</details>
 
 ### 开始写代码
 
