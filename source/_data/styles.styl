@@ -27,9 +27,10 @@ code {
     text-align: center;
     color: #4b5cc4;
 }
-//一言
-#lwlhitokoto {
-    color: #fc6423;
+
+// 文章背景
+.post-block {
+    background: rgba(255,255,255,0.75);    
 }
 // 文章标题字体
 .posts-expand .post-title {
@@ -66,13 +67,14 @@ code {
 // [Read More]按钮样式
 .post-button .btn {
     font-size: 15px;
-    box-shadow: inset 0px 0px 10px 0px #aaaaaa;
+    box-shadow: 0 8px 20px -8px rgba(0,0,0,0.3);
     border-bottom: 2px solid #2a3a4a;
-}
-.post-button .btn:hover {
-    color: #fff;
-    background-image: linear-gradient(90deg, #a166ab 0%, #ef4e7b 25%, #f37055 50%, #ef4e7b 75%, #a166ab 100%);
-    border-bottom: 2px solid #2a3a4a;
+
+    &:hover {
+        color: #fff;
+        background-image: linear-gradient(90deg, #a166ab 0%, #ef4e7b 25%, #f37055 50%, #ef4e7b 75%, #a166ab 100%);
+        border-bottom: 2px solid #2a3a4a;
+    }
 }
 //相关文章
 .popular-posts-header {
@@ -96,12 +98,6 @@ code {
 .post-nav-item a:hover {
     font-weight: bold;
 }
-// 文章内标题样式（左边的竖线）
-//.post-body h2, h3, h4, h5, h6 {
-//    border-left: 4px solid rgb(161, 102, 171);
-//    margin-left: -36px;
-//    padding-left: 32px;
-//}
 // 右下角返回顶部按钮样式
 .back-to-top {
     line-height: 1.5;
@@ -119,9 +115,16 @@ code {
 .site-nav-toggle {
     top: 30%;
 }
-//侧栏上半部分
+//侧栏
 .header-inner {
-    margin-top: 5px;
+    background: rgba(255,255,255,0.75);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 8px 20px -8px rgba(0,0,0,0.3);
+}
+.sidebar-inner {
+    background: rgba(255,255,255,0.75);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px -8px rgba(0,0,0,0.3);
 }
 // 侧栏站点描述
 .site-meta {
@@ -161,9 +164,37 @@ links-of-author-item .exturl, .links-of-author-item a {
         border-bottom-style: solid;
     }
 }
-// 文章页侧栏
-.sidebar-inner {
-    margin-top: 10px;
+// 时间轴年
+.posts-collapse .collection-title h2 {
+    margin-left: -20px;
+    width: 33%;
+    padding: 5px 20px 5px 0;
+    text-align: right;
+    background: #eee;
+    border-radius: 0 50px 50px 0;
+    box-shadow: 0 8px 20px -8px rgba(0,0,0,0.3);
+    transition: all 1s cubic-bezier(0.17, 0.08, 0.04, 0.99);
+    
+    &:hover {
+        width: 66%;
+        background: rgba(255,255,255,0.5);
+    }
+}
+// 时间轴月
+.posts-collapse .collection-title h3 {
+    margin-left: -20px;
+    width: 20%;
+    padding: 5px 20px 5px 0;
+    text-align: right;
+    background: #eee;
+    border-radius: 0 50px 50px 0;
+    box-shadow: 0 8px 20px -8px rgba(0,0,0,0.3);
+    transition: all 1s cubic-bezier(0.17, 0.08, 0.04, 0.99);
+
+    &:hover {
+        width: 45%;
+        background: rgba(255,255,255,0.5);    
+    }
 }
 // 时间轴左边线条
 .posts-collapse::after {
@@ -172,6 +203,23 @@ links-of-author-item .exturl, .links-of-author-item a {
 }
 .page-archive .posts-collapse::after {
     background: linear-gradient(180deg,#f79533 0,#f37055 15%,#ef4e7b 30%,#a166ab 44%,#5073b8 58%,#1098ad 72%,#07b39b 86%,#6dba82 100%);
+}
+// 时间轴年月圆点
+.posts-collapse .collection-title::before {
+    background: #8d4bbb;
+    margin-left: -6px;
+    width: 10px;
+    height: 10px;
+    box-shadow: 0 0 10px #fff;
+    z-index: 500;
+}
+.posts-collapse .post-header::before {
+    background: #8d4bbb;
+    margin-left: -6px;
+    width: 10px;
+    height: 10px;
+    box-shadow: 0 0 10px #fff;
+    z-index: 500;
 }
 // 时间轴文章标题底部虚线
 .posts-collapse .post-header:hover {
@@ -188,7 +236,7 @@ links-of-author-item .exturl, .links-of-author-item a {
 /* 参考https://segmentfault.com/a/1190000003708894 */
 ::-webkit-scrollbar {
     width: 5px;
-    height: 15px;
+    height: 5px;
 }
 /* 滚动槽 */
 ::-webkit-scrollbar-track {
@@ -248,13 +296,48 @@ div#days {
     color: coral;
 }
 //评论区
+.v .vwrap {
+    padding: 5px 20px !important;
+    border: 1px solid #eee !important;
+    border-radius: 10px !important;
+    background: rgba(255,255,255,0.3);
+    box-shadow: 0 8px 20px -8px rgba(0,0,0,0.3);
+}
 .comments{
-  margin-left: 5px;
-
-  @media (max-width: 767px) {
-    padding: 15px;
-    margin: 0 15px 20px;
-  }
+    background: transparent;
+    margin-left: 5px;
+    background: rgba(255,255,255,0.3);
+}
+.vcontent p {
+    margin-right: 10px;
+}
+.v .vlist .vcard .vh {
+    padding-left: 10px !important;
+    box-shadow: 0 8px 20px -8px rgba(0,0,0,0.3);
+    border-radius: 10px !important;
+    background: rgba(255,255,255,0.3) !important;
+    border: 1px dotted #eee !important;
+}
+.v .vlist .vcard .vh .vmeta {
+    margin-right: 15px;
+    border-bottom: 0px !important;
+}
+.v .vlist .vcard .vhead {
+    margin-top: 10px !important;
+}
+.v .vlist .vcard .vhead .vnick {
+    color: #fc6423 !important;
+}
+.v .vlist .vcard .vhead .vsys {
+    background: rgba(255,255,255,0.3) !important;
+    border: 1px solid #aaa !important;
+    color: #aaa !important;
+    line-height: 1.2 !important;
+}
+.v .vlist .vcard .vquote {
+    margin: 10px 10px 15px 15px;
+    border-left: 1px dashed #f9a972 !important;
+    padding-left: 5px !important;
 }
 //valine评论背景
 #veditor {
@@ -272,8 +355,55 @@ input:focus, textarea:focus {
     -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(82,168,236,0.6);
     box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(82,168,236,0.6);
 }
-// 图片边框阴影
+// 图片
 img {
+    height: auto;
+    opacity: 0.8;
     border-radius: 10px;
     box-shadow: rgb(170, 170, 170) 0px 0px 14px 0px;
+}
+.posts-expand .post-body img {
+    margin: 5px auto 0;
+    border-radius: 20px;
+    max-width: 90%;
+    transition: all 0.2s linear;
+    
+    &:hover {
+        border-radius: 0;
+        opacity: 1;
+        border: 1px solid #4b5cc4;
+    }
+}
+// summary 文字颜色
+summary {
+    color: #4b5cc4;
+    text-align: center;
+
+    &:hover {
+        color: #fc6423;
+        border-bottom: 1px solid #fc6423;
+    }
+}
+// 背景
+// body::before {
+//     content: "";
+//     display: block;
+//     position: fixed;
+//     left: 0;
+//     top: 0;
+//     width: 100%;
+//     height: 100%;
+//     z-index: -99;
+//     background: url(https://co5.me/css/bk.jpg) no-repeat center center;
+//     background-size: cover;
+// }
+
+.menu .menu-item a:hover, .menu-item-active a {
+    background: #eee;
+    border-radius: 50px 0 0 50px;
+    border-color: transparent;
+    box-shadow: 0 8px 20px -8px rgba(0,0,0,0.3);
+}
+.menu .menu-item a {
+    border-radius: 50px 0 0 50px;
 }

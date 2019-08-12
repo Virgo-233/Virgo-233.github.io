@@ -412,7 +412,7 @@ text_align:
   mobile: justify
 
 # Reduce padding / margin indents on devices with narrow width.
-mobile_layout_economy: false
+mobile_layout_economy: true
 
 # Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
 android_chrome_color: "#eee"
@@ -824,7 +824,7 @@ firestore:
 busuanzi_count:
   enable: true
   total_visitors: true
-  total_visitors_icon: user
+  total_visitors_icon: user-secret
   total_views: true
   total_views_icon: eye
   post_views: false
