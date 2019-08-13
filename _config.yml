@@ -286,7 +286,7 @@ offline:
   maximumFileSizeToCacheInBytes: 10485760
   staticFileGlobs:
 #    - public/**/*.{js,html,css,png,jpg,jpeg,gif,svg,json,xml,eot,ttf,woff,woff2}
-    - public/posts/*
+    - public/manifest.json
   stripPrefix: public
   verbose: false
   runtimeCaching:
