@@ -1,14 +1,32 @@
 /* global NexT, CONFIG */
 
-NexT.utils = {
+HTMLElement.prototype.isVisible = function() {
+  return window.getComputedStyle(this).display !== 'none';
+};
 
+HTMLElement.prototype.width = function() {
+  return parseFloat(window.getComputedStyle(this).width);
+};
+
+HTMLElement.prototype.height = function() {
+  return parseFloat(window.getComputedStyle(this).height);
+};
+
+HTMLElement.prototype.css = function(dict) {
+  for (var key in dict) {
+    this.style[key] = dict[key];
+  }
+  return this;
+};
+
+NexT.utils = {
   /**
    * Wrap images with fancybox.
    */
   wrapImageWithFancyBox: function() {
-    $('.post-body img')
-      .each(function() {
-        var $image = $(this);
+    document.querySelectorAll('.post-body img')
+      .forEach(element => {
+        var $image = $(element);
         var imageTitle = $image.attr('title') || $image.attr('alt');
         var $imageWrapLink = $image.parent('a');
 
@@ -43,11 +61,13 @@ NexT.utils = {
   },
 
   registerExtURL: function() {
-    $('.exturl').on('click', function() {
-      var $exturl = $(this).attr('data-url');
-      var $decurl = decodeURIComponent(escape(window.atob($exturl)));
-      window.open($decurl, '_blank', 'noopener');
-      return false;
+    document.querySelectorAll('.exturl').forEach(element => {
+      element.addEventListener('click', event => {
+        var $exturl = event.currentTarget.getAttribute('data-url');
+        var $decurl = decodeURIComponent(escape(window.atob($exturl)));
+        window.open($decurl, '_blank', 'noopener');
+        return false;
+      });
     });
   },
 
@@ -55,7 +75,7 @@ NexT.utils = {
    * One-click copy code support.
    */
   registerCopyCode: function() {
-    $('.highlight').not('.gist .highlight').each(function(i, e) {
+    $('.highlight').not('.gist .highlight').each((i, e) => {
       function initButton(button) {
         if (CONFIG.copycode.style === 'mac') {
           button.html('<i class="fa fa-clipboard"></i>');
@@ -64,10 +84,10 @@ NexT.utils = {
         }
       }
       var $button = $('<div>').addClass('copy-btn');
-      $button.on('click', function() {
-        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
-          return $(e).text();
-        }).toArray().join('\n');
+      $button.on('click', event => {
+        var code = [...event.currentTarget.parentNode.querySelectorAll('.code .line')].map(element => {
+          return element.innerText;
+        }).join('\n');
         var ta = document.createElement('textarea');
         var yPosition = window.pageYOffset || document.documentElement.scrollTop;
         ta.style.top = yPosition + 'px'; // Prevent page scroll
@@ -83,20 +103,19 @@ NexT.utils = {
         ta.readOnly = false;
         var result = document.execCommand('copy');
         if (CONFIG.copycode.show_result) {
-          $(this).text(result ? CONFIG.translation.copy_success : CONFIG.translation.copy_failure);
+          event.currentTarget.innerText = result ? CONFIG.translation.copy_success : CONFIG.translation.copy_failure;
         }
         ta.blur(); // For iOS
-        $(this).blur();
+        event.currentTarget.blur();
         if (selected) {
           selection.removeAllRanges();
           selection.addRange(selected);
         }
         document.body.removeChild(ta);
       });
-      $button.on('mouseleave', function() {
-        var $b = $(this).closest('.copy-btn');
-        setTimeout(function() {
-          initButton($b);
+      $button.on('mouseleave', event => {
+        setTimeout(() => {
+          initButton($(event.currentTarget));
         }, 300);
       });
       initButton($button);
@@ -109,10 +128,10 @@ NexT.utils = {
     var $top = $('.back-to-top');
 
     // For init back to top in sidebar if page was scrolled after page refresh.
-    $(window).on('load scroll', function() {
+    $(window).on('load scroll', () => {
       $top.toggleClass('back-to-top-on', window.pageYOffset > THRESHOLD);
 
-      var scrollTop = $(window).scrollTop();
+      var scrollTop = window.scrollY;
       var contentVisibilityHeight = NexT.utils.getContentVisibilityHeight();
       var scrollPercent = scrollTop / contentVisibilityHeight;
       var scrollPercentRounded = Math.round(scrollPercent * 100);
@@ -120,7 +139,7 @@ NexT.utils = {
       $('#scrollpercent > span').html(scrollPercentMaxed);
     });
 
-    $top.on('click', function() {
+    $top.on('click', () => {
       $('html, body').animate({ scrollTop: 0 });
     });
   },
@@ -130,13 +149,13 @@ NexT.utils = {
    */
   registerTabsTag: function() {
     // Binding `nav-tabs` & `tab-content` by real time permalink changing.
-    $('.tabs ul.nav-tabs .tab').on('click', function(href) {
-      href.preventDefault();
+    $('.tabs ul.nav-tabs .tab').on('click', event => {
+      event.preventDefault();
       // Prevent selected tab to select again.
-      if (!$(this).hasClass('active')) {
+      if (!$(event.currentTarget).hasClass('active')) {
         // Add & Remove active class on `nav-tabs` & `tab-content`.
-        $(this).addClass('active').siblings().removeClass('active');
-        var tActive = $(this).find('a').attr('href');
+        $(event.currentTarget).addClass('active').siblings().removeClass('active');
+        var tActive = $(event.currentTarget).find('a').attr('href');
         $(tActive).addClass('active').siblings().removeClass('active');
         // Trigger event
         document.querySelector(tActive).dispatchEvent(new Event('tabs:click', {
@@ -161,14 +180,14 @@ NexT.utils = {
   },
 
   registerActiveMenuItem: function() {
-    $('.menu-item').each(function() {
-      var target = $(this).find('a[href]')[0];
+    document.querySelectorAll('.menu-item').forEach(element => {
+      var target = element.querySelector('a[href]');
       var isSamePath = target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '');
       var isSubPath = target.pathname !== '/' && location.pathname.indexOf(target.pathname) === 0;
       if (target.hostname === location.hostname && (isSamePath || isSubPath)) {
-        $(this).addClass('menu-item-active');
+        element.classList.add('menu-item-active');
       } else {
-        $(this).removeClass('menu-item-active');
+        element.classList.remove('menu-item-active');
       }
     });
   },
@@ -178,8 +197,6 @@ NexT.utils = {
    * @see http://toddmotto.com/fluid-and-responsive-youtube-and-vimeo-videos-with-fluidvids-js/
    */
   embeddedVideoTransformer: function() {
-    var $iframes = $('iframe');
-
     // Supported Players. Extend this if you need more players.
     var SUPPORTED_PLAYERS = [
       'www.youtube.com',
@@ -190,10 +207,10 @@ NexT.utils = {
     ];
     var pattern = new RegExp(SUPPORTED_PLAYERS.join('|'));
 
-    function getDimension($element) {
+    function getDimension(element) {
       return {
-        width : $element.width(),
-        height: $element.height()
+        width : element.width(),
+        height: element.height()
       };
     }
 
@@ -201,25 +218,24 @@ NexT.utils = {
       return height / width * 100;
     }
 
-    $iframes.each(function() {
-      var iframe = this;
-      var $iframe = $(this);
-      var oldDimension = getDimension($iframe);
+    document.querySelectorAll('iframe').forEach(iframe => {
+      var oldDimension = getDimension(iframe);
       var newDimension;
 
-      if (this.src.search(pattern) > 0) {
+      if (iframe.src.search(pattern) > 0) {
 
         // Calculate the video ratio based on the iframe's w/h dimensions
         var videoRatio = getAspectRadio(oldDimension.width, oldDimension.height);
 
         // Replace the iframe's dimensions and position the iframe absolute
         // This is the trick to emulate the video ratio
-        $iframe.width('100%').height('100%')
-          .css({
-            position: 'absolute',
-            top     : '0',
-            left    : '0'
-          });
+        iframe.css({
+          width   : '100%',
+          height  : '100%',
+          position: 'absolute',
+          top     : '0',
+          left    : '0'
+        });
 
         // Wrap the iframe in a new <div> which uses a dynamically fetched padding-top property
         // based on the video's w/h dimensions
@@ -238,8 +254,8 @@ NexT.utils = {
         wrap.appendChild(iframe);
 
         // Additional adjustments for 163 Music
-        if (this.src.search('music.163.com') > 0) {
-          newDimension = getDimension($iframe);
+        if (iframe.src.search('music.163.com') > 0) {
+          newDimension = getDimension(iframe);
           var shouldRecalculateAspect = newDimension.width > oldDimension.width
                                      || newDimension.height < oldDimension.height;
 
@@ -295,7 +311,7 @@ NexT.utils = {
       display = CONFIG.sidebar.display === 'always' || (CONFIG.sidebar.display === 'post' && hasTOC);
     }
     if (display) {
-      $(document).trigger('sidebar:show');
+      window.dispatchEvent(new Event('sidebar:show'));
     }
   },
 
@@ -315,24 +331,15 @@ NexT.utils = {
     return CONFIG.scheme === 'Gemini';
   },
 
-  getScrollbarWidth: function() {
-    var $div = $('<div/>').addClass('scrollbar-measure').prependTo('body');
-    var div = $div[0];
-    var scrollbarWidth = div.offsetWidth - div.clientWidth;
-    $div.remove();
-
-    return scrollbarWidth;
-  },
-
   getContentVisibilityHeight: function() {
-    var docHeight = $('.container').height();
-    var winHeight = $(window).height();
-    var contentVisibilityHeight = docHeight > winHeight ? docHeight - winHeight : $(document).height() - winHeight;
+    var docHeight = document.querySelector('.container').height();
+    var winHeight = window.innerHeight;
+    var contentVisibilityHeight = docHeight > winHeight ? docHeight - winHeight : document.body.scrollHeight - winHeight;
     return contentVisibilityHeight;
   },
 
   getSidebarb2tHeight: function() {
-    var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? $('.back-to-top').height() : 0;
+    var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? document.querySelector('.back-to-top').height() : 0;
     return sidebarb2tHeight;
   },
 
@@ -352,12 +359,10 @@ NexT.utils = {
       callback();
     } else {
       $.ajax({
-        type: 'GET',
-        url: url,
+        url     : url,
         dataType: 'script',
-        cache: true,
-        success: callback
-      });
+        cache   : true
+      }).then(callback);
     }
   }
 };
