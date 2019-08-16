@@ -855,7 +855,7 @@ algolia_search:
     hits_stats: "${hits} results found in ${time} ms"
 
 # Local search
-# Dependencies: https://github.com/theme-next/hexo-generator-searchdb
+# Dependencies: https://github.com/wzpan/hexo-generator-search
 local_search:
   enable: true
   # If auto, trigger search by changing input.
@@ -1131,6 +1131,7 @@ vendors:
   # algolia_instant_css: //cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css
   algolia_instant_js: //cdnjs.loli.net/ajax/libs/instantsearch.js/2.10.4/instantsearch.min.js
   algolia_instant_css: //cdnjs.loli.net/ajax/libs/instantsearch.js/2.10.4/instantsearch.min.css
+
   # PDF
   # Example:
   # pdfobject: //cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js
@@ -1185,9 +1186,9 @@ vendors:
   canvas_ribbon:
 
 # Assets
-css: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.12/css
-js: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.12/js
-images: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.12/images
+css: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.16/css
+js: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.16/js
+images: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.16/images
 
 # 文章末尾添加“本文结束”标记
 passage_end_tag:

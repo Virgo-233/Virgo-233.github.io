@@ -53,8 +53,8 @@ code {
   h3 {counter-reset: h4}
   h4 {counter-reset: h5}
   h5 {counter-reset: h6}
-  h2:not(.post-title):before {counter-increment: h2; content: counter(h2) ". "}
-  h3:before {counter-increment: h3; content: counter(h2) "." counter(h3) ". "}
+  h2:not(.post-title):not(.posts-collapse .collection-title):before {counter-increment: h2; content: counter(h2) ". "}
+  h3:not(.posts-collapse .collection-title):before {counter-increment: h3; content: counter(h2) "." counter(h3) ". "}
   h4:before {counter-increment: h4; content: counter(h2) "." counter(h3) "." counter(h4) ". "}
   h5:before {counter-increment: h5; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ". "}
   h6:before {counter-increment: h6; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". "}
@@ -157,7 +157,7 @@ code {
 
 // 侧栏站点描述
 .site-meta {
-    background: #0f1f2f0f;
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
 }
 .site-title {
     color: #1a2a3a;
@@ -214,6 +214,16 @@ links-of-author-item .exturl, .links-of-author-item a {
     }
 }
 
+@media screen and (max-width: 1200px) {
+    .posts-collapse .collection-title h2 {
+        width: 57%;
+            
+        &:hover {
+            width: 90%;
+        }
+    }
+}
+
 // 时间轴月
 .posts-collapse .collection-title h3 {
     margin-left: -20px;
@@ -228,6 +238,16 @@ links-of-author-item .exturl, .links-of-author-item a {
     &:hover {
         width: 45%;
         background: rgba(255,255,255,0.5);    
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .posts-collapse .collection-title h3 {
+        width: 27%;
+            
+        &:hover {
+            width: 62%;
+        }
     }
 }
 
@@ -342,7 +362,7 @@ div#days {
     padding: 5px 20px !important;
     border: 1px solid #eee !important;
     border-radius: 10px !important;
-    background: rgba(255,255,255,0.3);
+    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
     box-shadow: 0 8px 20px -8px rgba(0,0,0,0.3);
 }
 .comments{
