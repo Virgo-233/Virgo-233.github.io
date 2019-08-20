@@ -2982,6 +2982,12 @@ hexo-log@^0.2.0:
     chalk "^1.1.1"
     hexo-bunyan "^1.0.0"
 
+hexo-next-share@theme-next/hexo-next-share:
+  version "1.0.0"
+  resolved "https://codeload.github.com/theme-next/hexo-next-share/tar.gz/8cf591c468d5a80a9c25ffe092f3359bdd311d7c"
+  dependencies:
+    js-yaml "^3.13.1"
+
 hexo-offline@^1.0.0:
   version "1.0.0"
   resolved "http://r.cnpmjs.org/hexo-offline/download/hexo-offline-1.0.0.tgz#9c78fce0aaa05bf39c6ee2cab41cea34d5806c62"
@@ -3789,7 +3795,7 @@ js-yaml@^3.12.0:
     argparse "^1.0.7"
     esprima "^4.0.0"
 
-js-yaml@^3.6.1:
+js-yaml@^3.13.1, js-yaml@^3.6.1:
   version "3.13.1"
   resolved "http://r.cnpmjs.org/js-yaml/download/js-yaml-3.13.1.tgz#aff151b30bfdfa8e49e05da22e7415e9dfa37847"
   integrity sha1-r/FRswv9+o5J4F2iLnQV6d+jeEc=
