@@ -34,6 +34,7 @@ custom_file_path:
   style: source/_data/styles.styl
 
 show_ad: true
+show_post_end_message: false
 
 # ---------------------------------------------------------------
 # Site Information Settings

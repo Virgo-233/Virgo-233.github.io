@@ -1,8 +1,10 @@
-<div>
-    {% if not is_index %}
-        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
-    {% endif %}
-</div>
+{%- if theme.show_post_end_message.enable %}
+    <div>
+        {% if not is_index %}
+            <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+        {% endif %}
+    </div>
+{%- endif %} 
 
 {%- if theme.show_ad.enable %}
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
