@@ -33,6 +33,7 @@ custom_file_path:
   mixin: source/_data/mixins.styl
   style: source/_data/styles.styl
 
+show_ad: true
 
 # ---------------------------------------------------------------
 # Site Information Settings
@@ -1145,7 +1146,3 @@ vendors:
 css: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.20/css
 js: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.20/js
 images: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.20/images
-
-# 文章末尾添加“本文结束”标记
-passage_end_tag:
-  enabled: true
