@@ -210,10 +210,12 @@ social_icons:
   transition: true
 
 # Blog rolls
-links_icon: link
-links_title: Links
-#links_layout: block
-links_layout: inline
+links_settings:
+  icon: link
+  title: Links
+  # Available values: block | inline
+  layout: inline
+
 links:
   #PHB: http://hbh.fun/ #https://particlehwang.github.io/
   #iHiD: http://ihid.tk/
@@ -341,7 +343,7 @@ reward:
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
 related_posts:
   enable: true
-  title: # custom header, leave empty to use the default one
+  title: # Custom header, leave empty to use the default one
   display_in_home: false
   params:
     maxCount: 5
@@ -552,31 +554,24 @@ math:
 # For moreinformation: https://github.com/MoOx/pjax
 pjax: true
 
-# Fancybox. There is support for old version 2 and new version 3.
-# Choose only one variant, do not need to install both.
-# To install 2.x: https://github.com/theme-next/theme-next-fancybox
-# To install 3.x: https://github.com/theme-next/theme-next-fancybox3
+# FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.
 # For more information: https://fancyapps.com/fancybox
 fancybox: true
 
 # A JavaScript library for zooming images like Medium.
 # Do not enable both `fancybox` and `mediumzoom`.
-# Dependencies: https://github.com/theme-next/theme-next-mediumzoom
 # For more information: https://github.com/francoischalifour/medium-zoom
 mediumzoom: false
 
 # Vanilla JavaScript plugin for lazyloading images.
-# Dependencies: https://github.com/theme-next/theme-next-lazyload
 # For more information: https://github.com/ApoorvSaxena/lozad.js
 lazyload: true
 
 # Pangu Support
-# Dependencies: https://github.com/theme-next/theme-next-pangu
 # For more information: https://github.com/vinta/pangu.js
 pangu: false
 
 # Quicklink Support
-# Dependencies: https://github.com/theme-next/theme-next-quicklink
 # For more information: https://github.com/GoogleChromeLabs/quicklink
 quicklink:
   enable: true
@@ -686,7 +681,7 @@ gitalk:
 
 
 # ---------------------------------------------------------------
-# Post Widgets / Content Sharing Services
+# Post Widgets & Content Sharing Services
 # See: https://theme-next.org/docs/third-party-services/post-widgets
 # ---------------------------------------------------------------
 
@@ -825,7 +820,6 @@ tencent_mta: # <app_id>
 # ---------------------------------------------------------------
 
 # Algolia Search
-# Dependencies: https://github.com/theme-next/theme-next-algolia-instant-search
 # For more information: https://www.algolia.com
 algolia_search:
   enable: false
@@ -836,7 +830,7 @@ algolia_search:
     hits_empty: "We didn't find any results for the search: ${query}"
     hits_stats: "${hits} results found in ${time} ms"
 
-# Local search
+# Local Search
 # Dependencies: https://github.com/wzpan/hexo-generator-search
 local_search:
   enable: true
@@ -1041,12 +1035,12 @@ vendors:
   fancybox: //cdnjs.loli.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js
   fancybox_css: //cdnjs.loli.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css
 
-  # Internal version: 1.0.4
+  # Medium-zoom
   # Example:
   # mediumzoom: //cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js
   mediumzoom: //cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js
 
-  # Internal version: 1.10.0
+  # Lazyload
   # Example:
   # lazyload: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
   # lazyload: //cdnjs.cloudflare.com/ajax/libs/lozad.js/1.9.0/lozad.min.js
@@ -1058,7 +1052,7 @@ vendors:
   # pangu: //cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js
   pangu: //cdnjs.loli.net/ajax/libs/pangu/4.0.7/pangu.min.js  
 
-  # Internal version: 1.0.0
+  # Quicklink
   # Example:
   # quicklink: //cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js
   quicklink: //cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js
@@ -1144,6 +1138,6 @@ vendors:
   canvas_ribbon:
 
 # Assets
-css: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.20/css
-js: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.20/js
-images: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.20/images
+css: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.23/css
+js: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.23/js
+images: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.23/images
