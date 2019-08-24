@@ -25,20 +25,21 @@ NexT.boot.registerEvents = function() {
     var item = $(event.currentTarget);
     var activeTabClassName = 'sidebar-nav-active';
     var activePanelClassName = 'sidebar-panel-active';
-    if (item.hasClass(activeTabClassName)) return;
 
     var target = $('.' + item.data('target'));
+    if (item.hasClass(activeTabClassName)) {
+      target.find('.motion-element').css({ opacity: 1 });
+      return;
+    }
     var currentTarget = target.siblings('.sidebar-panel');
     currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, () => {
-      currentTarget.hide();
+      // Prevent adding TOC to Overview if Overview was selected when close & open sidebar.
+      currentTarget.removeClass(activePanelClassName);
       target
         .stop()
-        .css({ 'opacity': 0, 'display': 'block' })
-        .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, () => {
-          // Prevent adding TOC to Overview if Overview was selected when close & open sidebar.
-          currentTarget.removeClass(activePanelClassName, 'motion-element');
-          target.addClass(activePanelClassName, 'motion-element');
-        });
+        .css({ opacity: 0 })
+        .addClass(activePanelClassName)
+        .animate({ opacity: 1 }, TAB_ANIMATE_DURATION);
     });
 
     item.siblings().removeClass(activeTabClassName);
@@ -63,7 +64,7 @@ NexT.boot.refresh = function() {
    * Need to add config option in Front-End at 'layout/_partials/head.swig' file.
    */
   CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
-  CONFIG.mediumzoom && window.mediumZoom('.post-body img');
+  CONFIG.mediumzoom && window.mediumZoom('.post-body :not(a) > img');
   CONFIG.lazyload && window.lozad('.post-body img').observe();
   CONFIG.pangu && window.pangu.spacingPage();
 
@@ -71,20 +72,26 @@ NexT.boot.refresh = function() {
   CONFIG.copycode.enable && NexT.utils.registerCopyCode();
   NexT.utils.registerTabsTag();
   NexT.utils.registerActiveMenuItem();
-  NexT.utils.embeddedVideoTransformer();
+  NexT.utils.registerSidebarTOC();
 
-  var sidebarNav = document.querySelector('.sidebar-nav');
-  if (document.querySelector('.post-toc-wrap').childElementCount > 0) {
-    sidebarNav.style.display = '';
-    sidebarNav.classList.add('motion-element');
-    document.querySelector('.sidebar-nav-toc').click();
-  } else {
-    sidebarNav.style.display = 'none';
-    sidebarNav.classList.remove('motion-element');
-    document.querySelector('.sidebar-nav-overview').click();
-  }
-
-  $('table').not('.gist table').wrap('<div class="table-container"></div>');
+  $(':not(.gist) table').wrap('<div class="table-container"></div>');
+  document.querySelectorAll('iframe').forEach(element => {
+    var SUPPORTED_PLAYERS = [
+      'www.youtube.com',
+      'player.vimeo.com',
+      'player.youku.com',
+      'player.bilibili.com',
+      'www.tudou.com'
+    ];
+    var pattern = new RegExp(SUPPORTED_PLAYERS.join('|'));
+    if (!element.parentNode.matches('.video-container') && element.src.search(pattern) > 0) {
+      $(element).wrap('<div class="video-container"></div>');
+      var width = Number(element.width), height = Number(element.height);
+      if (width && height) {
+        element.parentNode.style.paddingTop = height / width * 100 + '%';
+      }
+    }
+  });
 };
 
 NexT.boot.motion = function() {

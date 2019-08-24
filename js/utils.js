@@ -1,17 +1,5 @@
 /* global NexT, CONFIG */
 
-HTMLElement.prototype.isVisible = function() {
-  return window.getComputedStyle(this).display !== 'none';
-};
-
-HTMLElement.prototype.width = function() {
-  return parseFloat(window.getComputedStyle(this).width);
-};
-
-HTMLElement.prototype.height = function() {
-  return parseFloat(window.getComputedStyle(this).height);
-};
-
 HTMLElement.prototype.outerHeight = function(flag) {
   var height = this.offsetHeight;
   if (!flag) return height;
@@ -33,24 +21,20 @@ NexT.utils = {
    * Wrap images with fancybox.
    */
   wrapImageWithFancyBox: function() {
-    document.querySelectorAll('.post-body img').forEach(element => {
+    document.querySelectorAll('.post-body :not(a) > img').forEach(element => {
       var $image = $(element);
-      var imageTitle = $image.attr('title') || $image.attr('alt');
-      var $imageWrapLink = $image.parent('a');
-
-      if ($imageWrapLink.length < 1) {
-        var imageLink = $image.attr('data-src') || $image.attr('src');
-        $imageWrapLink = $image.wrap(`<a class="fancybox fancybox.image" href="${imageLink}" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>`).parent('a');
-        if ($image.is('.post-gallery img')) {
-          $imageWrapLink.addClass('post-gallery-img');
-          $imageWrapLink.attr('data-fancybox', 'gallery').attr('rel', 'gallery');
-        } else if ($image.is('.group-picture img')) {
-          $imageWrapLink.attr('data-fancybox', 'group').attr('rel', 'group');
-        } else {
-          $imageWrapLink.attr('data-fancybox', 'default').attr('rel', 'default');
-        }
+      var imageLink = $image.attr('data-src') || $image.attr('src');
+      var $imageWrapLink = $image.wrap(`<a class="fancybox fancybox.image" href="${imageLink}" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>`).parent('a');
+      if ($image.is('.post-gallery img')) {
+        $imageWrapLink.addClass('post-gallery-img');
+        $imageWrapLink.attr('data-fancybox', 'gallery').attr('rel', 'gallery');
+      } else if ($image.is('.group-picture img')) {
+        $imageWrapLink.attr('data-fancybox', 'group').attr('rel', 'group');
+      } else {
+        $imageWrapLink.attr('data-fancybox', 'default').attr('rel', 'default');
       }
 
+      var imageTitle = $image.attr('title') || $image.attr('alt');
       if (imageTitle) {
         $imageWrapLink.append(`<p class="image-caption">${imageTitle}</p>`);
         // Make sure img title tag will show correctly in fancybox
@@ -140,7 +124,7 @@ NexT.utils = {
     $(window).on('load scroll', () => {
       var scrollPercent;
       if (backToTop || readingProgressBar) {
-        var docHeight = document.querySelector('.container').height();
+        var docHeight = document.querySelector('.container').offsetHeight;
         var winHeight = window.innerHeight;
         var contentVisibilityHeight = docHeight > winHeight ? docHeight - winHeight : document.body.scrollHeight - winHeight;
         var scrollPercentRounded = Math.round(100 * window.scrollY / contentVisibilityHeight);
@@ -193,13 +177,13 @@ NexT.utils = {
   },
 
   registerCanIUseTag: function() {
-    // GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+    // Get responsive height passed from iframe.
     window.addEventListener('message', e => {
       var data = e.data;
       if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
         var featureID = data.split(':')[1];
         var height = data.split(':')[2];
-        $(`iframe[data-feature=${featureID}]`).height(parseInt(height, 10) + 30);
+        document.querySelector(`iframe[data-feature=${featureID}]`).style.height = parseInt(height, 10) + 'px';
       }
     }, false);
   },
@@ -217,80 +201,59 @@ NexT.utils = {
     });
   },
 
-  /**
-   * Transform embedded video to support responsive layout.
-   * @see http://toddmotto.com/fluid-and-responsive-youtube-and-vimeo-videos-with-fluidvids-js/
-   */
-  embeddedVideoTransformer: function() {
-    // Supported Players. Extend this if you need more players.
-    var SUPPORTED_PLAYERS = [
-      'www.youtube.com',
-      'player.vimeo.com',
-      'player.youku.com',
-      'music.163.com',
-      'www.tudou.com'
-    ];
-    var pattern = new RegExp(SUPPORTED_PLAYERS.join('|'));
-
-    function getDimension(element) {
-      return {
-        width : element.width(),
-        height: element.height()
-      };
+  registerSidebarTOC: function() {
+    var sidebarNav = document.querySelector('.sidebar-nav');
+    if (document.querySelector('.post-toc')) {
+      sidebarNav.style.display = '';
+      sidebarNav.classList.add('motion-element');
+      document.querySelector('.sidebar-nav-toc').click();
+    } else {
+      sidebarNav.style.display = 'none';
+      sidebarNav.classList.remove('motion-element');
+      document.querySelector('.sidebar-nav-overview').click();
+      return;
     }
 
-    function getAspectRadio(width, height) {
-      return height / width * 100;
-    }
+    const navItems = document.querySelectorAll('.post-toc li');
+    const sections = [...navItems].map(element => {
+      var link = element.querySelector('a.nav-link');
+      // TOC item animation navigate.
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        var target = document.getElementById(event.currentTarget.getAttribute('href').replace('#', ''));
+        var offset = $(target).offset().top;
 
-    document.querySelectorAll('iframe').forEach(iframe => {
-      var oldDimension = getDimension(iframe);
-      var newDimension;
-
-      if (iframe.src.search(pattern) > 0) {
-
-        // Calculate the video ratio based on the iframe's w/h dimensions
-        var videoRatio = getAspectRadio(oldDimension.width, oldDimension.height);
-
-        // Replace the iframe's dimensions and position the iframe absolute
-        // This is the trick to emulate the video ratio
-        iframe.css({
-          width   : '100%',
-          height  : '100%',
-          position: 'absolute',
-          top     : '0',
-          left    : '0'
-        });
-
-        // Wrap the iframe in a new <div> which uses a dynamically fetched padding-top property
-        // based on the video's w/h dimensions
-        var wrap = document.createElement('div');
-        wrap.className = 'fluid-vids';
-        wrap.style.position = 'relative';
-        wrap.style.marginBottom = '20px';
-        wrap.style.width = '100%';
-        wrap.style.paddingTop = videoRatio + '%';
-        // Fix for appear inside tabs tag.
-        (wrap.style.paddingTop === '') && (wrap.style.paddingTop = '50%');
-
-        // Add the iframe inside our newly created <div>
-        var iframeParent = iframe.parentNode;
-        iframeParent.insertBefore(wrap, iframe);
-        wrap.appendChild(iframe);
-
-        // Additional adjustments for 163 Music
-        if (iframe.src.search('music.163.com') > 0) {
-          newDimension = getDimension(iframe);
-          var shouldRecalculateAspect = newDimension.width > oldDimension.width
-                                     || newDimension.height < oldDimension.height;
-
-          // 163 Music Player has a fixed height, so we need to reset the aspect radio
-          if (shouldRecalculateAspect) {
-            wrap.style.paddingTop = getAspectRadio(newDimension.width, oldDimension.height) + '%';
-          }
-        }
-      }
+        $(document.documentElement).stop().animate({
+          scrollTop: offset + 10
+        }, 500);
+      });
+      return document.getElementById(link.getAttribute('href').replace('#', ''));
     });
+
+    var $tocElement = $('.post-toc');
+    function activateNavByIndex(target) {
+      if (target.classList.contains('active-current')) return;
+
+      document.querySelectorAll('.post-toc .active').forEach(element => {
+        element.classList.remove('active', 'active-current');
+      });
+      target.classList.add('active', 'active-current');
+      $(target).parents('li').addClass('active');
+
+      // Scrolling to center active TOC element if TOC content is taller then viewport.
+      $tocElement.scrollTop($(target).offset().top - $tocElement.offset().top + $tocElement.scrollTop() - ($tocElement.height() / 2));
+    }
+
+    const intersectionObserver = new IntersectionObserver(entries => {
+      var index = sections.indexOf(entries[0].target);
+      activateNavByIndex(navItems[index]);
+    }, {
+      rootMargin: '0px 0px -100%'
+    });
+
+    for (let i = 0; i < sections.length; i++) {
+      intersectionObserver.observe(sections[i]);
+    }
   },
 
   hasMobileUA: function() {
@@ -329,16 +292,6 @@ NexT.utils = {
   },
 
   /**
-   * Escape meta symbols in jQuery selectors.
-   *
-   * @param selector
-   * @returns {string|void|XML|*}
-   */
-  escapeSelector: function(selector) {
-    return selector.replace(/[!"$%&'()*+,./:;<=>?@[\\\]^`{|}~]/g, '\\$&');
-  },
-
-  /**
    * Init Sidebar & TOC inner dimensions on all pages and for all schemes.
    * Need for Sidebar/TOC inner scrolling if content taller then viewport.
    */
@@ -347,12 +300,12 @@ NexT.utils = {
     var sidebarPadding = sidebarInner.innerWidth() - sidebarInner.width();
     var sidebarNavHeight = $('.sidebar-nav').css('display') === 'block' ? $('.sidebar-nav').outerHeight(true) : 0;
     var sidebarOffset = CONFIG.sidebar.offset || 12;
-    var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? document.querySelector('.back-to-top').height() : sidebarOffset;
+    var sidebarb2tHeight = CONFIG.back2top.enable && CONFIG.back2top.sidebar ? document.querySelector('.back-to-top').offsetHeight : sidebarOffset;
     var sidebarSchemePadding = NexT.utils.isPisces() || NexT.utils.isGemini()
       ? (sidebarPadding * 2) + sidebarNavHeight + sidebarOffset + sidebarb2tHeight
       : (sidebarPadding * 2) + (sidebarNavHeight / 2);
     // Initialize Sidebar & TOC Height.
-    var sidebarWrapperHeight = document.body.clientHeight - sidebarSchemePadding;
+    var sidebarWrapperHeight = document.body.offsetHeight - sidebarSchemePadding;
     $('.site-overview-wrap, .post-toc-wrap').css('max-height', sidebarWrapperHeight);
   },
 
@@ -362,7 +315,7 @@ NexT.utils = {
       return;
     }
     // Expand sidebar on post detail page by default, when post has a toc.
-    var $tocContent = $('.post-toc-content');
+    var $tocContent = $('.post-toc');
     var display = CONFIG.page.sidebar;
     if (typeof display !== 'boolean') {
       // There's no definition sidebar in the page front-matter
