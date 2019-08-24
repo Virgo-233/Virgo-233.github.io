@@ -82,10 +82,16 @@ footer:
     # Version info of NexT after scheme info (vX.X.X).
     version: false
 
-  # Beian ICP information for Chinese users. See: http://www.beian.miit.gov.cn
+  # Beian ICP and gongan information for Chinese users. See: http://www.beian.miit.gov.cn, http://www.beian.gov.cn
   beian:
     enable: false
     icp:
+    # The digit in the num of gongan beian.
+    gongan_id:
+    # The full num of gongan beian.
+    gongan_num:
+    # The icon for gongan beian. See: http://www.beian.gov.cn/portal/download
+    gongan_icon_url:
 
 # Creative Commons 4.0 International License.
 # See: https://creativecommons.org/share-your-work/licensing-types-examples
@@ -1044,13 +1050,13 @@ vendors:
   # Example:
   # lazyload: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
   # lazyload: //cdnjs.cloudflare.com/ajax/libs/lozad.js/1.9.0/lozad.min.js
-  lazyload: //cdnjs.loli.net/ajax/libs/lozad.js/1.9.0/lozad.min.js  
+  lazyload: //cdnjs.loli.net/ajax/libs/lozad.js/1.9.0/lozad.min.js
   
   # Pangu
   # Example:
   # pangu: //cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js
   # pangu: //cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js
-  pangu: //cdnjs.loli.net/ajax/libs/pangu/4.0.7/pangu.min.js  
+  pangu: //cdnjs.loli.net/ajax/libs/pangu/4.0.7/pangu.min.js
 
   # Quicklink
   # Example:
@@ -1095,7 +1101,7 @@ vendors:
   # mermaid: //cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js
   # mermaid: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js
   mermaid:
-  
+
   # Internal version: 1.2.1
   # Example:
   # velocity: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js
@@ -1138,6 +1144,6 @@ vendors:
   canvas_ribbon:
 
 # Assets
-css: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.23/css
-js: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.23/js
-images: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.23/images
+css: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.24a/css
+js: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.24a/js
+images: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.24a/images
