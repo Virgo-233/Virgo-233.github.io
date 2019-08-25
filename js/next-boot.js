@@ -25,12 +25,9 @@ NexT.boot.registerEvents = function() {
     var item = $(event.currentTarget);
     var activeTabClassName = 'sidebar-nav-active';
     var activePanelClassName = 'sidebar-panel-active';
+    if (item.hasClass(activeTabClassName)) return;
 
     var target = $('.' + item.data('target'));
-    if (item.hasClass(activeTabClassName)) {
-      target.find('.motion-element').css({ opacity: 1 });
-      return;
-    }
     var currentTarget = target.siblings('.sidebar-panel');
     currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, () => {
       // Prevent adding TOC to Overview if Overview was selected when close & open sidebar.
@@ -73,25 +70,8 @@ NexT.boot.refresh = function() {
   NexT.utils.registerTabsTag();
   NexT.utils.registerActiveMenuItem();
   NexT.utils.registerSidebarTOC();
-
-  $(':not(.gist) table').wrap('<div class="table-container"></div>');
-  document.querySelectorAll('iframe').forEach(element => {
-    var SUPPORTED_PLAYERS = [
-      'www.youtube.com',
-      'player.vimeo.com',
-      'player.youku.com',
-      'player.bilibili.com',
-      'www.tudou.com'
-    ];
-    var pattern = new RegExp(SUPPORTED_PLAYERS.join('|'));
-    if (!element.parentNode.matches('.video-container') && element.src.search(pattern) > 0) {
-      $(element).wrap('<div class="video-container"></div>');
-      var width = Number(element.width), height = Number(element.height);
-      if (width && height) {
-        element.parentNode.style.paddingTop = height / width * 100 + '%';
-      }
-    }
-  });
+  NexT.utils.wrapTableWithBox();
+  NexT.utils.registerVideoIframe();
 };
 
 NexT.boot.motion = function() {
