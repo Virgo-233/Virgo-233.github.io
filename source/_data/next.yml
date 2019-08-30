@@ -614,11 +614,15 @@ comments:
   active:
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
-  # Modify icons and texts for any style, here are some examples.
+  # Modify texts or order for any navs, here are some examples.
   nav:
-    #disqus: disqus
-    #facebook_comments_plugin: <i class="fa fa-facebook-official" aria-hidden="true"></i> facebook
-    #gitalk: Load Gitalk
+    #disqus:
+    #  text: Load Disqus
+    #  order: -1
+    #facebook_comments_plugin:
+    #  text: <i class="fa fa-facebook-official" aria-hidden="true"></i> facebook
+    #gitalk:
+    #  order: -2
 
 # Disqus
 disqus:
@@ -626,6 +630,8 @@ disqus:
   shortname:
   count: true
   lazyload: false
+  #post_meta_order: 0
+
 
 # DisqusJS
 # Alternative Disqus - Render comment component using Disqus API.
@@ -664,6 +670,7 @@ valine:
   language: # Language, available values: en, zh-cn
   visitor: true # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
   comment_count: true # If false, comment count will only be displayed in post page, not in home page
+  #post_meta_order: 0
 
 # LiveRe comments system
 # You can get your uid from https://livere.com/insight/myCode (General web site)
@@ -707,6 +714,7 @@ facebook_comments_plugin:
   num_of_posts: 10    # Minimum posts num is 1
   width:        100%  # Default width is 550px
   scheme:       light # Default scheme is light (light or dark)
+  #post_meta_order: 0
 
 # VKontakte API Support
 # To get your AppID visit https://vk.com/editapp?act=create
@@ -996,11 +1004,10 @@ vendors:
   # Internal path prefix. Please do not edit it.
   _internal: lib
 
-  # Internal version: 3.4.1
+  # Internal version: 3.1.0
   # Example:
-  # jquery: //cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
-  # jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
-  jquery: //cdnjs.loli.net/ajax/libs/jquery/3.4.1/jquery.min.js
+  # anime: //cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js
+  anime: //cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js
 
   # Internal version: 4.7.0
   # Example:
@@ -1034,12 +1041,12 @@ vendors:
 
   # FancyBox
   # Example:
+  # jquery: //cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
   # fancybox: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js
-  # fancybox: //cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js
   # fancybox_css: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css
-  # fancybox_css: //cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css
-  fancybox: //cdnjs.loli.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js
-  fancybox_css: //cdnjs.loli.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css
+  jquery: //cdnjs.loli.net/ajax/libs/jquery/3.4.1/jquery.min.js
+  fancybox: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js
+  fancybox_css: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css
 
   # Medium-zoom
   # Example:
@@ -1144,6 +1151,6 @@ vendors:
   canvas_ribbon:
 
 # Assets
-css: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.26/css
-js: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.27/js
+css: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.30/css
+js: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.30/js
 images: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.26/images
