@@ -135,7 +135,6 @@ h2.nocount:before, h3.nocount:before, h4.nocount:before, h5.nocount:before, h6.n
     text-decoration: none;
     letter-spacing: 2px;
     border: none;
-    border-radius: 40px;
     background: transparent;
     font-size: 17px;
 
@@ -144,8 +143,6 @@ h2.nocount:before, h3.nocount:before, h4.nocount:before, h5.nocount:before, h6.n
         border: none;
     }
 }
-
-
 
 // 相关文章
 .popular-posts-header {
@@ -520,12 +517,12 @@ input:focus, textarea:focus {
 }
 
 // 文章图片
-.posts-expand .post-body img {
+.post-body img {
     height: auto;
     opacity: 0.8;
+    padding: 0px;
     border-radius: 10px;
     box-shadow: rgb(170, 170, 170) 0px 0px 14px 0px;
-    border-radius: 20px;
     max-width: 90%;
     transition: all 0.2s linear;
 
@@ -534,6 +531,10 @@ input:focus, textarea:focus {
         opacity: 1;
         border: 1px solid #4b5cc4;
     }
+}
+
+.image-caption {
+    margin: -15px auto 15px;
 }
 
 // summary 文字颜色
