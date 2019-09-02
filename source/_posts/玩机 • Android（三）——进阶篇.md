@@ -19,8 +19,7 @@ Android 有两个模式：Recovery 和 Bootloader，也叫卡刷模式和线刷�
 
 - Mac <https://dl.google.com/android/repository/platform-tools-latest-darwin.zip>
 
-- Linux
-<https://dl.google.com/android/repository/platform-tools-latest-linux.zip>
+- Linux <https://dl.google.com/android/repository/platform-tools-latest-linux.zip>
 
 进入工具包目录，在当前目录打开终端，输入 `adb devices`会显示当前设备，如果没显示则可能是驱动没装好。
 
@@ -30,9 +29,7 @@ Android 有两个模式：Recovery 和 Bootloader，也叫卡刷模式和线刷�
 
 ## Recovery
 
-Recovery 看它的名字大概够强猜出其功能了。自带的 Recovery 是非常简陋的，并不能满足我们的要求，所以需要使用如 TWRP、CWM 之类的第三方 REC。替换方法在前面 Bootloader 中有。进入 REC 的方法不同品牌可能有所不同，MIUI 是按住电源键和音量加音量减，出现 logo 后屏幕突然一亮之后松手即可进入。
-![TWRP_2.7.0.0.png](https://i.loli.net/2018/12/23/5c1f47bbbe168.png)
-原版 TWRP 是没有中文的，不过一般都能在网上找到支持中文的版本。主要功能为安装、清除、备份、恢复、挂载、设置、高级功能。
+Recovery 看它的名字大概够强猜出其功能了。自带的 Recovery 是非常简陋的，并不能满足我们的要求，所以需要使用如 TWRP、CWM 之类的第三方 REC。替换方法在前面 Bootloader 中有。进入 REC 的方法不同品牌可能有所不同，MIUI 是按住电源键和音量加音量减，出现 logo 后屏幕突然一亮之后松手即可进入。原版 TWRP 是没有中文的，不过一般都能在网上找到支持中文的版本。主要功能为安装、清除、备份、恢复、挂载、设置、高级功能。
 
 - 安装
 

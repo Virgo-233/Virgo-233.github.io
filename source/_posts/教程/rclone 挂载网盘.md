@@ -1,10 +1,10 @@
 ---
-title: 手机使用 rclone 挂载网盘
+title: Android 使用 rclone 挂载网盘
 abbrlink: 2a60e472
 tags: Android
 date: 2019-07-16 22:22:05
 ---
-将网盘挂载到手机上当硬盘使用
+<img src="https://cdn.jsdelivr.net/gh/cxyzzz/CDN@19.09.02/images/posts/HiShoot_20190902_152747.webp" width="500" />
 <!-- more -->
 
 <details>

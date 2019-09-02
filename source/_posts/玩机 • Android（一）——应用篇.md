@@ -4,7 +4,7 @@ abbrlink: 9e7b6f05
 date: 2018-07-22 13:45:34
 tags: Android
 ---
-<img src="https://i.loli.net/2018/09/11/5b978bf25c9c3.png" height="100" width="100" />
+<img src="https://i.loli.net/2019/09/02/jRZEznveFTCpocU.jpg" width="500" />
 <!--more-->
 闲来无事，写几篇水文。仅为我个人玩机经历，如果觉得对，欢迎参考，如果不对，请无视。全文分为 [应用篇](#apps)、Root 篇 和 进阶篇。
 
@@ -46,7 +46,7 @@ via 浏览器是酷友的作品，注重浏览体验，干净利落，化繁为�
 
 - ADM 下载器 `https://www.coolapk.com/apk/com.dv.adm.pay` 复制链接到 酷安 客户端打开。
 
-- 主页文件（与图中有部分差异）链接:`https://pan.baidu.com/s/1tMZ8Eie_ewVKSIMtLdnpoQ` 密码:`2htc`
+- 主页文件(与图中有部分差异)链接:`https://pan.baidu.com/s/1tMZ8Eie_ewVKSIMtLdnpoQ` 密码:`2htc`
 
 ## <div class="note danger"><p>[黑阈](https://www.coolapk.com/apk/me.piebridge.brevent)</p></div>
 
