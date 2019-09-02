@@ -1,7 +1,38 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
+<span> created at the caret position.
+	  // for inputs, just '.' would be enough, but why bother?
+	  span.textContent = element.value.substring(position) || '.';  // || because a completely empty faux span doesn't render at all
+	  div.appendChild(span);
+
+	  var coordinates = {
+	    top: span.offsetTop + parseInt(computed['borderTopWidth']),
+	    left: span.offsetLeft + parseInt(computed['borderLeftWidth'])
+	  };
+
+	  if (debug) {
+	    span.style.backgroundColor = '#aaa';
+	  } else {
+	    document.body.removeChild(div);
+	  }
+
+	  return coordinates;
+	}
+
+	if (typeof module != "undefined" &amp;&amp; typeof module.exports != "undefined") {
+	  module.exports = getCaretCoordinates;
+	} else {
+	  window.getCaretCoordinates = getCaretCoordinates;
+	}
+
+	}());
+
+/***/ })
+/******/ ])
+});
+; 
+</span><a id="more"></a>(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' &amp;&amp; typeof module === 'object')
 		module.exports = factory();
-	else if(typeof define === 'function' && define.amd)
+	else if(typeof define === 'function' &amp;&amp; define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
 		exports["POWERMODE"] = factory();
@@ -89,7 +120,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var el = document.activeElement;
 	    var bcr;
 	    if (el.tagName === 'TEXTAREA' ||
-	        (el.tagName === 'INPUT' && el.getAttribute('type') === 'text')) {
+	        (el.tagName === 'INPUT' &amp;&amp; el.getAttribute('type') === 'text')) {
 	        var offset = __webpack_require__(1)(el, el.selectionEnd);
 	        bcr = el.getBoundingClientRect();
 	        return {
@@ -140,8 +171,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    { // shake screen
 	        if (POWERMODE.shake) {
 	            var intensity = 1 + 2 * Math.random();
-	            var x = intensity * (Math.random() > 0.5 ? -1 : 1);
-	            var y = intensity * (Math.random() > 0.5 ? -1 : 1);
+	            var x = intensity * (Math.random() &gt; 0.5 ? -1 : 1);
+	            var y = intensity * (Math.random() &gt; 0.5 ? -1 : 1);
 	            document.body.style.marginLeft = x + 'px';
 	            document.body.style.marginTop = y + 'px';
 	            setTimeout(function() {
@@ -161,9 +192,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    context.clearRect(0, 0, canvas.width, canvas.height);
 	    var rendered = false;
 	    var rect = canvas.getBoundingClientRect();
-	    for (var i = 0; i < particles.length; ++i) {
+	    for (var i = 0; i &lt; particles.length; ++i) {
 	        var particle = particles[i];
-	        if (particle.alpha <= 1 3 0.1) continue; particle.velocity.y +="0.075;" particle.x particle.y particle.alpha *="0.96;" context.globalalpha="particle.alpha;" context.fillstyle="particle.color;" context.fillrect( math.round(particle.x - 1.5) rect.left, math.round(particle.y rect.top, 3, ); rendered="true;" } if(rendered){ requestanimationframe(loop); }else{ rendering="false;" module.exports="POWERMODE;" *** }), (function(module, exports) { jshint browser: true (function () the properties that we copy into a mirrored div. note some browsers, such as firefox, do not concatenate properties, i.e. padding-top, bottom etc.> padding,
+	        if (particle.alpha &lt;= 1 3 0.1) continue; particle.velocity.y +="0.075;" particle.x particle.y particle.alpha *="0.96;" context.globalalpha="particle.alpha;" context.fillstyle="particle.color;" context.fillrect( math.round(particle.x - 1.5) rect.left, math.round(particle.y rect.top, 3, ); rendered="true;" } if(rendered){ requestanimationframe(loop); }else{ rendering="false;" module.exports="POWERMODE;" *** }), (function(module, exports) { jshint browser: true (function () the properties that we copy into a mirrored div. note some browsers, such as firefox, do not concatenate properties, i.e. padding-top, bottom etc.&gt; padding,
 	// so we have to do every single property specifically.
 	var properties = [
 	  'direction',  // RTL support
@@ -211,7 +242,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function getCaretCoordinates(element, position, options) {
 
-	  var debug = options && options.debug || false;
+	  var debug = options &amp;&amp; options.debug || false;
 	  if (debug) {
 	    var el = document.querySelector('#input-textarea-caret-position-mirror-div');
 	    if ( el ) { el.parentNode.removeChild(el); }
@@ -223,7 +254,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  document.body.appendChild(div);
 
 	  var style = div.style;
-	  var computed = window.getComputedStyle? getComputedStyle(element) : element.currentStyle;  // currentStyle for IE < 9
+	  var computed = window.getComputedStyle? getComputedStyle(element) : element.currentStyle;  // currentStyle for IE &lt; 9
 
 	  // default textarea styles
 	  style.whiteSpace = 'pre-wrap';
@@ -242,7 +273,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  if (isFirefox) {
 	    // Firefox lies about the overflow property for textareas: https://bugzilla.mozilla.org/show_bug.cgi?id=984275
-	    if (element.scrollHeight > parseInt(computed.height))
+	    if (element.scrollHeight &gt; parseInt(computed.height))
 	      style.overflowY = 'scroll';
 	  } else {
 	    style.overflow = 'hidden';  // for Chrome to not render a scrollbar; IE keeps overflowY = 'scroll'
@@ -257,38 +288,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // Wrapping must be replicated *exactly*, including when a long word gets
 	  // onto the next line, with whitespace at the end of the line before (#7).
 	  // The  *only* reliable way to do that is to copy the *entire* rest of the
-	  // textarea's content into the <span> created at the caret position.
-	  // for inputs, just '.' would be enough, but why bother?
-	  span.textContent = element.value.substring(position) || '.';  // || because a completely empty faux span doesn't render at all
-	  div.appendChild(span);
-
-	  var coordinates = {
-	    top: span.offsetTop + parseInt(computed['borderTopWidth']),
-	    left: span.offsetLeft + parseInt(computed['borderLeftWidth'])
-	  };
-
-	  if (debug) {
-	    span.style.backgroundColor = '#aaa';
-	  } else {
-	    document.body.removeChild(div);
-	  }
-
-	  return coordinates;
-	}
-
-	if (typeof module != "undefined" && typeof module.exports != "undefined") {
-	  module.exports = getCaretCoordinates;
-	} else {
-	  window.getCaretCoordinates = getCaretCoordinates;
-	}
-
-	}());
-
-/***/ })
-/******/ ])
-});
-; 
-</span><!--=--><script>
+	  // textarea's content into the <!--=--><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }

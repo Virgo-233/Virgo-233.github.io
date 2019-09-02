@@ -8,7 +8,7 @@ var OriginTitile = document.title;
      }
      else {
          $('[rel="icon"]').attr('href', "/images/favicon-16x16.png");
-         document.title = '(ฅ>ω<script>
+         document.title = '(ฅ&gt;ω<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
