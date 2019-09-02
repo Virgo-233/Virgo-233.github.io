@@ -214,18 +214,19 @@ symbols_count_time:
   symbols: true
   time: true
   total_symbols: true
-  total_time: false
+  total_time: true
+  exclude_codeblock: false
 
 marked:
   gfm: true
   pedantic: false
-  sanitize: false
-  tables: true
   breaks: true
   smartLists: true
   smartypants: true
   modifyAnchors: ''
   autolink: true
+  sanitizeUrl: false
+  headerIds: true
 
 githubEmojis:
   enable: true
