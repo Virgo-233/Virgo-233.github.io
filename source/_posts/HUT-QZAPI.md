@@ -7,6 +7,9 @@ tags:
 
 HUT 强智教务系统 API
 
+地址<https://github.com/cxyzzz/HUT_QIANZHI_API>
+参考<https://github.com/TLingC/QZAPI>
+
 ## API列表
 
 ### authUser
@@ -280,4 +283,4 @@ night：晚上
 
 1. 支持导出课表为 ics 日历文件
 
-2. WEB 展示(不会前端，暂未完善)
+2. WEB 展示(不会前端，使用博客为模板写了课表展示，暂未完善)
