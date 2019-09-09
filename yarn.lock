@@ -1282,6 +1282,11 @@ cryptiles@0.2.x:
   dependencies:
     boom "0.4.x"
 
+crypto-js@^3.1.9-1:
+  version "3.1.9-1"
+  resolved "http://r.cnpmjs.org/crypto-js/download/crypto-js-3.1.9-1.tgz#fda19e761fc077e01ffbfdc6e9fdfc59e8806cd8"
+  integrity sha1-/aGedh/Ad+Af+/3G6f38WeiAbNg=
+
 crypto-random-string@^1.0.0:
   version "1.0.0"
   resolved "http://r.cnpmjs.org/crypto-random-string/download/crypto-random-string-1.0.0.tgz#a230f64f568310e1498009940790ec99545bca7e"
@@ -2735,6 +2740,15 @@ hexo-baidu-url-submit@^0.0.6:
   integrity sha1-Lo34FM7tNCDlbMJ/1QP2AjJW3G0=
   dependencies:
     xmlhttprequest "^1.8.0"
+
+hexo-blog-encrypt@^2.2.7:
+  version "2.2.7"
+  resolved "http://r.cnpmjs.org/hexo-blog-encrypt/download/hexo-blog-encrypt-2.2.7.tgz#ea6d8465533050bdf4cd1bb4aa8366d2290c29df"
+  integrity sha1-6m2EZVMwUL30zRu0qoNm0ikMKd8=
+  dependencies:
+    crypto-js "^3.1.9-1"
+    hexo-fs "^1.0.2"
+    hexo-log "^0.2.0"
 
 hexo-bunyan@^1.0.0:
   version "1.0.0"

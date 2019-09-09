@@ -304,3 +304,8 @@ offline:
       handler: cacheFirst
       options:
         origin: cxyzzz.github.io
+
+
+# Security
+encrypt: # hexo-blog-encrypt
+  enable: true
