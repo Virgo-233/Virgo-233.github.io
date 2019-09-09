@@ -1,6 +1,6 @@
 ---
 title: HUT-Email 登录及部分 EDU 邮箱可用福利
-abbrlink: f5125d59
+abbrlink: ffffffff
 categories:
   - 教程
 date: 2018-06-17 17:12:31
