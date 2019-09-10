@@ -283,3 +283,4 @@ night：晚上
 1. 支持导出课表为 ics 日历文件
 
 2. WEB 展示(不会前端，使用博客为模板写了课表展示，暂未完善)
+![Screenshot_20190910_212948.png](https://i.loli.net/2019/09/10/Ns3qxcToGBQblIv.png)
