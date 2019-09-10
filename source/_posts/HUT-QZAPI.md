@@ -3,7 +3,6 @@ title: HUT_QZAPI
 date: 2019-09-09 22:57:55
 tags:
 ---
-# GDUF-QZAPI
 
 HUT 强智教务系统 API
 
@@ -14,10 +13,10 @@ HUT 强智教务系统 API
 
 ### authUser
 
-登录帐号\
+登录帐号  
 `http://218.75.197.123:83/app.do?method=authUser&xh=学号&pwd=密码`
 
-**返回值**\
+**返回值**  
 返回 JSON 对象
 
 ``` json
@@ -25,8 +24,8 @@ HUT 强智教务系统 API
     'success': 登录状态,
     'token': 'Token',
     'user':{
-        'scsj': None,
-        'sjyzm': None,
+        'scsj': 未知,
+        'sjyzm': 未知,
         'useraccount': '登录用户',
         'usertype': '用户类型，学生为 2',
         'userdwmc': '学院',
@@ -44,10 +43,10 @@ HUT 强智教务系统 API
 
 ### getStudentIdInfo
 
-~~获取学号信息(已禁止查询)\
+~~获取学号信息(已禁止查询)  
 `http://218.75.197.123:83/app.do?method=getStudentIdInfo&xh=#学号#`~~
 
-**返回值**\
+**返回值**  
 返回 JSON 对象
 
 ``` json
@@ -61,10 +60,10 @@ HUT 强智教务系统 API
 
 ### getCurrentTime
 
-获取当前时间、周次、学年等信息\
+获取当前时间、周次、学年等信息  
 `http://218.75.197.123:83/app.do?method=getCurrentTime&currDate=#查询日期#`
 
-**返回值**\
+**返回值**  
 返回 JSON 对象
 
 ``` json
@@ -78,10 +77,10 @@ HUT 强智教务系统 API
 
 ### getKbcxAzc
 
-获取课程表\
+获取课程表  
 `http://218.75.197.123:83/app.do?method=getKbcxAzc&xh=#学号#&xnxqid=#学年#&zc=#周次#`
 
-**返回值**\
+**返回值**  
 返回JSON数组
 
 ``` json
@@ -101,10 +100,10 @@ HUT 强智教务系统 API
 
 ### getXqcx
 
-获取校区\
+获取校区  
 `http://218.75.197.123:83/app.do?method=getXqcx`
 
-**返回值**\
+**返回值**  
 返回JSON数组
 
 ``` json
@@ -122,10 +121,10 @@ HUT 强智教务系统 API
 
 ### getJxlcx
 
-获取校区教学楼信息\
+获取校区教学楼信息  
 `http://218.75.197.123:83/app.do?method=getJxlcx&xqid=#校区ID#`
 
-**返回值**\
+**返回值**  
 返回JSON数组
 
 ``` json
@@ -139,24 +138,24 @@ HUT 强智教务系统 API
 
 ### getKxJscx
 
-获取空教室\
+获取空教室  
 `http://218.75.197.123:83/app.do?method=getKxJscx&time=#查询日期#&idleTime=#见下方说明#&xqid=#校区ID#&jxlid=#教学楼ID#&classroomNumber=_#可容纳人数，见下方说明#`
 
 xqid(校区 ID)、jxlid(教学楼 ID)、classroomNumber(教室容纳人数)是可选参数
 
-**idleTime取值**\
-> allday：全天\
-am：上午\
-pm：下午\
+**idleTime取值**  
+> allday：全天  
+am：上午  
+pm：下午  
 night：晚上
 
-**classroomNumber**\
-> 30：30人以下\
-30-40：30-40人\
-40-50：40-50人\
+**classroomNumber**  
+> 30：30人以下  
+30-40：30-40人  
+40-50：40-50人  
 60：60人以上
 
-**返回值**\
+**返回值**  
 返回JSON数组
 
 ``` json
@@ -185,10 +184,10 @@ night：晚上
 
 ### getUserInfo
 
-获取帐号信息\
+获取帐号信息  
 `http://218.75.197.123:83/app.do?method=getUserInfo&xh=#学号#`
 
-**返回值**\
+**返回值**  
 返回 JSON 对象
 
 ``` json
@@ -214,10 +213,10 @@ night：晚上
 
 ### getXnxq
 
-获取学年和学期信息\
+获取学年和学期信息  
 `http://218.75.197.123:83/app.do?method=getXnxq&xh=#学号#`
 
-**返回值**\
+**返回值**  
 返回JSON数组
 
 ``` json
@@ -232,10 +231,10 @@ night：晚上
 
 ### getCjcx
 
-获取成绩信息\
+获取成绩信息  
 `http://218.75.197.123:83/app.do?method=getCjcx&xh=#学号#&xnxqid=#学期学年ID#`
 
-**返回值**\
+**返回值**  
 返回 JSON 数组
 
 ``` json
@@ -261,22 +260,22 @@ night：晚上
 
 ### getKscx
 
-获取考试信息\
+获取考试信息  
 `http://218.75.197.123:83/app.do?method=getKscx&xh=#学号#`
 
-**返回值**\
+**返回值**  
 条件所限，尚未明晰
 
 ### getEarlyWarnInfo
 
-获取学籍预警信息\
+获取学籍预警信息  
 `http://218.75.197.123:83/app.do?method=getEarlyWarnInfo&xh=#学号#&history=#见下方说明#`
 
-**history取值**\
-> 0：当前预警\
+**history取值**  
+> 0：当前预警  
 1：历史预警
 
-**返回值**\
+**返回值**  
 条件所限，尚未明晰
 
 ## 示例
