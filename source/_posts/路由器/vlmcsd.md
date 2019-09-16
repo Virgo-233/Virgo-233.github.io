@@ -19,6 +19,7 @@ KMS 激活也需要密钥，且不同版本对应不同密钥。不过这个密�
 
 Windows KMS 密钥 <https://technet.microsoft.com/en-us/library/jj612867(v=ws.11).aspx>
 Office KMS 密钥 <https://technet.microsoft.com/en-us/library/dn385360(v=office.16).aspx>
+Windows10 2019 LTSC 密钥：`M7XTQ-FN8P6-TTKYV-9D4CC-J462D`
 
 - 激活 windows 10 专业版
     右键开始菜单，点击命令提示符（管理员）或者 Windows PowerShell （管理员)
