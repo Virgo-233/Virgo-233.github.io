@@ -377,8 +377,6 @@ cheers: true
 
 # TagCloud settings for tags page.
 tagcloud:
-  # If true, font size, font color and amount of tags can be customized
-  enable: false
   # All values below are same as default, change them by yourself
   min: 12 # Minimun font size in px
   max: 30 # Maxium font size in px
@@ -654,6 +652,7 @@ changyan:
   enable: false
   appid: cytmrDfp5
   appkey: 3658080e7209c8209774ccabc7fd9e97
+  #post_meta_order: 0
 
 # Valine
 # You can get your appid and appkey from https://leancloud.cn
@@ -1152,6 +1151,6 @@ vendors:
   canvas_ribbon:
 
 # Assets
-css: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.30/css
-js: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.09.05/js
+css: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.9.19/css
+js: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.9.19/js
 images: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.09.02/images
