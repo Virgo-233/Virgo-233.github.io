@@ -35,7 +35,8 @@ code {
 
 // 文章背景
 .post-block {
-    background: rgba(255, 255, 255, 0.75);
+    // background: rgba(255, 255, 255, 0.75);
+    background: transparent;
 }
 
 // 文章标题字体
@@ -523,9 +524,10 @@ input:focus, textarea:focus {
     border-radius: 10px;
     box-shadow: rgb(170, 170, 170) 0px 0px 14px 0px;
     max-width: 90%;
-    transition: all 0.2s linear;
+    transition: all 0.8s linear;
 
     &:hover {
+        transform: scale(1.15);
         border-radius: 0;
         border: 1px solid #4b5cc4;
     }
@@ -571,3 +573,14 @@ summary {
 .menu .menu-item a {
     border-radius: 50px 0 0 50px;
 }
+
+.container {
+    padding-bottom: initial;
+    //background-image: url(https://whu.pt/attachments/201908/2019080….jpg) !important;
+    background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    background-repeat: repeat;
+}
+
