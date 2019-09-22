@@ -136,6 +136,7 @@ all_minifier: true
 js_concator:
   enable: false
   bundle_path: '/js/bundle.js'
+  use_versioned_bundle: false
   front: false
 
 html_minifier:
@@ -241,7 +242,7 @@ filter_optimize:
   #   - like `?v=1.0.0`
   remove_query_string: true
   # remove the surrounding comments in each of the bundled files
-  remove_comments: false
+  remove_comments: true
   css:
     enable: true
     # bundle loaded css file into the one
