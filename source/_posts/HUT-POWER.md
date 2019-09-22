@@ -3,7 +3,7 @@ title: 湖南工业大学电费查询
 date: 2019-09-22 21:09:43
 tags: HUT
 ---
-
+<a href="https://sm.ms/image/tDgNBEq7ZkGxnc5" target="_blank"><img src="https://i.loli.net/2019/09/22/tDgNBEq7ZkGxnc5.jpg" width="500" ></a>
 接口均为从完美校园抓包得出，理论上适用于其它也接入了完美校园的学校。
 <!-- more -->
 ## Demo
