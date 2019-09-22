@@ -10,6 +10,11 @@ HUT 强智教务系统 API
 地址 <https://github.com/cxyzzz/HUT_QIANZHI_API>
 参考 <https://github.com/TLingC/QZAPI>
 <!-- more -->
+
+## Demo
+
+<http://106.15.194.74:99>  
+
 ## API列表
 
 ### authUser
