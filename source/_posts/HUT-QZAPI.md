@@ -2,14 +2,14 @@
 title: HUT_QZAPI
 abbrlink: d1e775bf
 date: 2019-09-09 22:57:55
-tags:
+tags: HUT
 ---
 
 HUT 强智教务系统 API
 
-地址<https://github.com/cxyzzz/HUT_QIANZHI_API>
-参考<https://github.com/TLingC/QZAPI>
-
+地址 <https://github.com/cxyzzz/HUT_QIANZHI_API>
+参考 <https://github.com/TLingC/QZAPI>
+<!-- more -->
 ## API列表
 
 ### authUser
@@ -36,7 +36,6 @@ HUT 强智教务系统 API
     'userdwmc': '学院',
     'userrealname': '用户姓名',
     'usertype': '用户类型，学生为 2'
-
 }
 ```
 
