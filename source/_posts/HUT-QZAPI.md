@@ -192,6 +192,8 @@ night：晚上
 获取帐号信息  
 `http://218.75.197.123:83/app.do?method=getUserInfo&xh=#学号#`
 
+ps: 学号可以是其他人的
+
 **返回值**  
 返回 JSON 对象
 
