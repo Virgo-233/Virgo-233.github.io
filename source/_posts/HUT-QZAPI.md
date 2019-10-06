@@ -239,6 +239,8 @@ night：晚上
 获取成绩信息  
 `http://218.75.197.123:83/app.do?method=getCjcx&xh=#学号#&xnxqid=#学期学年ID#`
 
+ps: 此处学号可以是其他人的
+
 **返回值**  
 返回 JSON 数组
 
