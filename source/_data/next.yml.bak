@@ -1150,6 +1150,6 @@ vendors:
   canvas_ribbon:
 
 # Assets
-css: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.10.6/css
+css: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.10.5/css
 js: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.10.5/js
 images: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.09.22/images
