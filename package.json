@@ -14,7 +14,7 @@
     "hexo-autoprefixer": "^2.0.0",
     "hexo-baidu-url-submit": "^0.0.6",
     "hexo-blog-encrypt": "^3.0.3",
-    "hexo-cli": "^2.0.0",
+    "hexo-cli": "^3.0.0",
     "hexo-directory-category": "^1.0.7",
     "hexo-filter-github-emojis": "^2.0.0",
     "hexo-filter-optimize": "^0.2.5",
@@ -40,6 +40,5 @@
     "hexo-symbols-count-time": "^0.6.0",
     "imagemin-pngquant": "^8.0.0"
   },
-  "browserslist": {
-  }
+  "browserslist": {}
 }
