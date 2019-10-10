@@ -666,8 +666,10 @@ valine:
   guest_info: nick,mail,link # Custom comment header
   pageSize: 10 # Pagination size
   language: # Language, available values: en, zh-cn
-  visitor: true # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
+  visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
   comment_count: true # If false, comment count will only be displayed in post page, not in home page
+  recordIP: false # Whether to record the commenter IP
+  serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)
   #post_meta_order: 0
 
 # LiveRe comments system
@@ -790,7 +792,7 @@ application_insights:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn to get AppID and AppKey.
 leancloud_visitors:
-  enable: false
+  enable: true
   app_id: W0aszG0X0SsIHQvIWYSrC969-gzGzoHsz
   app_key: ozjSCfjt66qIMInckgP8YzkB
   # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
@@ -963,7 +965,6 @@ pace:
 # Dependencies: https://github.com/theme-next/theme-next-three
 three:
   enable: false
-  delay: false # Set true to further delay loading
   three_waves: false
   canvas_lines: false
   canvas_sphere: false
@@ -1149,6 +1150,6 @@ vendors:
   canvas_ribbon:
 
 # Assets
-css: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.9.30/css
-js: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.9.30/js
-images: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.9.30/images
+css: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.10.10/css
+js: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.10.10/js
+images: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.09.22/images
