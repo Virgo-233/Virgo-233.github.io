@@ -1,4 +1,35 @@
-(function webpackUniversalModuleDefinition(root, factory) {
+<span> created at the caret position.
+	  // for inputs, just '.' would be enough, but why bother?
+	  span.textContent = element.value.substring(position) || '.';  // || because a completely empty faux span doesn't render at all
+	  div.appendChild(span);
+
+	  var coordinates = {
+	    top: span.offsetTop + parseInt(computed['borderTopWidth']),
+	    left: span.offsetLeft + parseInt(computed['borderLeftWidth'])
+	  };
+
+	  if (debug) {
+	    span.style.backgroundColor = '#aaa';
+	  } else {
+	    document.body.removeChild(div);
+	  }
+
+	  return coordinates;
+	}
+
+	if (typeof module != "undefined" &amp;&amp; typeof module.exports != "undefined") {
+	  module.exports = getCaretCoordinates;
+	} else {
+	  window.getCaretCoordinates = getCaretCoordinates;
+	}
+
+	}());
+
+/***/ })
+/******/ ])
+});
+; 
+</span><a id="more"></a>(function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' &amp;&amp; typeof module === 'object')
 		module.exports = factory();
 	else if(typeof define === 'function' &amp;&amp; define.amd)
@@ -163,7 +194,41 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var rect = canvas.getBoundingClientRect();
 	    for (var i = 0; i &lt; particles.length; ++i) {
 	        var particle = particles[i];
-	        if (particle.alpha &lt;= 1 3 0.1) continue; particle.velocity.y +="0.075;" particle.x particle.y particle.alpha *="0.96;" context.globalalpha="particle.alpha;" context.fillstyle="particle.color;" context.fillrect( math.round(particle.x - 1.5) rect.left, math.round(particle.y rect.top, 3, ); rendered="true;" } if(rendered){ requestanimationframe(loop); }else{ rendering="false;" module.exports="POWERMODE;" *** }), (function(module, exports) { jshint browser: true (function () the properties that we copy into a mirrored div. note some browsers, such as firefox, do not concatenate properties, i.e. padding-top, bottom etc.&gt; padding,
+	        if (particle.alpha &lt;= 0.1) continue;
+	        particle.velocity.y += 0.075;
+	        particle.x += particle.velocity.x;
+	        particle.y += particle.velocity.y;
+	        particle.alpha *= 0.96;
+	        context.globalAlpha = particle.alpha;
+	        context.fillStyle = particle.color;
+	        context.fillRect(
+	            Math.round(particle.x - 1.5) - rect.left,
+	            Math.round(particle.y - 1.5) - rect.top,
+	            3, 3
+	        );
+	        rendered = true;
+	    }
+	    if(rendered){
+	        requestAnimationFrame(loop);
+	    }else{
+	        rendering = false;
+	    }
+	}
+
+	module.exports = POWERMODE;
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+	/* jshint browser: true */
+
+	(function () {
+
+	// The properties that we copy into a mirrored div.
+	// Note that some browsers, such as Firefox,
+	// do not concatenate properties, i.e. padding-top, bottom etc. -&gt; padding,
 	// so we have to do every single property specifically.
 	var properties = [
 	  'direction',  // RTL support
@@ -257,38 +322,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // Wrapping must be replicated *exactly*, including when a long word gets
 	  // onto the next line, with whitespace at the end of the line before (#7).
 	  // The  *only* reliable way to do that is to copy the *entire* rest of the
-	  // textarea's content into the <span> created at the caret position.
-	  // for inputs, just '.' would be enough, but why bother?
-	  span.textContent = element.value.substring(position) || '.';  // || because a completely empty faux span doesn't render at all
-	  div.appendChild(span);
-
-	  var coordinates = {
-	    top: span.offsetTop + parseInt(computed['borderTopWidth']),
-	    left: span.offsetLeft + parseInt(computed['borderLeftWidth'])
-	  };
-
-	  if (debug) {
-	    span.style.backgroundColor = '#aaa';
-	  } else {
-	    document.body.removeChild(div);
-	  }
-
-	  return coordinates;
-	}
-
-	if (typeof module != "undefined" &amp;&amp; typeof module.exports != "undefined") {
-	  module.exports = getCaretCoordinates;
-	} else {
-	  window.getCaretCoordinates = getCaretCoordinates;
-	}
-
-	}());
-
-/***/ })
-/******/ ])
-});
-; 
-</span><!--=--><script>
+	  // textarea's content into the <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }

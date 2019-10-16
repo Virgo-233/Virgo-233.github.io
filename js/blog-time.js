@@ -16,7 +16,12 @@ seconds=setzero(Math.floor((e_minsold-minsold)*60));
 document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
 }
 function setzero(i){
-if (i<script>
+if (i&lt;10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
