@@ -744,7 +744,7 @@ add_this_id:
 # Weibo | Wechat | Douban | QQZone | Twitter | Facebook | Linkedin | Mailto | Reddit | Delicious | StumbleUpon | Pinterest
 # GooglePlus | Tumblr | GoogleBookmarks | Newsvine | Evernote | Friendfeed | Vkontakte | Odnoklassniki | Mailru
 needmoreshare:
-  enable: true
+  enable: false
   cdn:
     js: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js
     css: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css
@@ -763,6 +763,19 @@ needmoreshare:
       position: middleRight
       networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
 
+# share.js
+# See: https://github.com/overtrue/share.js
+# networks: weibo,qq,wechat,tencent,douban,qzone,linkedin,diandian,facebook,twitter,google
+sharejs:
+  enable: false
+  cdn:
+    js: //cdn.jsdelivr.net/npm/social-share.js@1/dist/js/social-share.min.js
+    css: //cdn.jsdelivr.net/npm/social-share.js@1/dist/js/social-share.min.css
+  networks: weibo,qq,wechat,tencent,douban,qzone,linkedin,diandian,facebook,twitter,google
+  wechat_qrcode:
+    title: share.title
+    prompt: share.prompt      
+      
 # ---------------------------------------------------------------
 # Statistics and Analytics
 # See: https://theme-next.org/docs/third-party-services/statistics-and-analytics

@@ -1,7 +1,8 @@
 ---
 title: 小米浏览器去广告、隐私保护增强
-date: 2019-10-16 14:20:06
 tags: MIUI
+abbrlink: b788c5ea
+date: 2019-10-16 14:20:06
 ---
 <img src="https://i.loli.net/2019/10/16/jronISYk9gXcUxN.jpg" width="500"/>
 <!--more-->
@@ -9,7 +10,7 @@ tags: MIUI
 
 当然即便是启用简洁模式也还是有很多不好的地方，比如菜单栏的广告、搜索栏热点推荐、无法自定义搜索引擎等等。习惯性去数据目录看看，发现了对应的配置文件，既然是需要从本地读取那就好办了，直接把文件内容清空去掉读写权限，设置不可更该属性就好。
 
-MIUI 浏览器的去广告功能还是很强的，规则文件存储在`/data/data/com.android.browser/files/data/adblock/`目录下，其中`miui_blacklist.json`就是规则文件了，打开看可以看到存储规则是这样的
+MIUI 浏览器的去广告功能还是很强的，规则文件存储在 `/data/data/com.android.browser/files/data/adblock/` 目录下，其中 `miui_blacklist.json` 就是规则文件了，打开看可以看到存储规则是这样的
 
 ``` json
 {
