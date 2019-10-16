@@ -1,12 +1,13 @@
 {
   "name": "hexo-site",
   "version": "0.0.0",
+  "license": "ISC",
   "private": true,
   "hexo": {
     "version": "3.9.0"
   },
   "dependencies": {
-    "hexo": "^3.8.0",
+    "hexo": "^4.0.0",
     "hexo-abbrlink": "^2.0.5",
     "hexo-all-minifier": "^0.5.2",
     "hexo-auto-canonical": "^0.1.1",
@@ -38,11 +39,10 @@
     "hexo-renderer-marked": "^2.0.0",
     "hexo-renderer-stylus": "^1.1.0",
     "hexo-server": "^1.0.0",
-    "hexo-symbols-count-time": "^0.6.0",
+    "hexo-symbols-count-time": "^0.6.3",
     "imagemin-pngquant": "^8.0.0"
   },
   "browserslist": [
     "defaults"
   ]
 }
-

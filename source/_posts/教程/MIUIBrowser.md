@@ -1,0 +1,80 @@
+---
+title: 小米浏览器去广告、隐私保护增强
+date: 2019-10-16 14:20:06
+tags: MIUI
+---
+<img src="https://i.loli.net/2019/10/16/jronISYk9gXcUxN.jpg" width="500"/>
+<!--more-->
+一直以来我都是把自带浏览器删除用 via 替换的，但 MIUI 在某个版本升级后如果卸载了自带浏览器会导致快应用闪退，刚好 MIUI 浏览器更新了简洁模式界面还不错，就决定用回自带浏览器了。
+
+当然即便是启用简洁模式也还是有很多不好的地方，比如菜单栏的广告、搜索栏热点推荐、无法自定义搜索引擎等等。习惯性去数据目录看看，发现了对应的配置文件，既然是需要从本地读取那就好办了，直接把文件内容清空去掉读写权限，设置不可更该属性就好。
+
+MIUI 浏览器的去广告功能还是很强的，规则文件存储在`/data/data/com.android.browser/files/data/adblock/`目录下，其中`miui_blacklist.json`就是规则文件了，打开看可以看到存储规则是这样的
+
+``` json
+{
+    'effectiveTime': int(time.time() * 1000),
+    'flag': 0,
+    'id': id,
+    'network': 255,
+    'rule': line,
+    'updatetime': int(time.time() * 1000)
+}
+```
+
+其中最重要的就是 rule 项，由于文件过大，内容还都是压缩的，我就没仔细看了，直接试着将 PC 上的去广告规则添加进去，经测试是有效的，所以最终有了这篇文章。
+
+既然知道可以使用 PC 上的 ABP 规则，那么接下来就是将 ABP 的规则添加到 MIUI 自带规则中去，这里我选择使用 Python 来处理。从前面我们知道了一条规则的内容，接下来就很好办了，先将自带的规则导入，然后遍历 ABP 规则，把除头部及注释的内容，按上面的格式拼接，其中 effectiveTime 和 updatetime 均为距 1970 年的秒数（自带规则里这两个的值是不一样的，这里为了方便使用同一个值），使用 time 模块的 time 获取毫秒数将其乘以 1000 取整即可，然后 append 到自带规则中即可，最后再 dump 到文件中。至此就大功告成了。
+
+另外还有个白名单文件，建议把它清空。
+
+代码：
+
+``` python
+import json
+import time
+from urllib import request
+
+default = json.load(open('miui_blacklist.json', 'r'))
+urls = ('https://easylist-downloads.adblockplus.org/easylistchina.txt',
+        'https://easylist-downloads.adblockplus.org/easyprivacy.txt',
+        'https://easylist-downloads.adblockplus.org/easylist.txt',
+        'https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/ABP-FX.txt'
+        )
+
+i = len(default['data'])
+id = []
+for j in default['data']:
+    id.append(j['id'])
+id = max(id)
+
+for url in urls:
+    filename = url.split('/')[-1]
+    req = request.Request(url)
+    while(True):
+        try:
+            res = request.urlopen(req).read().decode('utf-8')
+            if(res):
+                print("正在添加 %s" % filename)
+                for line in res.split('\n'):
+                    if(not (line.startswith('[') or line.startswith('!'))):
+                        data = {
+                            'effectiveTime': int(time.time() * 1000),
+                            'flag': 0,
+                            'id': id,
+                            'network': 255,
+                            'rule': line,
+                            'updatetime': int(time.time() * 1000)
+                        }
+                        default['data'].append(data)
+                        i += 1
+                        id += 1
+                print("%s 添加完成" % filename)
+                break
+        except Exception as err:
+            print(err)
+            print('sleep 3s')
+            time.sleep(3)
+json.dump(default, open('miui_blacklist_opt.json', 'w'))
+
+```
