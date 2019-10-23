@@ -20,10 +20,10 @@ HUT 强智教务系统 API
 ### authUser
 
 登录帐号  
-`http://218.75.197.123:83/app.do?method=authUser&xh=学号&pwd=密码`
+`http://218.75.197.123:83/app.do?method=authUser&xh=#学号#&pwd=#密码#`
 
 **返回值**  
-返回 JSON 对象
+返回 json 对象
 
 ``` json
 {
@@ -52,7 +52,7 @@ HUT 强智教务系统 API
 `http://218.75.197.123:83/app.do?method=getStudentIdInfo&xh=#学号#`~~
 
 **返回值**  
-返回 JSON 对象
+返回 json 对象
 
 ``` json
 {
@@ -69,7 +69,7 @@ HUT 强智教务系统 API
 `http://218.75.197.123:83/app.do?method=getCurrentTime&currDate=#查询日期#`
 
 **返回值**  
-返回 JSON 对象
+返回 json 对象
 
 ``` json
 {
@@ -86,7 +86,7 @@ HUT 强智教务系统 API
 `http://218.75.197.123:83/app.do?method=getKbcxAzc&xh=#学号#&xnxqid=#学年#&zc=#周次#`
 
 **返回值**  
-返回JSON数组
+返回 json 数组
 
 ``` json
 [
@@ -109,7 +109,7 @@ HUT 强智教务系统 API
 `http://218.75.197.123:83/app.do?method=getXqcx`
 
 **返回值**  
-返回JSON数组
+返回 json 数组
 
 ``` json
 [
@@ -130,7 +130,7 @@ HUT 强智教务系统 API
 `http://218.75.197.123:83/app.do?method=getJxlcx&xqid=#校区ID#`
 
 **返回值**  
-返回JSON数组
+返回 json 数组
 
 ``` json
 [
@@ -161,7 +161,7 @@ night：晚上
 60：60人以上
 
 **返回值**  
-返回JSON数组
+返回 json 对象
 
 ``` json
 {
@@ -195,7 +195,7 @@ night：晚上
 ps: 学号可以是其他人的
 
 **返回值**  
-返回 JSON 对象
+返回 json 对象
 
 ``` json
 {
@@ -224,7 +224,7 @@ ps: 学号可以是其他人的
 `http://218.75.197.123:83/app.do?method=getXnxq&xh=#学号#`
 
 **返回值**  
-返回JSON数组
+返回 json 数组
 
 ``` json
 [
@@ -244,7 +244,7 @@ ps: 学号可以是其他人的
 ps: 此处学号可以是其他人的
 
 **返回值**  
-返回 JSON 数组
+返回 json 对象
 
 ``` json
 {
