@@ -34,29 +34,50 @@ MIUI 浏览器的去广告功能还是很强的，规则文件存储在 `/data/d
 ``` python
 import json
 import time
+import zipfile
+import tempfile
 from urllib import request
 
-default = json.load(open('miui_blacklist.json', 'r'))
-urls = ('https://easylist-downloads.adblockplus.org/easylistchina.txt',
-        'https://easylist-downloads.adblockplus.org/easyprivacy.txt',
-        'https://easylist-downloads.adblockplus.org/easylist.txt',
-        'https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/ABP-FX.txt'
-        )
+miui_api = 'https://api.browser.miui.com/bsr/adRuleBlock/miuiadblock'
+sub_urls = ['https://easylist-downloads.adblockplus.org/easylistchina.txt',
+            'https://easylist-downloads.adblockplus.org/easyprivacy.txt',
+            'https://easylist-downloads.adblockplus.org/easylist.txt',
+            'https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/ABP-FX.txt',
+            'https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt',
+            'http://tools.yiclear.com/ChinaList2.0.txt'
+            ]
 
-i = len(default['data'])
-id = []
-for j in default['data']:
-    id.append(j['id'])
-id = max(id)
+print("正在从 MIUI API 获取数据下载地址")
+req = request.Request(miui_api)
+res = request.urlopen(req).read().decode('utf-8')
+print("地址获取成功")
 
-for url in urls:
+res = json.loads(res)
+tmpdir = tempfile.mkdtemp()
+print("正在下载压缩包")
+req = request.Request(res['miuiadblock']['download_url'])
+res = request.urlopen(req).read()
+tmpfile = tmpdir + '/' + 'tmp.zip'
+with open(tmpfile, 'wb') as f:
+    f.write(res)
+print("压缩包下载完成，开始解压")
+file_zip = zipfile.ZipFile(tmpfile, 'r')
+file_zip.extractall(tmpdir)
+print("解压完成，开始数据合并")
+print('*'*50)
+miui_blacklist = tmpdir + '/' + 'blacklist.json'
+default = json.load(open(miui_blacklist, 'r'))
+
+id = 66666
+for url in sub_urls:
     filename = url.split('/')[-1]
     req = request.Request(url)
     while(True):
         try:
+            print("正在下载 %s" % filename)
             res = request.urlopen(req).read().decode('utf-8')
             if(res):
-                print("正在添加 %s" % filename)
+                print("开始添加 %s" % filename)
                 for line in res.split('\n'):
                     if(not (line.startswith('[') or line.startswith('!'))):
                         data = {
@@ -68,7 +89,6 @@ for url in urls:
                             'updatetime': int(time.time() * 1000)
                         }
                         default['data'].append(data)
-                        i += 1
                         id += 1
                 print("%s 添加完成" % filename)
                 break
