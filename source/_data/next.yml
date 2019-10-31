@@ -682,7 +682,7 @@ rating:
 
 # AddThis Share. See: https://www.addthis.com
 # Go to https://www.addthis.com/dashboard to customize your tools.
-add_this_id: ra-5dbaa333234d17a3
+add_this_id: #ra-5dbaa333234d17a3
       
 # ---------------------------------------------------------------
 # Statistics and Analytics
@@ -691,7 +691,7 @@ add_this_id: ra-5dbaa333234d17a3
 
 # Google Analytics
 google_analytics:
-  tracking_id: # UA-118566890-1
+  tracking_id: #UA-118566890-1
   localhost_ignored: true
   # By default, NexT will load an external gtag.js script on your site.
   # If you only need the pageview feature, set the following option to true to get a better performance.
