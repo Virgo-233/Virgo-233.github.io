@@ -1,7 +1,8 @@
 ---
 title: 使用日历订阅工大就业中心宣讲会、双选会
-date: 2019-10-23 19:16:52
 tags: HUT
+abbrlink: ad3ad898
+date: 2019-10-23 19:16:52
 ---
 <a href="https://sm.ms/image/BQtMTU3vR2sScPX" target="_blank"><img src="https://i.loli.net/2019/10/23/BQtMTU3vR2sScPX.jpg" width="500"/></a>
 接口均为抓包得出，理论上适用于其它也接入了此系统的学校。
