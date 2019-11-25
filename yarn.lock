@@ -2824,7 +2824,7 @@ hexo-deployer-git@^2.0.0:
 
 hexo-directory-category@^1.0.7:
   version "1.0.7"
-  resolved "http://r.cnpmjs.org/hexo-directory-category/download/hexo-directory-category-1.0.7.tgz#37a1d23a3712890cbda1e1ab539749193bff2738"
+  resolved "https://registry.npm.taobao.org/hexo-directory-category/download/hexo-directory-category-1.0.7.tgz#37a1d23a3712890cbda1e1ab539749193bff2738"
   integrity sha1-N6HSOjcSiQy9oeGrU5dJGTv/Jzg=
   dependencies:
     bluebird "^3.5.1"

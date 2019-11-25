@@ -123,7 +123,7 @@ scheme: Gemini
 # Usage: `Key: /link/ || icon`
 # Key is the name of menu item. If the translation for this item is available, the translated text will be loaded, otherwise the Key name will be used. Key is case-senstive.
 # Value before `||` delimiter is the target link, value after `||` delimiter is the name of Font Awesome icon.
-# When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash from link value (/archives -> archives).
+# When running the site in a subdirectory (e.g. yoursite.com/blog), remove the leading slash from link value (/archives -> archives).
 # External url should start with http:// or https://
 menu:
   home: / || home
@@ -225,7 +225,7 @@ toc:
   wrap: false
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
   expand_all: false
-  # Maximum heading depth of generated toc. You can set it in one post through `toc_max_depth` in Front-matter.
+  # Maximum heading depth of generated toc.
   max_depth: 6
 
 # A button to open designated chat widget in sidebar.
@@ -253,7 +253,7 @@ auto_excerpt:
   length: 50
 
 # Read more button
-# If true, the read more button would be displayed in excerpt section.
+# If true, the read more button will be displayed in excerpt section.
 read_more_btn: true
 
 # Post meta display settings
@@ -279,8 +279,7 @@ tag_icon: true
 
 # Reward (Donate)
 reward_settings:
-  # If true, reward would be displayed in every article by default.
-  # You can show or hide reward in a specific article throuth `reward: true | false` in Front-matter.
+  # If true, reward will be displayed in every article by default.
   enable: true
   animation: true
   #comment: Donate comment here.
@@ -309,6 +308,10 @@ post_edit:
   enable: false
   url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name # Link for view source
   #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name # Link for fork & edit
+
+# Show previous post and next post in post footer if exists
+# Available values: left | right | false
+post_navigation: left
 
 
 # ---------------------------------------------------------------
@@ -467,9 +470,9 @@ font:
 # Disable Baidu transformation on mobile devices.
 disable_baidu_transformation: false
 
-# Set a canonical link tag in your hexo, you could use it for your SEO of blog.
+# Set a canonical link tag for your Hexo site.
 # See: https://support.google.com/webmasters/answer/139066
-# Remember to set up your URL in Hexo `_config.yml` (e.g. url: http://yourdomain.com)
+# Remember to set up your URL in Hexo `_config.yml` (e.g. url: http://yoursite.com)
 canonical: true
 
 # Change headers hierarchy on site-subtitle (will be main site description) and on all post / page titles for better SEO-optimization.
@@ -532,7 +535,6 @@ math:
 
 # Easily enable fast Ajax navigation on your website.
 # Dependencies: https://github.com/theme-next/theme-next-pjax
-# For moreinformation: https://github.com/MoOx/pjax
 pjax: true
 
 # FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.
@@ -554,12 +556,12 @@ pangu: false
 
 # Quicklink Support
 # For more information: https://github.com/GoogleChromeLabs/quicklink
+# Front-matter (unsupport home archive).
 quicklink:
   enable: true
 
-  # Quicklink (quicklink.umd.js script) is loaded on demand.
-  # Add `quicklink: true` in Front-matter of the page or post you need.
   # Home page and archive page can be controlled through home and archive options below.
+  # This configuration item is independent of `enable`.
   home: true
   archive: true
 
@@ -683,6 +685,7 @@ rating:
 # AddThis Share. See: https://www.addthis.com
 # Go to https://www.addthis.com/dashboard to customize your tools.
 add_this_id: #ra-5dbaa333234d17a3
+
       
 # ---------------------------------------------------------------
 # Statistics and Analytics
@@ -692,7 +695,6 @@ add_this_id: #ra-5dbaa333234d17a3
 # Google Analytics
 google_analytics:
   tracking_id: #UA-118566890-1
-  localhost_ignored: true
   # By default, NexT will load an external gtag.js script on your site.
   # If you only need the pageview feature, set the following option to true to get a better performance.
   only_pageview: false
@@ -705,12 +707,6 @@ growingio_analytics: # <project_id>
 
 # CNZZ count
 cnzz_siteid:
-
-# Tencent analytics
-tencent_analytics: # <app_id>
-
-# Tencent MTA
-tencent_mta: # <app_id>
 
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn to get AppID and AppKey.
@@ -915,9 +911,9 @@ canvas_ribbon:
 
 # Script Vendors. Set a CDN address for the vendor you want to customize.
 # Be aware that you would better use the same version as internal ones to avoid potential problems.
-# Please use the https protocol of CDN files when you enable https on your site.
+# Remember to use the https protocol of CDN files when you enable https on your site.
 vendors:
-  # Internal path prefix. Please do not edit it.
+  # Internal path prefix.
   _internal: lib
 
   # Internal version: 3.1.0
@@ -925,7 +921,6 @@ vendors:
   anime: //cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js
 
   # Internal version: 4.7.0
-  # Example:
   # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css
   # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
   fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css
@@ -985,7 +980,7 @@ vendors:
 
   # Valine
   # valine: //cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js
-  # valine: //cdnjs.cloudflare.com/ajax/libs/valine/1.3.4/Valine.min.js
+  # valine: //cdnjs.cloudflare.com/ajax/libs/valine/1.3.10/Valine.min.js
   valine: //cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js
 
   # Gitalk
@@ -1048,7 +1043,7 @@ vendors:
 
 # Assets
 css: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.11.14/css
-js: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.11.14/js
+js: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.11.25/js
 images: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.09.22/images
 
 # Change title and favicon when window is hidden and visible.
