@@ -24,7 +24,7 @@ Windows10 2019 LTSC 密钥：`M7XTQ-FN8P6-TTKYV-9D4CC-J462D`
 - 激活 windows 10 专业版
     右键开始菜单，点击命令提示符（管理员）或者 Windows PowerShell （管理员)
     输入 `slmgr /upk` 卸载原有密钥，如果是刚装好的系统，这一步可以省略。
-    输入 `slmgr /skms 172.30.192.106` 设置 KMS 服务器地址。
+    输入 `slmgr /skms 172.30.192.173` 设置 KMS 服务器地址。
     输入 `slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX` 安装 KMS 密钥
     输入 `slmgr /ato` 查看激活状态，如果显示 “成功地激活了产品”，表示激活成功，
     每隔 180 天会自动续订，不需要担心激活过期。
@@ -32,5 +32,5 @@ Windows10 2019 LTSC 密钥：`M7XTQ-FN8P6-TTKYV-9D4CC-J462D`
 - 激活 Office 2016
     右键开始菜单，点击命令提示符（管理员）或者 Windows PowerShell （管理员)
     输入 `cd "C:\Program Files (x86)\Microsoft Office\Office16"` 这个是 Office 激活脚本所在位置，不同的 Office 版本不一样，比如 Office 2013 是 `cd "C:\Program Files (x86)\Microsoft Office\Office15"`。
-    输入 `cscript ospp.vbs /sethst:172.30.192.106` 将激活服务器地址设为 172.30.192.106。
+    输入 `cscript ospp.vbs /sethst:172.30.192.173` 将激活服务器地址设为 172.30.192.173。
     输入 `cscript ospp.vbs /act` 激活 office。
