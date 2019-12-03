@@ -2683,7 +2683,7 @@ hawk@1.1.1:
     hoek "0.9.x"
     sntp "0.2.x"
 
-he@1.2.x, he@^1.0.0:
+he@1.2.x:
   version "1.2.0"
   resolved "http://r.cnpmjs.org/he/download/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha1-hK5l+n6vsWX922FWauFLrwVmTw8=
@@ -2719,13 +2719,6 @@ hexo-auto-canonical@^0.1.1:
   version "0.1.1"
   resolved "http://r.cnpmjs.org/hexo-auto-canonical/download/hexo-auto-canonical-0.1.1.tgz#9d864d6a915e399c6d1b89042846eb0bf209fc9b"
   integrity sha1-nYZNapFeOZxtG4kEKEbrC/IJ/Js=
-
-hexo-auto-excerpt@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.npm.taobao.org/hexo-auto-excerpt/download/hexo-auto-excerpt-1.1.2.tgz#d19d3449e4c4c164c629a5641a2e688fff9aace3"
-  integrity sha1-0Z00SeTEwWTGKaVkGi5oj/+arOM=
-  dependencies:
-    html-to-text "^3.3.0"
 
 hexo-autonofollow@^1.0.1:
   version "1.0.1"
@@ -3040,7 +3033,7 @@ hexo-next-share@theme-next/hexo-next-share:
   version "1.0.0"
   resolved "https://codeload.github.com/theme-next/hexo-next-share/tar.gz/bc358ef1e7b8427df05c3739e8b2fd939489d4b3"
   dependencies:
-    next-util "github:theme-next/next-util"
+    js-yaml "^3.13.1"
 
 hexo-next-title@theme-next/hexo-next-title:
   version "0.1.0"
@@ -3293,18 +3286,7 @@ html-minifier@^3.5.21:
     relateurl "0.2.x"
     uglify-js "3.4.x"
 
-html-to-text@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.npm.taobao.org/html-to-text/download/html-to-text-3.3.0.tgz#6a9b63c699b885bb7ba84b1446bfe6876bbfcfb7"
-  integrity sha1-aptjxpm4hbt7qEsURr/mh2u/z7c=
-  dependencies:
-    he "^1.0.0"
-    htmlparser2 "^3.9.2"
-    optimist "^0.6.1"
-    underscore "^1.8.3"
-    underscore.string "^3.2.3"
-
-htmlparser2@^3.9.1, htmlparser2@^3.9.2:
+htmlparser2@^3.9.1:
   version "3.10.1"
   resolved "http://r.cnpmjs.org/htmlparser2/download/htmlparser2-3.10.1.tgz#bd679dc3f59897b6a34bb10749c855bb53a9392f"
   integrity sha1-vWedw/WYl7ajS7EHSchVu1OpOS8=
@@ -4978,7 +4960,7 @@ open@^6.3.0:
   dependencies:
     is-wsl "^1.1.0"
 
-optimist@^0.6.1, optimist@~0.6:
+optimist@~0.6:
   version "0.6.1"
   resolved "https://registry.npm.taobao.org/optimist/download/optimist-0.6.1.tgz#da3ea74686fa21a19a111c326e90eb15a0196686"
   integrity sha1-2j6nRob6IaGaERwybpDrFaAZZoY=
@@ -6655,14 +6637,6 @@ unbzip2-stream@^1.0.9:
     buffer "^5.2.1"
     through "^2.3.8"
 
-underscore.string@^3.2.3:
-  version "3.3.5"
-  resolved "https://registry.npm.taobao.org/underscore.string/download/underscore.string-3.3.5.tgz#fc2ad255b8bd309e239cbc5816fd23a9b7ea4023"
-  integrity sha1-/CrSVbi9MJ4jnLxYFv0jqbfqQCM=
-  dependencies:
-    sprintf-js "^1.0.3"
-    util-deprecate "^1.0.2"
-
 underscore@^1.8.3:
   version "1.9.1"
   resolved "https://registry.npm.taobao.org/underscore/download/underscore-1.9.1.tgz#06dce34a0e68a7babc29b365b8e74b8925203961"
@@ -6775,7 +6749,7 @@ use@^3.1.0:
   resolved "https://registry.npm.taobao.org/use/download/use-3.1.1.tgz#d50c8cac79a19fbc20f2911f56eb973f4e10070f"
   integrity sha1-1QyMrHmhn7wg8pEfVuuXP04QBw8=
 
-util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
+util-deprecate@^1.0.1, util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "http://r.cnpmjs.org/util-deprecate/download/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
