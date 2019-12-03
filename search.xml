@@ -48,6 +48,9 @@
             document.body.appendChild(img);
           });
       </script>]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
       <tags>
         <tag>MIUI</tag>
       </tags>
@@ -126,6 +129,9 @@
             document.body.appendChild(img);
           });
       </script>]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
       <tags>
         <tag>Android</tag>
       </tags>
@@ -204,6 +210,9 @@
             document.body.appendChild(img);
           });
       </script>]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
       <tags>
         <tag>Windows</tag>
       </tags>
@@ -285,6 +294,9 @@
             document.body.appendChild(img);
           });
       </script>]]></content>
+      <categories>
+        <category>路由器</category>
+      </categories>
   </entry>
   <entry>
     <title>HUT-Email 登录及部分 EDU 邮箱可用福利</title>
@@ -374,6 +386,9 @@
             document.body.appendChild(img);
           });
       </script>]]></content>
+      <categories>
+        <category>路由器</category>
+      </categories>
       <tags>
         <tag>OpenWrt</tag>
         <tag>Office</tag>

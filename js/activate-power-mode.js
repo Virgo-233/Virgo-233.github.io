@@ -1,35 +1,4 @@
-<span> created at the caret position.
-	  // for inputs, just '.' would be enough, but why bother?
-	  span.textContent = element.value.substring(position) || '.';  // || because a completely empty faux span doesn't render at all
-	  div.appendChild(span);
-
-	  var coordinates = {
-	    top: span.offsetTop + parseInt(computed['borderTopWidth']),
-	    left: span.offsetLeft + parseInt(computed['borderLeftWidth'])
-	  };
-
-	  if (debug) {
-	    span.style.backgroundColor = '#aaa';
-	  } else {
-	    document.body.removeChild(div);
-	  }
-
-	  return coordinates;
-	}
-
-	if (typeof module != "undefined" &amp;&amp; typeof module.exports != "undefined") {
-	  module.exports = getCaretCoordinates;
-	} else {
-	  window.getCaretCoordinates = getCaretCoordinates;
-	}
-
-	}());
-
-/***/ })
-/******/ ])
-});
-; 
-</span><a id="more"></a>(function webpackUniversalModuleDefinition(root, factory) {
+(function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' &amp;&amp; typeof module === 'object')
 		module.exports = factory();
 	else if(typeof define === 'function' &amp;&amp; define.amd)
@@ -322,7 +291,38 @@ return /******/ (function(modules) { // webpackBootstrap
 	  // Wrapping must be replicated *exactly*, including when a long word gets
 	  // onto the next line, with whitespace at the end of the line before (#7).
 	  // The  *only* reliable way to do that is to copy the *entire* rest of the
-	  // textarea's content into the <script>
+	  // textarea's content into the <span> created at the caret position.
+	  // for inputs, just '.' would be enough, but why bother?
+	  span.textContent = element.value.substring(position) || '.';  // || because a completely empty faux span doesn't render at all
+	  div.appendChild(span);
+
+	  var coordinates = {
+	    top: span.offsetTop + parseInt(computed['borderTopWidth']),
+	    left: span.offsetLeft + parseInt(computed['borderLeftWidth'])
+	  };
+
+	  if (debug) {
+	    span.style.backgroundColor = '#aaa';
+	  } else {
+	    document.body.removeChild(div);
+	  }
+
+	  return coordinates;
+	}
+
+	if (typeof module != "undefined" &amp;&amp; typeof module.exports != "undefined") {
+	  module.exports = getCaretCoordinates;
+	} else {
+	  window.getCaretCoordinates = getCaretCoordinates;
+	}
+
+	}());
+
+/***/ })
+/******/ ])
+});
+; 
+</span><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
