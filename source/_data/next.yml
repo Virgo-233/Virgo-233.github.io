@@ -1031,8 +1031,8 @@ vendors:
   canvas_ribbon:
 
 # Assets
-css: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.11.14/css
-js: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.11.25/js
+css: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.12.05/css
+js: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.12.05/js
 images: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.09.22/images
 
 # Change title and favicon when window is hidden and visible.
