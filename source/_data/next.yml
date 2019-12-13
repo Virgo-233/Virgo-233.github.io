@@ -582,6 +582,8 @@ comments:
   active: valine
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
+  # Lazyload all comment systems.
+  lazyload: true
   # Modify texts or order for any navs, here are some examples.
   nav:
     #disqus:
@@ -595,7 +597,6 @@ disqus:
   enable: false
   shortname:
   count: true
-  lazyload: false
   #post_meta_order: 0
 
 # DisqusJS
@@ -1032,7 +1033,7 @@ vendors:
 
 # Assets
 css: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.12.05/css
-js: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.12.05/js
+js: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.12.13/js
 images: //cdn.jsdelivr.net/gh/cxyzzz/CDN@19.09.22/images
 
 # Change title and favicon when window is hidden and visible.
