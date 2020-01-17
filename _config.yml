@@ -140,7 +140,7 @@ js_concator:
   front: false
 
 html_minifier:
-  enable: true
+  enable: false
   ignore_error: false
   exclude: 
 
