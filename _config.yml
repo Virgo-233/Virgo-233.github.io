@@ -142,7 +142,7 @@ js_concator:
 html_minifier:
   enable: true
   ignore_error: false
-  exclude:
+  exclude: 
 
 image_minifier:
   enable: true
