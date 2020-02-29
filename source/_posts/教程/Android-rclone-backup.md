@@ -17,6 +17,8 @@ tags: Android
 ``` bash
 #!/system/bin/env bash
 
+set -xe
+
 if pidof -o %PPID -s "syncone"; then
     exit 1
 fi
