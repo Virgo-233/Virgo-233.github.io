@@ -77,7 +77,7 @@ if [ "${ret_code}" = "200" ]; then
     termux-tools termux-tts-speak "网络连接正常,开始备份！"
     echo "网络连接正常,开始备份！"
 
-    ${RCLONE} sync ${SOURCE} ${REMOTE_NAME}:${REMOTE-DIR}
+    ${RCLONE} sync ${SOURCE} ${REMOTE_NAME}:${REMOTE_DIR}
 
     termux-tools termux-tts-speak "rclone 备份完成！"
     echo "备份完成！"
