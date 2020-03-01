@@ -1038,9 +1038,9 @@ vendors:
   canvas_ribbon:
 
 # Assets
-css: //cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@18fb82b/source/css
-js: //cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@18fb82b/source/js
-images: //cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@18fb82b/source/images
+css: //cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@2435126/source/css
+js: //cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@2435126/source/js
+images: //cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@2435126/source/images
 
 # Change title and favicon when window is hidden and visible.
 title_change:
