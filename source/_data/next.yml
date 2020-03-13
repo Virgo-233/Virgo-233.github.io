@@ -33,7 +33,7 @@ custom_file_path:
   mixin: source/_data/mixins.styl
   style: source/_data/styles.styl
 
-show_ad: true
+show_ad: false
 show_post_end_message: false
 
 # ---------------------------------------------------------------
@@ -362,9 +362,6 @@ mobile_layout_economy: false
 
 # Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
 android_chrome_color: "#eee"
-
-# Hide sticky headers and color the menu bar on Safari (iOS / macOS).
-safari_rainbow: true
 
 # Custom Logo (Do not support scheme Mist)
 custom_logo: #/uploads/custom-logo.jpg
@@ -971,7 +968,7 @@ vendors:
 
   # Gitalk
   # gitalk_js: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
-  # gitalk_css: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css
+  # gitalk_css: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css
   gitalk_js:
   gitalk_css:
 
@@ -988,7 +985,7 @@ vendors:
 
   # Mermaid
   # mermaid: //cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js
-  # mermaid: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.0/mermaid.min.js
+  # mermaid: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.2/mermaid.min.js
   mermaid:
 
   # Internal version: 1.2.1
@@ -1022,9 +1019,9 @@ vendors:
   canvas_ribbon:
 
 # Assets
-css: //cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@5098466/source/css
-js: //cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@5098466/source/js
-images: //cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@5098466/source/images
+css: //cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@95e53fb/source/css
+js: //cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@95e53fb/source/js
+images: //cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@95e53fb/source/images
 
 # Change title and favicon when window is hidden and visible.
 title_change:
