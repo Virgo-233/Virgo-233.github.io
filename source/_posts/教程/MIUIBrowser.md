@@ -6,6 +6,120 @@ date: 2019-10-16 14:20:06
 ---
 <img src="https://i.loli.net/2019/10/16/jronISYk9gXcUxN.jpg" width="500"/>
 <!--more-->
+
+<details>
+<summary>点击显示更新信息</summary>
+
+{% note success %}
+### 2019.3.14 更新
+1. 当官方规则 API 返回空数据时跳过添加官方规则
+2. 添加显示单个订阅规则调试（可能有误差）以及添加进度
+3. 使用 [YUX-IO/ffp](https://github.com/YUX-IO/ffp) 的 demo 服务 <https://ffp.yux.io/> 代理下载规则，加速规则下载。（代理无法使用时会回退使用原地址）
+4. 增加自动替换、防覆盖功能了。（防覆盖需要 chattr 命令支持，magisk 用户可以将 `/sbin/.magisk/busybox/chattr` 链接到 `/system/xbin/chattr`）
+
+``` python
+import json
+import time
+import zipfile
+import tempfile
+import os
+from urllib import request
+
+proxy = 'https://ffp.yux.io/'
+miui_api = 'https://api.browser.miui.com/bsr/adRuleBlock/miuiadblock'
+sub_urls = ['https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/ABP-FX.txt',
+            'https://easylist-downloads.adblockplus.org/easylistchina+easylist.txt',
+            'https://easylist-downloads.adblockplus.org/easyprivacy.txt',
+            'https://easylist-downloads.adblockplus.org/antiadblockfilters.txt',
+            'https://easylist-downloads.adblockplus.org/easyprivacy.tpl',
+            'https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt'
+            ]
+
+flag = 0
+print("正在从 MIUI API 获取数据下载地址")
+req = request.Request(miui_api)
+res = request.urlopen(req).read().decode('utf-8')
+print("地址获取成功")
+
+res = json.loads(res)
+if res['miuiadblock']['download_url'] != '':
+    flag = 1
+    tmpdir = tempfile.mkdtemp()
+    print("正在下载压缩包")
+    req = request.Request(res['miuiadblock']['download_url'])
+    res = request.urlopen(req).read()
+    tmpfile = tmpdir + '/' + 'tmp.zip'
+    with open(tmpfile, 'wb') as f:
+        f.write(res)
+    print("压缩包下载完成，开始解压")
+    file_zip = zipfile.ZipFile(tmpfile, 'r')
+    file_zip.extractall(tmpdir)
+    print("解压完成，开始数据合并\n")
+    miui_blacklist = tmpdir + '/' + 'blacklist.json'
+    default = json.load(open(miui_blacklist, 'r'))
+else:
+    print("MIUI API 无数据")
+    default = {'data': []}
+
+id = 66666
+total = 0
+for url in sub_urls:
+    _url = url
+    url = proxy + url
+    filename = url.split('/')[-1]
+    req = request.Request(url)
+    req.add_header('UserAgent', 'Mozilla/5.0 (Linux; Android 9; Redmi Note 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.93 Mobile Safari/537.36')
+    while(True):
+        try:
+            print("正在下载 %s" % url)
+            res = request.urlopen(req).read().decode('utf-8')
+            if(res):
+                lines = res.split('\n')
+                length = len(lines)
+                print("开始添加 %s，共计 %d 条 " % (filename, length))
+                for line in lines:
+                    if(line.startswith('[') or line.startswith('!') or (not line)):
+                        length -= 1
+                        continue
+                    else:
+                        data = {
+                            'effectiveTime': int(time.time() * 1000),
+                            'flag': 0,
+                            'id': id,
+                            'network': 255,
+                            'rule': line,
+                            'updatetime': int(time.time() * 1000)
+                        }
+                        default['data'].append(data)
+                        id += 1
+                        percent = (id - 66666 - total) / length
+                        print("进度：{:.1%} [{}/{}]".format(percent, id - 66666 - total, length), end='\r')
+                print("\n%s 添加完成\n" % filename)
+                total += length
+                break
+        except Exception as err:
+            url = _url
+            print(err)
+            print('sleep 3s')
+            time.sleep(3)
+json.dump(default, open('miui_blacklist.json', 'w'))
+
+print("规则生成完毕，替换浏览器文件中")
+os.system('su -c chown u0_a21:u0_a21 miui_blacklist.json')
+os.system('su -c chattr -i /data/data/com.android.browser/files/data/adblock/miui_blacklist.json')
+os.system('su -c mv miui_blacklist.json /data/data/com.android.browser/files/data/adblock')
+os.system('su -c chmod 444 /data/data/com.android.browser/files/data/adblock/miui_blacklist.json')
+os.system('su -c chattr +i /data/data/com.android.browser/files/data/adblock/miui_blacklist.json')
+
+print("替换完成，清理缓存文件")
+if flag:
+    os.system('rm -rf %s' % tmpdir)
+```
+{% endnote %}
+
+</details>
+
+
 一直以来我都是把自带浏览器删除用 via 替换的，但 MIUI 在某个版本升级后如果卸载了自带浏览器会导致快应用闪退，刚好 MIUI 浏览器更新了简洁模式界面还不错，就决定用回自带浏览器了。
 
 当然即便是启用简洁模式也还是有很多不好的地方，比如菜单栏的广告、搜索栏热点推荐、无法自定义搜索引擎等等。习惯性去数据目录看看，发现了对应的配置文件，既然是需要从本地读取那就好办了，直接把文件内容清空去掉读写权限，设置不可更该属性就好。
