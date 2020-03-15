@@ -18,7 +18,10 @@ date: 2019-10-16 14:20:06
 4. 增加自动替换、防覆盖功能（防覆盖需要 chattr 命令支持，magisk 用户可以将 `/sbin/.magisk/busybox/chattr` 链接到 `/system/xbin/chattr`）
 5. 添加 github gist 地址。
 
+<details>
+<summary>点击显示 Gist</summary>
 {% gist f720d18d00cb8f46206d4b4f109c5b7f ad.py %}
+</details>
 
 {% endnote %}
 
@@ -119,4 +122,9 @@ json.dump(default, open('miui_blacklist_opt.json', 'w'))
 
 ```
 
-最后再分享个去除 QQ 自定义字体、礼物特效;修改 MIUI 浏览器搜索引擎;去除 X5、TBS 内核 的 shell 脚本 {% gist e4f2315dc29b89fd5d7d569c2b4f3ee9 Pure.sh %}
+最后再分享个去除 QQ 自定义字体、礼物特效;修改 MIUI 浏览器搜索引擎;去除 X5、TBS 内核 的 shell 脚本 
+
+<details>
+<summary>点击显示 Gist</summary>
+{% gist e4f2315dc29b89fd5d7d569c2b4f3ee9 Pure.sh %}
+</details>
