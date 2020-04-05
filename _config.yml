@@ -95,16 +95,6 @@ deploy:
 - type: leancloud_counter_security_sync
   message: '站点更新:{{now("YYYY-MM-DD HH/mm/ss")}}'
 
-backup:
-    type: git
-    theme: next
-    message: '源文件更新:{{now("YYYY-MM-DD HH/mm/ss")}}'
-    repository:
-      github: git@github.com:cxyzzz/cxyzzz.github.io.git,hexo_source
-      coding: git@git.coding.net:Virgo-233/Virgo-233.git,hexo_source
-
-
-# sitemap
 sitemap:
   path: sitemap.xml
 baidusitemap:
@@ -187,30 +177,6 @@ auto_dir_categorize:
 	enable: true  # options:true, false; default is true
 	force: false # options:true, false; default is false
 
-# hexo-generator-amp
-# The following settings is the quick start options.
-
-#generator_amp:
-#  templateDir:  amp-template
-#  assetDistDir: amp-dist
-#  logo:
-#    path:   sample/sample-logo.png
-#    width:  600
-#    height: 60
-#  substituteTitleImage:
-#    path:   sample/sample-substituteTitleImage.png
-#    width:  1024
-#    height: 800
-#  warningLog: false   # To display warning, please set true.
-
-#recommended_posts:
-#  server: https://api.truelaurel.com #后端推荐服务器地址
-#  timeoutInMillis: 10000 #服务时长，超过此时长，则使用离线推荐模式
-#  internalLinks: 1 #内部文章数量
-#  externalLinks: 1 #外部文章数量
-#  fixedNumber: false
-#  autoDisplay: false #自动在文章底部显示推荐文章
-
 symbols_count_time:
   symbols: true
   time: true
@@ -229,113 +195,7 @@ marked:
   sanitizeUrl: false
   headerIds: true
 
-githubEmojis:
-  enable: true
-  idName: github-emoji
-  unicode: false
-  styles: 
-  localEmojis: 
-
-filter_optimize:
-  enable: true
-  # remove static resource query string
-  #   - like `?v=1.0.0`
-  remove_query_string: true
-  # remove the surrounding comments in each of the bundled files
-  remove_comments: true
-  css:
-    enable: true
-    # bundle loaded css file into the one
-    bundle: true
-    # use a script block to load css elements dynamically
-    delivery: true
-    # make specific css content inline into the html page
-    #   - only support the full path
-    #   - default is ['css/main.css']
-    inlines: 
-    excludes: 
-
-  js:
-    # bundle loaded js file into the one
-    bundle: true
-    excludes: 
-  # set the priority of this plugin,
-  # lower means it will be executed first, default is 10
-  priority: 12
-
-autoprefixer:
-  exclude:
-    - '*.min.css'
-  browsers:
-    - 'last 2 versions'
-
-# RSS
-feed:
-  type: atom
-  path: /atom.xml
-  limit: 20
-  hub:
-  content: true
-  content_limit: 140
-  content_limit_delim: 
-  order_by: -date
-  icon: 
-
-# Offline
-## Config passed to sw-precache
-## https://github.com/JLHwung/hexo-offline
-offline:
-  maximumFileSizeToCacheInBytes: 10485760
-  staticFileGlobs:
-#    - public/**/*.{js,html,css,png,jpg,jpeg,gif,svg,json,xml,eot,ttf,woff,woff2}
-    - public/manifest.json
-  stripPrefix: public
-  verbose: false
-  runtimeCaching:
-    # CDNs - should be cacheFirst, since they should be used specific versions so should not change
-    - urlPattern: /*
-      handler: cacheFirst
-      options:
-        origin: cdn.jsdelivr.net
-    - urlPattern: /*
-      handler: cacheFirst
-      options:
-        origin: cdnjs.loli.net
-    - urlPattern: /**/*
-      handler: cacheFirst
-      options:
-        origin: cxyzzz.github.io
-
-
 # Security
 encrypt: # hexo-blog-encrypt
   enable: true
-  
-# NeedMoreShare2
-# Dependencies: https://github.com/theme-next/theme-next-needmoreshare2
-# For more information: https://github.com/revir/need-more-share2
-# iconStyle: default | box
-# boxForm: horizontal | vertical
-# position: top / middle / bottom + Left / Center / Right
-# networks:
-# Weibo | Wechat | Douban | QQZone | Twitter | Facebook | Linkedin | Mailto | Reddit | Delicious | StumbleUpon | Pinterest
-# GooglePlus | Tumblr | GoogleBookmarks | Newsvine | Evernote | Friendfeed | Vkontakte | Odnoklassniki | Mailru
-needmoreshare:
-  enable: true
-  cdn:
-    js: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js
-    css: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css
-  postbottom:
-    enable: true
-    options:
-      iconStyle: box
-      boxForm: horizontal
-      position: bottomCenter
-      networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
-  float:
-    enable: false
-    options:
-      iconStyle: box
-      boxForm: horizontal
-      position: middleRight
-      networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
+
