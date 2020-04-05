@@ -44,7 +44,7 @@ NexT.utils = {
   },
 
   registerExtURL: function() {
-    document.querySelectorAll('span.exturl').forEach(element => {
+    document.querySelectorAll('.exturl').forEach(element => {
       let link = document.createElement('a');
       // https://stackoverflow.com/questions/30106476/using-javascripts-atob-to-decode-base64-doesnt-properly-decode-utf-8-strings
       link.href = decodeURIComponent(atob(element.dataset.url).split('').map(c => {
@@ -52,8 +52,7 @@ NexT.utils = {
       }).join(''));
       link.rel = 'noopener external nofollow noreferrer';
       link.target = '_blank';
-      link.className = element.className;
-      link.title = element.title;
+      link.className = 'exturl';
       link.innerHTML = element.innerHTML;
       element.parentNode.replaceChild(link, element);
     });
@@ -67,7 +66,7 @@ NexT.utils = {
       const box = document.createElement('div');
       element.wrap(box);
       box.classList.add('highlight-container');
-      box.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-clipboard fa-fw"></i></div>');
+      box.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-clipboard"></i></div>');
       var button = element.parentNode.querySelector('.copy-btn');
       button.addEventListener('click', event => {
         var target = event.currentTarget;
@@ -86,7 +85,7 @@ NexT.utils = {
         ta.readOnly = false;
         var result = document.execCommand('copy');
         if (CONFIG.copycode.show_result) {
-          target.querySelector('i').className = result ? 'fa fa-check fa-fw' : 'fa fa-times fa-fw';
+          target.querySelector('i').className = result ? 'fa fa-check' : 'fa fa-times';
         }
         ta.blur(); // For iOS
         target.blur();
@@ -98,7 +97,7 @@ NexT.utils = {
       });
       button.addEventListener('mouseleave', event => {
         setTimeout(() => {
-          event.target.querySelector('i').className = 'fa fa-clipboard fa-fw';
+          event.target.querySelector('i').className = 'fa fa-clipboard';
         }, 300);
       });
     });
@@ -215,18 +214,6 @@ NexT.utils = {
       var isSamePath = target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '');
       var isSubPath = !CONFIG.root.startsWith(target.pathname) && location.pathname.startsWith(target.pathname);
       element.classList.toggle('menu-item-active', target.hostname === location.hostname && (isSamePath || isSubPath));
-    });
-  },
-
-  registerLangSelect: function() {
-    let sel = document.querySelector('.lang-select');
-    if (!sel) return;
-    sel.value = CONFIG.page.lang;
-    sel.addEventListener('change', () => {
-      let target = sel.options[sel.selectedIndex];
-      document.querySelector('.lang-select-label span').innerText = target.text;
-      let url = target.dataset.href;
-      window.pjax ? window.pjax.loadUrl(url) : window.location.href = url;
     });
   },
 
