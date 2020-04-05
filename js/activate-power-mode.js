@@ -1,7 +1,7 @@
 (function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' &amp;&amp; typeof module === 'object')
+	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
-	else if(typeof define === 'function' &amp;&amp; define.amd)
+	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
 		exports["POWERMODE"] = factory();
@@ -89,7 +89,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var el = document.activeElement;
 	    var bcr;
 	    if (el.tagName === 'TEXTAREA' ||
-	        (el.tagName === 'INPUT' &amp;&amp; el.getAttribute('type') === 'text')) {
+	        (el.tagName === 'INPUT' && el.getAttribute('type') === 'text')) {
 	        var offset = __webpack_require__(1)(el, el.selectionEnd);
 	        bcr = el.getBoundingClientRect();
 	        return {
@@ -140,8 +140,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    { // shake screen
 	        if (POWERMODE.shake) {
 	            var intensity = 1 + 2 * Math.random();
-	            var x = intensity * (Math.random() &gt; 0.5 ? -1 : 1);
-	            var y = intensity * (Math.random() &gt; 0.5 ? -1 : 1);
+	            var x = intensity * (Math.random() > 0.5 ? -1 : 1);
+	            var y = intensity * (Math.random() > 0.5 ? -1 : 1);
 	            document.body.style.marginLeft = x + 'px';
 	            document.body.style.marginTop = y + 'px';
 	            setTimeout(function() {
@@ -161,9 +161,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    context.clearRect(0, 0, canvas.width, canvas.height);
 	    var rendered = false;
 	    var rect = canvas.getBoundingClientRect();
-	    for (var i = 0; i &lt; particles.length; ++i) {
+	    for (var i = 0; i < particles.length; ++i) {
 	        var particle = particles[i];
-	        if (particle.alpha &lt;= 0.1) continue;
+	        if (particle.alpha <= 0.1) continue;
 	        particle.velocity.y += 0.075;
 	        particle.x += particle.velocity.x;
 	        particle.y += particle.velocity.y;
@@ -197,7 +197,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	// The properties that we copy into a mirrored div.
 	// Note that some browsers, such as Firefox,
-	// do not concatenate properties, i.e. padding-top, bottom etc. -&gt; padding,
+	// do not concatenate properties, i.e. padding-top, bottom etc. -> padding,
 	// so we have to do every single property specifically.
 	var properties = [
 	  'direction',  // RTL support
@@ -245,7 +245,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function getCaretCoordinates(element, position, options) {
 
-	  var debug = options &amp;&amp; options.debug || false;
+	  var debug = options && options.debug || false;
 	  if (debug) {
 	    var el = document.querySelector('#input-textarea-caret-position-mirror-div');
 	    if ( el ) { el.parentNode.removeChild(el); }
@@ -257,7 +257,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  document.body.appendChild(div);
 
 	  var style = div.style;
-	  var computed = window.getComputedStyle? getComputedStyle(element) : element.currentStyle;  // currentStyle for IE &lt; 9
+	  var computed = window.getComputedStyle? getComputedStyle(element) : element.currentStyle;  // currentStyle for IE < 9
 
 	  // default textarea styles
 	  style.whiteSpace = 'pre-wrap';
@@ -276,7 +276,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  if (isFirefox) {
 	    // Firefox lies about the overflow property for textareas: https://bugzilla.mozilla.org/show_bug.cgi?id=984275
-	    if (element.scrollHeight &gt; parseInt(computed.height))
+	    if (element.scrollHeight > parseInt(computed.height))
 	      style.overflowY = 'scroll';
 	  } else {
 	    style.overflow = 'hidden';  // for Chrome to not render a scrollbar; IE keeps overflowY = 'scroll'
@@ -310,7 +310,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return coordinates;
 	}
 
-	if (typeof module != "undefined" &amp;&amp; typeof module.exports != "undefined") {
+	if (typeof module != "undefined" && typeof module.exports != "undefined") {
 	  module.exports = getCaretCoordinates;
 	} else {
 	  window.getCaretCoordinates = getCaretCoordinates;
@@ -322,22 +322,3 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ ])
 });
 ; 
-</span><script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
