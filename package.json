@@ -45,7 +45,7 @@
     "hexo-server": "^1.0.0",
     "hexo-symbols-count-time": "^0.7.1",
     "imagemin-pngquant": "^8.0.0",
-    "next-util": "^1.0.0"
+    "next-util": "^1.1.0"
   },
   "browserslist": [
     "defaults"
