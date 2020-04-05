@@ -11,7 +11,6 @@ date: 2018-04-14 12:20:00
 {%note success %}
 #### 2018/6/19 更新：openwrt 固件
 链接: <https://pan.baidu.com/s/1MqWci4ElhyytjqgCj9GnFw> 密码: `7ckw`
-![op](https://ws1.sinaimg.cn/large/ec245efdgy1fsguadvf4xj211y0kgmzo.jpg)
 {% endnote %}
 <!-- more -->
 

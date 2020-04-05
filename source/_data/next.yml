@@ -999,6 +999,6 @@ vendors:
   canvas_ribbon:
 
 # Assets
-css: //cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@55d04ef/source/css
+css: css
 js: //cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@55d04ef/source/js
 images: //cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@55d04ef/source/images

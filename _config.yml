@@ -198,4 +198,3 @@ marked:
 # Security
 encrypt: # hexo-blog-encrypt
   enable: true
-
