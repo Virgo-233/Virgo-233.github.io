@@ -190,3 +190,8 @@ marked:
 # Security
 encrypt: # hexo-blog-encrypt
   enable: true
+
+webPushNotification:
+  webpushrKey: "5SACw99e10PCmyyv5bQLNY4MqkR5ZkeLTONPufy3JM4"
+  webpushrAuthToken: "4410"
+  trackingCode: "BEg8OE6x7RYTwtfwoYrlYAm7_-0tCQ3ZCx3J3jrG6nUhN6xEX8clsDvIx7gHU2lPqCYBvi9kTsjYRFclg2NdnfM"
