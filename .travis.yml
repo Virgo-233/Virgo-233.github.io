@@ -42,8 +42,8 @@ env:
         - CODING_REF: git.coding.net/${CODING_NAME}/${CODING_NAME}.git
 
 notifications:
-email:
-  recipients:
-    - $GIT_EMAIL
-  on_success: change # default: change
-  on_failure: always # default: always
+  email:
+    recipients:
+      - ${GIT_EMAIL}
+    on_success: never # default: change
+    on_failure: always # default: always
