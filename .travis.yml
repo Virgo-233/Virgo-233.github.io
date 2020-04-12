@@ -28,7 +28,7 @@ after_script:
     - git config user.name $GIT_NAME
     - git config user.email $GIT_EMAIL
     - git add .
-    - git commit -m "Travis CI Auto Builder $(date +%F' '%T) With $TRAVIS_COMMIT commit and Build $TRAVIS_BUILD_NUMBER"
+    - git commit -m "Travis CI Auto Builder $(date +%F' '%T) Build $TRAVIS_BUILD_NUMBER With $TRAVIS_COMMIT Commit"
 # Github Pages
     - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
 # Coding Pages
