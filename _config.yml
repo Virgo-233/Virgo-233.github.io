@@ -201,17 +201,6 @@ symbols_count_time:
   total_time: true
   exclude_codeblock: false
 
-marked:
-  gfm: true
-  pedantic: false
-  breaks: true
-  smartLists: true
-  smartypants: true
-  modifyAnchors: ''
-  autolink: true
-  sanitizeUrl: false
-  headerIds: true
-
 # Security
 encrypt: # hexo-blog-encrypt
   enable: true
@@ -220,3 +209,27 @@ webPushNotification:
   webpushrKey: "5SACw99e10PCmyyv5bQLNY4MqkR5ZkeLTONPufy3JM4"
   webpushrAuthToken: "4410"
   trackingCode: "BEg8OE6x7RYTwtfwoYrlYAm7_-0tCQ3ZCx3J3jrG6nUhN6xEX8clsDvIx7gHU2lPqCYBvi9kTsjYRFclg2NdnfM"
+
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: false
+    linkify: true
+    typographer: true
+    quotes: '“”‘’'
+  plugins:
+    - markdown-it-abbr
+    - markdown-it-footnote
+    - markdown-it-ins
+    - markdown-it-sub
+    - markdown-it-sup
+  anchors:
+    level: 2
+    collisionSuffix: 'v'
+    permalink: true
+    permalinkClass: 'header-anchor'
+    permalinkSide: 'left'
+    permalinkSymbol: '¶'
+    case: 0
+    separator: ''
