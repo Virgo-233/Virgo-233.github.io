@@ -1,8 +1,13 @@
 {
   "name": "hexo-site",
   "version": "0.0.0",
-  "license": "ISC",
   "private": true,
+  "scripts": {
+    "build": "hexo generate",
+    "clean": "hexo clean",
+    "deploy": "hexo deploy",
+    "server": "hexo server"
+  },
   "hexo": {
     "version": "4.2.0"
   },

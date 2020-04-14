@@ -1,7 +1,8 @@
 ---
 title: 使用 RSS 订阅学校校内新闻和通知公告
-date: 2020-04-14 12:13:07
 tags: HUT
+abbrlink: 66c8d8e0
+date: 2020-04-14 12:13:07
 ---
 ![rss-40674_1280.png](https://i.loli.net/2020/04/14/Hkvmo8VnIyGM5zP.png)
 <!--more-->
