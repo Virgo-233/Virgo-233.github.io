@@ -1,6 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>使用 RSS 订阅学校校内新闻和通知公告</title>
+    <url>/posts/66c8d8e0.html</url>
+    <content><![CDATA[<p><img data-src="https://i.loli.net/2020/04/14/Hkvmo8VnIyGM5zP.png" alt="rss-40674_1280.png"></p>
+<a id="more"></a>
+
+
+
+<p>由于疫情影响学校要求每天到完美校园支付宝小程序上打卡。打卡完成后弹出了个校园新闻栏，点进去看了下正是学校官网校内行为栏的内容。二话不说马上打开了抓包软件，还是同样的味道，只在登录时进行了代理检测，登录后就可以随便弄了。看了下发送的数据包，数据是直接获取的，并没有任何鉴权措施。正好我很久以前就想弄 RSS 订阅学校官网的动态的，就利用完美校园的接口写算了。</p>
+<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p><a href="http://106.15.194.74:99/feed" rel="external nofollow noopener noreferrer" target="_blank">http://106.15.194.74:99/feed</a></p>
+<p>默认为湖南工业大学通知公告。<br>可选参数：<br>type: 2 为校内新闻，其余任意数字为通知公告<br>cuxtomerId: 学校 ID ，默认为湖南工业大学。</p>
+<h2 id="API接口"><a href="#API接口" class="headerlink" title="API接口"></a>API接口</h2><p>校内新闻和通知公告为同一接口不同请求参数<br><a href="#请求地址">请求地址</a> | <a href="#响应格式">响应格式</a> | <a href="#http-请求方式">HTTP 请求方式</a> | <a href="#是否需要授权">是否需要授权</a> | <a href="#请求参数">请求参数</a> | <a href="#响应结果">响应结果</a> | <a href="#响应参数说明">响应参数说明</a></p>
+<h3 id="请求地址"><a href="#请求地址" class="headerlink" title="请求地址"></a>请求地址</h3><p><a href="https://www.17wanxiao.com/campus/campus/schoolinfo/load.action" rel="external nofollow noopener noreferrer" target="_blank">https://www.17wanxiao.com/campus/campus/schoolinfo/load.action</a></p>
+<h3 id="响应格式"><a href="#响应格式" class="headerlink" title="响应格式"></a>响应格式</h3><p>JSON</p>
+<h3 id="HTTP-请求方式"><a href="#HTTP-请求方式" class="headerlink" title="HTTP 请求方式"></a>HTTP 请求方式</h3><p>POST</p>
+<h3 id="是否需要授权"><a href="#是否需要授权" class="headerlink" title="是否需要授权"></a>是否需要授权</h3><p>否</p>
+<h3 id="请求参数"><a href="#请求参数" class="headerlink" title="请求参数"></a>请求参数</h3><table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">必须</th>
+<th align="center">类型及范围</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">customerId</td>
+<td align="center">是</td>
+<td align="center">string 或 int,[784,869]</td>
+<td align="left">学校 ID</td>
+</tr>
+<tr>
+<td align="center">type</td>
+<td align="center">是</td>
+<td align="center">string 或 int,[0,2]</td>
+<td align="left">请求数据类型，[0,1] 学校简介,2 校内新闻,3 通知公告</td>
+</tr>
+<tr>
+<td align="center">pageSize</td>
+<td align="center">是</td>
+<td align="center">int</td>
+<td align="left">一页包含的数据条数</td>
+</tr>
+<tr>
+<td align="center">currPage</td>
+<td align="center">是</td>
+<td align="center">int</td>
+<td align="left">当前页</td>
+</tr>
+</tbody></table>
+<h3 id="响应结果"><a href="#响应结果" class="headerlink" title="响应结果"></a>响应结果</h3><table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">类型及范围</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">totalCount</td>
+<td align="center">int</td>
+<td align="center">总计页数</td>
+</tr>
+<tr>
+<td align="center">beginIndex</td>
+<td align="center">int</td>
+<td align="center">开始索引地址</td>
+</tr>
+<tr>
+<td align="center">pageSize</td>
+<td align="center">int</td>
+<td align="center">包含的数据条数</td>
+</tr>
+<tr>
+<td align="center">results</td>
+<td align="center">list</td>
+<td align="center">具体内容：{‘contentImages’: ‘[]’, ‘createTime’: ‘创建时间’, ‘creator’: ‘创建者’, ‘customerId’: 学校 ID, ‘enabled’: True, ‘firstImgUrl’: ‘’, ‘id’: (int)文章 id, ‘noticeFlag’: True, ‘summary’: ‘简介’, ‘title’: ‘标题’, ‘type’: 请求数据类型}</td>
+</tr>
+</tbody></table>
+<p>在写的时候发现还有很多个学校也用的这个，大概有四五百个，顺手增加了自定义学校 ID 进行订阅。</p>
+<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img data-src="https://i.loli.net/2020/04/14/5zCHN2JuLlvIDQ8.jpg" alt="Screenshot_2020-04-14-14-42-40-029_com.innologica.inoreader.jpg"><br><img data-src="https://i.loli.net/2020/04/14/yFQP9JSxL4vlrit.jpg" alt="Screenshot_2020-04-14-14-44-48-658_com.innologica.inoreader.jpg"></p>
+]]></content>
+      <tags>
+        <tag>HUT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>湖南工业大学电费查询</title>
     <url>/posts/328206c9.html</url>
     <content><![CDATA[<p><a href="https://sm.ms/image/tDgNBEq7ZkGxnc5" target="_blank" rel="external nofollow noopener noreferrer"><img data-src="https://i.loli.net/2019/09/22/tDgNBEq7ZkGxnc5.jpg" width="500"></a><br>接口均为从完美校园抓包得出，理论上适用于其它也接入了完美校园的学校。</p>
@@ -522,31 +608,6 @@
       </tags>
   </entry>
   <entry>
-    <title>使用 Mentohust 代替锐捷进行校园网认证</title>
-    <url>/posts/2443be7d.html</url>
-    <content><![CDATA[<p>使用 <a href="https://baike.baidu.com/item/mentohust/11049624" rel="external nofollow noopener noreferrer" target="_blank">Mentohust</a> 代替锐捷进行认证。mentohust 有多个平台，此处只讲在路由器上使用。大多数第三方固件均已集成了 Mentohust，如果没有集成的话可自行安装。不想用第三方固件或者不会刷固件可以购买极路由，官方自带锐捷认证。</p>
-<a id="more"></a>
-
-<p>使用 mentohust 需要安装三个软件包，libpcap.ipk、luci-app-mentohust.ipk、mentohust.ipk。其中 luci-app-mentohust.ipk 为 web 管理，可不安装。mentohust.ipk 包也可直接使用 mentohust 二进制包使用命令行运行。软件包需要对应路由器 cpu 架构，此处不提供文件，需自行解决，若实在找不到可在评论留言，我有时间会帮忙编译。</p>
-<p>部分项目地址：</p>
-<ul>
-<li><a href="https://github.com/hyrathb/mentohust" rel="external nofollow noopener noreferrer" target="_blank">mentohust 加入 v4 支持</a></li>
-<li><a href="https://github.com/ptpt52/com.ptpt52.openwrt" rel="external nofollow noopener noreferrer" target="_blank">com.ptpt52.openwrt</a> 含 luci-app-mentohust，mentohust-proxy</li>
-</ul>
-<p>mentohust 所有参数可在终端输入 <code>mentohust -h</code> 查看，输入后显示以下内容：</p>
-<p><img data-src="https://i.loli.net/2019/06/08/5cfb5bfcbe79f16881.jpg" alt="mentohust"></p>
-<p>或者直接在 webui 填写 （此为本人所有参数仅供参考）：</p>
-<p><img data-src="https://i.loli.net/2019/06/08/5cfb5c28f089313758.jpg" alt="mentohust"><br>其中 用户名填：<code>学号@运营商</code> 移动宽带则为移动，电信填电信，联通可直接使用学号。密码为 <code>宽带密码即使用锐捷客户端认证时的密码</code>,网卡选择 WAN 口网卡（可在 web 界面 网络-接口 查看。其他参数按照上图填写即可。</p>
-<p> 也可使用 <a href="https://github.com/updateing/minieap" rel="external nofollow noopener noreferrer" target="_blank">minieap</a> 进行锐捷认证。我没用过这个，故不作太多介绍。</p>
-]]></content>
-      <categories>
-        <category>路由器</category>
-      </categories>
-      <tags>
-        <tag>锐捷</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>路由器</title>
     <url>/posts/5799c0b3.html</url>
     <content><![CDATA[<p>此为本人用过的路由器部分资源，写出来方便以后需要。</p>
@@ -604,6 +665,31 @@
       <categories>
         <category>路由器</category>
       </categories>
+  </entry>
+  <entry>
+    <title>使用 Mentohust 代替锐捷进行校园网认证</title>
+    <url>/posts/2443be7d.html</url>
+    <content><![CDATA[<p>使用 <a href="https://baike.baidu.com/item/mentohust/11049624" rel="external nofollow noopener noreferrer" target="_blank">Mentohust</a> 代替锐捷进行认证。mentohust 有多个平台，此处只讲在路由器上使用。大多数第三方固件均已集成了 Mentohust，如果没有集成的话可自行安装。不想用第三方固件或者不会刷固件可以购买极路由，官方自带锐捷认证。</p>
+<a id="more"></a>
+
+<p>使用 mentohust 需要安装三个软件包，libpcap.ipk、luci-app-mentohust.ipk、mentohust.ipk。其中 luci-app-mentohust.ipk 为 web 管理，可不安装。mentohust.ipk 包也可直接使用 mentohust 二进制包使用命令行运行。软件包需要对应路由器 cpu 架构，此处不提供文件，需自行解决，若实在找不到可在评论留言，我有时间会帮忙编译。</p>
+<p>部分项目地址：</p>
+<ul>
+<li><a href="https://github.com/hyrathb/mentohust" rel="external nofollow noopener noreferrer" target="_blank">mentohust 加入 v4 支持</a></li>
+<li><a href="https://github.com/ptpt52/com.ptpt52.openwrt" rel="external nofollow noopener noreferrer" target="_blank">com.ptpt52.openwrt</a> 含 luci-app-mentohust，mentohust-proxy</li>
+</ul>
+<p>mentohust 所有参数可在终端输入 <code>mentohust -h</code> 查看，输入后显示以下内容：</p>
+<p><img data-src="https://i.loli.net/2019/06/08/5cfb5bfcbe79f16881.jpg" alt="mentohust"></p>
+<p>或者直接在 webui 填写 （此为本人所有参数仅供参考）：</p>
+<p><img data-src="https://i.loli.net/2019/06/08/5cfb5c28f089313758.jpg" alt="mentohust"><br>其中 用户名填：<code>学号@运营商</code> 移动宽带则为移动，电信填电信，联通可直接使用学号。密码为 <code>宽带密码即使用锐捷客户端认证时的密码</code>,网卡选择 WAN 口网卡（可在 web 界面 网络-接口 查看。其他参数按照上图填写即可。</p>
+<p> 也可使用 <a href="https://github.com/updateing/minieap" rel="external nofollow noopener noreferrer" target="_blank">minieap</a> 进行锐捷认证。我没用过这个，故不作太多介绍。</p>
+]]></content>
+      <categories>
+        <category>路由器</category>
+      </categories>
+      <tags>
+        <tag>锐捷</tag>
+      </tags>
   </entry>
   <entry>
     <title>KMS</title>
