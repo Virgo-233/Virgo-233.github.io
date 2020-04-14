@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://i.loli.net/2020/04/14/5zCHN2JuLlvIDQ8.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/04/14/yFQP9JSxL4vlrit.jpg">
 <meta property="article:published_time" content="2020-04-14T04:13:07.000Z">
-<meta property="article:modified_time" content="2020-04-14T08:34:17.874Z">
+<meta property="article:modified_time" content="2020-04-14T09:00:43.026Z">
 <meta property="article:author" content="𝕮𝖍𝖊𝖓">
 <meta property="article:tag" content="HUT">
 <meta name="twitter:card" content="summary">
@@ -226,7 +226,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-04-14 12:13:07 / 修改时间：16:34:17" itemprop="dateCreated datePublished" datetime="2020-04-14T12:13:07+08:00">2020-04-14</time>
+              <time title="创建时间：2020-04-14 12:13:07 / 修改时间：17:00:43" itemprop="dateCreated datePublished" datetime="2020-04-14T12:13:07+08:00">2020-04-14</time>
             </span>
 
           
@@ -257,7 +257,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>887</span>
+              <span>896</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -278,82 +278,97 @@
       
         <p><img data-src="https://i.loli.net/2020/04/14/Hkvmo8VnIyGM5zP.png" alt="rss-40674_1280.png"></p>
 <a id="more"></a>
-
-
-
 <p>由于疫情影响学校要求每天到完美校园支付宝小程序上打卡。打卡完成后弹出了个校园新闻栏，点进去看了下正是学校官网校内行为栏的内容。二话不说马上打开了抓包软件，还是同样的味道，只在登录时进行了代理检测，登录后就可以随便弄了。看了下发送的数据包，数据是直接获取的，并没有任何鉴权措施。正好我很久以前就想弄 RSS 订阅学校官网的动态的，就利用完美校园的接口写算了。</p>
-<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p><a href="http://106.15.194.74:99/feed" rel="external nofollow noopener noreferrer" target="_blank">http://106.15.194.74:99/feed</a></p>
-<p>默认为湖南工业大学通知公告。<br>可选参数：<br>type: 2 为校内新闻，其余任意数字为通知公告<br>cuxtomerId: 学校 ID ，默认为湖南工业大学。</p>
-<h2 id="API接口"><a href="#API接口" class="headerlink" title="API接口"></a>API接口</h2><p>校内新闻和通知公告为同一接口不同请求参数<br><a href="#请求地址">请求地址</a> | <a href="#响应格式">响应格式</a> | <a href="#http-请求方式">HTTP 请求方式</a> | <a href="#是否需要授权">是否需要授权</a> | <a href="#请求参数">请求参数</a> | <a href="#响应结果">响应结果</a> | <a href="#响应参数说明">响应参数说明</a></p>
-<h3 id="请求地址"><a href="#请求地址" class="headerlink" title="请求地址"></a>请求地址</h3><p><a href="https://www.17wanxiao.com/campus/campus/schoolinfo/load.action" rel="external nofollow noopener noreferrer" target="_blank">https://www.17wanxiao.com/campus/campus/schoolinfo/load.action</a></p>
-<h3 id="响应格式"><a href="#响应格式" class="headerlink" title="响应格式"></a>响应格式</h3><p>JSON</p>
-<h3 id="HTTP-请求方式"><a href="#HTTP-请求方式" class="headerlink" title="HTTP 请求方式"></a>HTTP 请求方式</h3><p>POST</p>
-<h3 id="是否需要授权"><a href="#是否需要授权" class="headerlink" title="是否需要授权"></a>是否需要授权</h3><p>否</p>
-<h3 id="请求参数"><a href="#请求参数" class="headerlink" title="请求参数"></a>请求参数</h3><table>
+<h2 id="Demo"><a class="header-anchor" href="#Demo">¶</a>Demo</h2>
+<p><a href="http://106.15.194.74:99/feed" rel="external nofollow noopener noreferrer" target="_blank">http://106.15.194.74:99/feed</a></p>
+<p>默认为湖南工业大学通知公告。
+可选参数：
+type: 2 为校内新闻，其余任意数字为通知公告
+cuxtomerId: 学校 ID ，默认为湖南工业大学。</p>
+<h2 id="API接口"><a class="header-anchor" href="#API接口">¶</a>API接口</h2>
+<p>校内新闻和通知公告为同一接口不同请求参数
+<a href="#%E8%AF%B7%E6%B1%82%E5%9C%B0%E5%9D%80">请求地址</a> | <a href="#%E5%93%8D%E5%BA%94%E6%A0%BC%E5%BC%8F">响应格式</a> | <a href="#http-%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F">HTTP 请求方式</a> | <a href="#%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E6%8E%88%E6%9D%83">是否需要授权</a> | <a href="#%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0">请求参数</a> | <a href="#%E5%93%8D%E5%BA%94%E7%BB%93%E6%9E%9C">响应结果</a> | <a href="#%E5%93%8D%E5%BA%94%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E">响应参数说明</a></p>
+<h3 id="请求地址"><a class="header-anchor" href="#请求地址">¶</a>请求地址</h3>
+<p><a href="https://www.17wanxiao.com/campus/campus/schoolinfo/load.action" rel="external nofollow noopener noreferrer" target="_blank">https://www.17wanxiao.com/campus/campus/schoolinfo/load.action</a></p>
+<h3 id="响应格式"><a class="header-anchor" href="#响应格式">¶</a>响应格式</h3>
+<p>JSON</p>
+<h3 id="HTTP-请求方式"><a class="header-anchor" href="#HTTP-请求方式">¶</a>HTTP 请求方式</h3>
+<p>POST</p>
+<h3 id="是否需要授权"><a class="header-anchor" href="#是否需要授权">¶</a>是否需要授权</h3>
+<p>否</p>
+<h3 id="请求参数"><a class="header-anchor" href="#请求参数">¶</a>请求参数</h3>
+<table>
 <thead>
 <tr>
-<th align="center">参数名</th>
-<th align="center">必须</th>
-<th align="center">类型及范围</th>
-<th align="left">说明</th>
+<th style="text-align:center">参数名</th>
+<th style="text-align:center">必须</th>
+<th style="text-align:center">类型及范围</th>
+<th style="text-align:left">说明</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">customerId</td>
-<td align="center">是</td>
-<td align="center">string 或 int,[784,869]</td>
-<td align="left">学校 ID</td>
+<tbody>
+<tr>
+<td style="text-align:center">customerId</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">string 或 int,[784,869]</td>
+<td style="text-align:left">学校 ID</td>
 </tr>
 <tr>
-<td align="center">type</td>
-<td align="center">是</td>
-<td align="center">string 或 int,[0,2]</td>
-<td align="left">请求数据类型，[0,1] 学校简介,2 校内新闻,3 通知公告</td>
+<td style="text-align:center">type</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">string 或 int,[0,2]</td>
+<td style="text-align:left">请求数据类型，[0,1] 学校简介,2 校内新闻,3 通知公告</td>
 </tr>
 <tr>
-<td align="center">pageSize</td>
-<td align="center">是</td>
-<td align="center">int</td>
-<td align="left">一页包含的数据条数</td>
+<td style="text-align:center">pageSize</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">int</td>
+<td style="text-align:left">一页包含的数据条数</td>
 </tr>
 <tr>
-<td align="center">currPage</td>
-<td align="center">是</td>
-<td align="center">int</td>
-<td align="left">当前页</td>
+<td style="text-align:center">currPage</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">int</td>
+<td style="text-align:left">当前页</td>
 </tr>
-</tbody></table>
-<h3 id="响应结果"><a href="#响应结果" class="headerlink" title="响应结果"></a>响应结果</h3><table>
+</tbody>
+</table>
+<h3 id="响应结果"><a class="header-anchor" href="#响应结果">¶</a>响应结果</h3>
+<table>
 <thead>
 <tr>
-<th align="center">参数名</th>
-<th align="center">类型及范围</th>
-<th align="center">说明</th>
+<th style="text-align:center">参数名</th>
+<th style="text-align:center">类型及范围</th>
+<th style="text-align:center">说明</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">totalCount</td>
-<td align="center">int</td>
-<td align="center">总计页数</td>
+<tbody>
+<tr>
+<td style="text-align:center">totalCount</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">总计页数</td>
 </tr>
 <tr>
-<td align="center">beginIndex</td>
-<td align="center">int</td>
-<td align="center">开始索引地址</td>
+<td style="text-align:center">beginIndex</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">开始索引地址</td>
 </tr>
 <tr>
-<td align="center">pageSize</td>
-<td align="center">int</td>
-<td align="center">包含的数据条数</td>
+<td style="text-align:center">pageSize</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">包含的数据条数</td>
 </tr>
 <tr>
-<td align="center">results</td>
-<td align="center">list</td>
-<td align="center">具体内容：{‘contentImages’: ‘[]’, ‘createTime’: ‘创建时间’, ‘creator’: ‘创建者’, ‘customerId’: 学校 ID, ‘enabled’: True, ‘firstImgUrl’: ‘’, ‘id’: (int)文章 id, ‘noticeFlag’: True, ‘summary’: ‘简介’, ‘title’: ‘标题’, ‘type’: 请求数据类型}</td>
+<td style="text-align:center">results</td>
+<td style="text-align:center">list</td>
+<td style="text-align:center">具体内容：{‘contentImages’: ‘[]’, ‘createTime’: ‘创建时间’, ‘creator’: ‘创建者’, ‘customerId’: 学校 ID, ‘enabled’: True, ‘firstImgUrl’: ‘’, ‘id’: (int)文章 id, ‘noticeFlag’: True, ‘summary’: ‘简介’, ‘title’: ‘标题’, ‘type’: 请求数据类型}</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>在写的时候发现还有很多个学校也用的这个，大概有四五百个，顺手增加了自定义学校 ID 进行订阅。</p>
-<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img data-src="https://i.loli.net/2020/04/14/5zCHN2JuLlvIDQ8.jpg" alt="Screenshot_2020-04-14-14-42-40-029_com.innologica.inoreader.jpg"><br><img data-src="https://i.loli.net/2020/04/14/yFQP9JSxL4vlrit.jpg" alt="Screenshot_2020-04-14-14-44-48-658_com.innologica.inoreader.jpg"></p>
+<h2 id="效果图"><a class="header-anchor" href="#效果图">¶</a>效果图</h2>
+<p><img data-src="https://i.loli.net/2020/04/14/5zCHN2JuLlvIDQ8.jpg" alt="Screenshot_2020-04-14-14-42-40-029_com.innologica.inoreader.jpg">
+<img data-src="https://i.loli.net/2020/04/14/yFQP9JSxL4vlrit.jpg" alt="Screenshot_2020-04-14-14-44-48-658_com.innologica.inoreader.jpg"></p>
 
     </div>
 
@@ -595,7 +610,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">55 分钟</span>
+    <span title="站点阅读时长">56 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Gemini</a> 强力驱动
   </div> 

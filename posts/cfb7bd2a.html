@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/06/08/5cfb5d73e805571236.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/06/08/5cfb5d744ee9883146.jpg">
 <meta property="article:published_time" content="2018-06-13T11:38:46.000Z">
-<meta property="article:modified_time" content="2020-04-14T08:34:17.874Z">
+<meta property="article:modified_time" content="2020-04-14T09:00:43.026Z">
 <meta property="article:author" content="𝕮𝖍𝖊𝖓">
 <meta property="article:tag" content="OpenWrt">
 <meta name="twitter:card" content="summary">
@@ -234,7 +234,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-14 16:34:17" itemprop="dateModified" datetime="2020-04-14T16:34:17+08:00">2020-04-14</time>
+                <time title="修改时间：2020-04-14 17:00:43" itemprop="dateModified" datetime="2020-04-14T17:00:43+08:00">2020-04-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -295,11 +295,9 @@
       
         <p><img data-src="https://i.loli.net/2019/06/08/5cfb5d6d5fab581544.jpg" alt="BaiduDesk"></p>
 <a id="more"></a>
-
 <div class="note info">
-            <p>BaiduPCS-Go 已被百度关注，原作者也准备停止维护了（<a href="https://github.com/iikira/BaiduPCS-Go/issues/643" rel="external nofollow noopener noreferrer" target="_blank">[作者] BaiduPCS-Go 已进入最后的维护阶段，有些话想对你们说 </a>）。目前使用下面方法仍可高速下载，并且不黑号。<a href="https://i.loli.net/2019/02/25/5c73bf0556fdd.png" rel="external nofollow noopener noreferrer" target="_blank"><img data-src="https://i.loli.net/2019/02/25/5c73bf0556fdd.png" alt="Screenshot_20190225_180815.png"></a> 图中链接：<a href="http://pcs.baidu.com/rest/2.0/pcs/file?app_id=265486&amp;method=list&amp;path=%2F" rel="external nofollow noopener noreferrer" target="_blank">http://pcs.baidu.com/rest/2.0/pcs/file?app_id=265486&amp;method=list&amp;path=%2F</a><br>快捷脚本见文末</p>
+            <p>BaiduPCS-Go 已被百度关注，原作者也准备停止维护了（<a href="https://github.com/iikira/BaiduPCS-Go/issues/643" rel="external nofollow noopener noreferrer" target="_blank">[作者] BaiduPCS-Go 已进入最后的维护阶段，有些话想对你们说 </a>）。目前使用下面方法仍可高速下载，并且不黑号。<a href="https://i.loli.net/2019/02/25/5c73bf0556fdd.png" rel="external nofollow noopener noreferrer" target="_blank"><img data-src="https://i.loli.net/2019/02/25/5c73bf0556fdd.png" alt="Screenshot_20190225_180815.png"></a> 图中链接：<a href="http://pcs.baidu.com/rest/2.0/pcs/file?app_id=265486&amp;method=list&amp;path=%2F" rel="external nofollow noopener noreferrer" target="_blank">http://pcs.baidu.com/rest/2.0/pcs/file?app_id=265486&amp;method=list&amp;path=%2F</a>快捷脚本见文末</p>
           </div>
-
 <p>在酷安看见 <a href="https://github.com/iikira/BaiduPCS-Go" rel="external nofollow noopener noreferrer" target="_blank">BaiduPCS-Go</a> (一个命令行界面的百度网盘客户端）,当时只是在手机上体验了下就删掉了。不久前弄了个工控板，第一次接触这个，以为能实现 路由器+NAS+小主机 结果 CPU 不支持虚拟化，虽然也能使用虚拟机，但只能使用 32 位系统，性能损失太大。就只装了一个 OpenWrt。这样配置就有点太奢侈了，95% 以上的性能都处于闲置状态，至少对于校园宽带环境的我来说太奢侈。对群晖的功能有点眼馋，所以想着能不能在 OpenWrt 上实现部分群晖的功能。比如远程下载，私有云存储等。经过一番折腾使用 Frp+BaiduPCS-Go+smaba 也算勉强实现了。</p>
 <ul>
 <li>Frp：一款开源的内网穿透工具，选它的主要原因是配置简单，有很多免费分享的服务器。</li>
@@ -308,34 +306,41 @@
 </ul>
 <p>BaiduPCS-Go 使用方法很简单，作者提供了编译好的二进制文件，直接去 <a href="https://github.com/iikira/BaiduPCS-Go/releases" rel="external nofollow noopener noreferrer" target="_blank">realease</a> 页面下载对应架构文件就行。下载后解压，将 BaiduPCS-Go 复制到任意文件夹下即可。使用时须进行登录。</p>
 <ul>
-<li><p>常规登录百度帐号<br>  支持在线验证绑定的手机号或邮箱,命令：<br>  <code>BaiduPCS-Go login</code></p>
+<li>
+<p>常规登录百度帐号
+支持在线验证绑定的手机号或邮箱,命令：
+<code>BaiduPCS-Go login</code></p>
 </li>
-<li><p>使用百度 BDUSS 来登录百度帐号<br>  <a href="https://github.com/iikira/BaiduPCS-Go/wiki/%E5%85%B3%E4%BA%8E-%E8%8E%B7%E5%8F%96%E7%99%BE%E5%BA%A6-BDUSS" rel="external nofollow noopener noreferrer" target="_blank">关于 获取百度 BDUSS</a> ，命令：<br>  <code>BaiduPCS-Go login -bduss=&lt;BDUSS&gt;</code></p>
+<li>
+<p>使用百度 BDUSS 来登录百度帐号
+<a href="https://github.com/iikira/BaiduPCS-Go/wiki/%E5%85%B3%E4%BA%8E-%E8%8E%B7%E5%8F%96%E7%99%BE%E5%BA%A6-BDUSS" rel="external nofollow noopener noreferrer" target="_blank">关于 获取百度 BDUSS</a> ，命令：
+<code>BaiduPCS-Go login -bduss=&lt;BDUSS&gt;</code></p>
 </li>
 </ul>
-<p>可使用 <code>BaiduPCS-Go -h</code> 查看帮助。<br>目前 BaiduPCS-Go 支持 多线程下载，上传，离线下载等功能，这里我只介绍下下载，更多使用方法可以查看项目 Readme 文档。</p>
-<p>使用 ssh 连接路由器，切换到存放 BaiduPCS-Go 的目录，我为了方便使用将文件重命名为 B ，如果是手动下载上传到路由器的还得注意文件权限，如果运行时出现 permission dead 就是无权限，可运行 <code>chmod 0777 ./B</code> 也可在 winscp 里更改。首次运行需要登录才能使用，登录后可先输入 <code>h</code> 查看帮助<br><img data-src="https://i.loli.net/2019/06/08/5cfb5d704fd6651176.jpg" alt="ssh"><br>其他的一些文件处理命令与 linux 一样，如 mv 是移动，cp 是复制，ls 列出当前目录等等。<br>下载文件或目录<br><code>BaiduPCS-Go download &lt;网盘文件或目录的路径1&gt; &lt;文件或目录2&gt; &lt;文件或目录3&gt; ...
-BaiduPCS-Go d &lt;网盘文件或目录的路径1&gt; &lt;文件或目录2&gt; &lt;文件或目录3&gt; ...</code></p>
+<p>可使用 <code>BaiduPCS-Go -h</code> 查看帮助。
+目前 BaiduPCS-Go 支持 多线程下载，上传，离线下载等功能，这里我只介绍下下载，更多使用方法可以查看项目 Readme 文档。</p>
+<p>使用 ssh 连接路由器，切换到存放 BaiduPCS-Go 的目录，我为了方便使用将文件重命名为 B ，如果是手动下载上传到路由器的还得注意文件权限，如果运行时出现 permission dead 就是无权限，可运行 <code>chmod 0777 ./B</code> 也可在 winscp 里更改。首次运行需要登录才能使用，登录后可先输入 <code>h</code> 查看帮助
+<img data-src="https://i.loli.net/2019/06/08/5cfb5d704fd6651176.jpg" alt="ssh">
+其他的一些文件处理命令与 linux 一样，如 mv 是移动，cp 是复制，ls 列出当前目录等等。
+下载文件或目录
+<code>BaiduPCS-Go download &lt;网盘文件或目录的路径1&gt; &lt;文件或目录2&gt; &lt;文件或目录3&gt; ... BaiduPCS-Go d &lt;网盘文件或目录的路径1&gt; &lt;文件或目录2&gt; &lt;文件或目录3&gt; ...</code></p>
 <p>可选参数</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">--<span class="built_in">test</span>          测试下载, 此操作不会保存文件到本地</span><br><span class="line">--ow            overwrite, 覆盖已存在的文件</span><br><span class="line">--status        输出所有线程的工作状态</span><br><span class="line">--save          将下载的文件直接保存到当前工作目录</span><br><span class="line">--saveto value  将下载的文件直接保存到指定的目录</span><br><span class="line">-x              为文件加上执行权限, (windows系统无效)</span><br><span class="line">--share         以分享文件的方式获取下载链接来下载</span><br><span class="line">--locate        以获取直链的方式来下载</span><br><span class="line">-p value        指定下载线程数</span><br></pre></td></tr></table></figure>
-
-<p>支持多个文件或目录的下载.<br>下载的文件默认保存到 程序所在目录 的 download/ 目录, 支持设置指定目录, 重名的文件会自动跳过!<br>使用 <code>./B config set -savedir /mnt/sdb1</code>可设置下载目录。这样就可以下载了。我用的是默认的 100 线程，下载速度还可以，如果闲速度不满意可适当提高线程数.</p>
+<p>支持多个文件或目录的下载.
+下载的文件默认保存到 程序所在目录 的 download/ 目录, 支持设置指定目录, 重名的文件会自动跳过!
+使用 <code>./B config set -savedir /mnt/sdb1</code>可设置下载目录。这样就可以下载了。我用的是默认的 100 线程，下载速度还可以，如果闲速度不满意可适当提高线程数.</p>
 <details>
 <summary>点击显示图片</summary>
-
 <p><img data-src="https://i.loli.net/2019/06/08/5cfb5d73e805571236.jpg" alt="BaiduPCS-Go"></p>
 </details>
-
-<p>当然高线程也会吃更多配置。<br>下载完可直接使用 smaba 共享，使用 fooview 进行播放。</p>
+<p>当然高线程也会吃更多配置。
+下载完可直接使用 smaba 共享，使用 fooview 进行播放。</p>
 <details>
 <summary>点击显示图片</summary>
-
 <p><img data-src="https://i.loli.net/2019/06/08/5cfb5d744ee9883146.jpg" alt="foooview"></p>
 </details>
-
 <p>搭配 frp 将 smaba ，ssh 穿透到外网即可实现远程下载。</p>
 <div class="note danger"><p>注意：将路由器 ssh 及 smaba 暴露到外网有一定风险</p></div>
-
 <p>快捷脚本：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#/system/bin/sh</span></span><br><span class="line">BaiduPCS-Go config <span class="built_in">set</span> -appid=266719 &amp;&gt;/dev/null</span><br><span class="line">BaiduPCS-Go cp <span class="variable">$1</span> /apps/baidu_shurufa &amp;&gt;/dev/null</span><br><span class="line">BaiduPCS-Go config <span class="built_in">set</span> -appid=265486 &amp;&gt;/dev/null</span><br><span class="line">BaiduPCS-Go d /apps/baidu_shurufa/*</span><br><span class="line">BaiduPCS-Go rm /adds/baidu_shurufa/* &amp;&gt;/dev/null</span><br><span class="line">BaiduPCS-Go config <span class="built_in">set</span> -appid=266719 &amp;&gt;/dev/null</span><br></pre></td></tr></table></figure>
     </div>
@@ -574,7 +579,7 @@ BaiduPCS-Go d &lt;网盘文件或目录的路径1&gt; &lt;文件或目录2&gt; &
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">55 分钟</span>
+    <span title="站点阅读时长">56 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Gemini</a> 强力驱动
   </div> 

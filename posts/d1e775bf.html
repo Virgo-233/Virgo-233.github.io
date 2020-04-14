@@ -23,16 +23,16 @@
     var CONFIG = {"hostname":"cxyzzz.gtihub.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="HUT 强智教务系统 API 地址 https:&#x2F;&#x2F;github.com&#x2F;cxyzzz&#x2F;HUT_QIANZHI_API参考 https:&#x2F;&#x2F;github.com&#x2F;TLingC&#x2F;QZAPI">
+  <meta name="description" content="HUT 强智教务系统 API 地址 https:&#x2F;&#x2F;github.com&#x2F;cxyzzz&#x2F;HUT_QIANZHI_API 参考 https:&#x2F;&#x2F;github.com&#x2F;TLingC&#x2F;QZAPI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HUT_QZAPI">
 <meta property="og:url" content="https://cxyzzz.gtihub.io/posts/d1e775bf.html">
 <meta property="og:site_name" content="𝓗𝓸𝓼𝓱𝓲𝔃𝓸𝓻𝓪">
-<meta property="og:description" content="HUT 强智教务系统 API 地址 https:&#x2F;&#x2F;github.com&#x2F;cxyzzz&#x2F;HUT_QIANZHI_API参考 https:&#x2F;&#x2F;github.com&#x2F;TLingC&#x2F;QZAPI">
+<meta property="og:description" content="HUT 强智教务系统 API 地址 https:&#x2F;&#x2F;github.com&#x2F;cxyzzz&#x2F;HUT_QIANZHI_API 参考 https:&#x2F;&#x2F;github.com&#x2F;TLingC&#x2F;QZAPI">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2019/09/10/Ns3qxcToGBQblIv.png">
 <meta property="article:published_time" content="2019-09-09T14:57:55.000Z">
-<meta property="article:modified_time" content="2020-04-14T08:34:17.874Z">
+<meta property="article:modified_time" content="2020-04-14T09:00:43.026Z">
 <meta property="article:author" content="𝕮𝖍𝖊𝖓">
 <meta property="article:tag" content="HUT">
 <meta name="twitter:card" content="summary">
@@ -232,7 +232,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-14 16:34:17" itemprop="dateModified" datetime="2020-04-14T16:34:17+08:00">2020-04-14</time>
+                <time title="修改时间：2020-04-14 17:00:43" itemprop="dateModified" datetime="2020-04-14T17:00:43+08:00">2020-04-14</time>
               </span>
 
           
@@ -263,7 +263,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.2k</span>
+              <span>3.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -283,76 +283,114 @@
 
       
         <p>HUT 强智教务系统 API</p>
-<p>地址 <a href="https://github.com/cxyzzz/HUT_QIANZHI_API" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/cxyzzz/HUT_QIANZHI_API</a><br>参考 <a href="https://github.com/TLingC/QZAPI" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/TLingC/QZAPI</a></p>
+<p>地址 <a href="https://github.com/cxyzzz/HUT_QIANZHI_API" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/cxyzzz/HUT_QIANZHI_API</a>
+参考 <a href="https://github.com/TLingC/QZAPI" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/TLingC/QZAPI</a></p>
 <a id="more"></a>
-
-<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p><a href="http://106.15.194.74:99" rel="external nofollow noopener noreferrer" target="_blank">http://106.15.194.74:99</a>  </p>
-<h2 id="API列表"><a href="#API列表" class="headerlink" title="API列表"></a>API列表</h2><h3 id="authUser"><a href="#authUser" class="headerlink" title="authUser"></a>authUser</h3><p>登录帐号<br><code>http://218.75.197.123:83/app.do?method=authUser&amp;xh=#学号#&amp;pwd=#密码#</code></p>
-<p><strong>返回值</strong><br>返回 json 对象</p>
+<h2 id="Demo"><a class="header-anchor" href="#Demo">¶</a>Demo</h2>
+<p><a href="http://106.15.194.74:99" rel="external nofollow noopener noreferrer" target="_blank">http://106.15.194.74:99</a></p>
+<h2 id="API列表"><a class="header-anchor" href="#API列表">¶</a>API列表</h2>
+<h3 id="authUser"><a class="header-anchor" href="#authUser">¶</a>authUser</h3>
+<p>登录帐号<br>
+<code>http://218.75.197.123:83/app.do?method=authUser&amp;xh=#学号#&amp;pwd=#密码#</code></p>
+<p><strong>返回值</strong><br>
+返回 json 对象</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    'success': 登录状态,</span><br><span class="line">    'token': 'Token',</span><br><span class="line">    'user':&#123;</span><br><span class="line">        'scsj': 未知,</span><br><span class="line">        'sjyzm': 未知,</span><br><span class="line">        'useraccount': '登录用户',</span><br><span class="line">        'usertype': '用户类型，学生为 2',</span><br><span class="line">        'userdwmc': '学院',</span><br><span class="line">        'username': '用户姓名',</span><br><span class="line">        'userpasswd': '用户密码'</span><br><span class="line">        &#125;,</span><br><span class="line">    'userdwmc': '学院',</span><br><span class="line">    'userrealname': '用户姓名',</span><br><span class="line">    'usertype': '用户类型，学生为 2'</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>之后的查询均需携带 Token</p>
-<h3 id="getStudentIdInfo"><a href="#getStudentIdInfo" class="headerlink" title="getStudentIdInfo"></a>getStudentIdInfo</h3><p><del>获取学号信息(已禁止查询)<br><code>http://218.75.197.123:83/app.do?method=getStudentIdInfo&amp;xh=#学号#</code></del></p>
-<p><strong>返回值</strong><br>返回 json 对象</p>
+<h3 id="getStudentIdInfo"><a class="header-anchor" href="#getStudentIdInfo">¶</a>getStudentIdInfo</h3>
+<p><s>获取学号信息(已禁止查询)<br>
+<code>http://218.75.197.123:83/app.do?method=getStudentIdInfo&amp;xh=#学号#</code></s></p>
+<p><strong>返回值</strong><br>
+返回 json 对象</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    'bjid'：'未知',</span><br><span class="line">    'ndzyid'：'未知',</span><br><span class="line">    'yxid'：'未知',</span><br><span class="line">    'xxdm'：'未知'</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="getCurrentTime"><a href="#getCurrentTime" class="headerlink" title="getCurrentTime"></a>getCurrentTime</h3><p>获取当前时间、周次、学年等信息<br><code>http://218.75.197.123:83/app.do?method=getCurrentTime&amp;currDate=#查询日期#</code></p>
-<p><strong>返回值</strong><br>返回 json 对象</p>
+<h3 id="getCurrentTime"><a class="header-anchor" href="#getCurrentTime">¶</a>getCurrentTime</h3>
+<p>获取当前时间、周次、学年等信息<br>
+<code>http://218.75.197.123:83/app.do?method=getCurrentTime&amp;currDate=#查询日期#</code></p>
+<p><strong>返回值</strong><br>
+返回 json 对象</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    'e_time': '周结束时间',</span><br><span class="line">    's_time': '周开始时间',</span><br><span class="line">    'xnxqh': '学年',</span><br><span class="line">    'zc': '周次'</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="getKbcxAzc"><a href="#getKbcxAzc" class="headerlink" title="getKbcxAzc"></a>getKbcxAzc</h3><p>获取课程表<br><code>http://218.75.197.123:83/app.do?method=getKbcxAzc&amp;xh=#学号#&amp;xnxqid=#学年#&amp;zc=#周次#</code></p>
-<p><strong>返回值</strong><br>返回 json 数组</p>
+<h3 id="getKbcxAzc"><a class="header-anchor" href="#getKbcxAzc">¶</a>getKbcxAzc</h3>
+<p>获取课程表<br>
+<code>http://218.75.197.123:83/app.do?method=getKbcxAzc&amp;xh=#学号#&amp;xnxqid=#学年#&amp;zc=#周次#</code></p>
+<p><strong>返回值</strong><br>
+返回 json 数组</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        'jsmc': '教室名称',</span><br><span class="line">        'jssj': '下课时间',</span><br><span class="line">        'jsxm': '教师姓名',</span><br><span class="line">        'kcmc': '课程名称',</span><br><span class="line">        'kkzc': '课程教学周',</span><br><span class="line">        'kcsj': '课程时间（eg: 50304 表示星期五第3-4节）',</span><br><span class="line">        'kssj': '上课时间',</span><br><span class="line">        'sjbz': '未知'</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<h3 id="getXqcx"><a href="#getXqcx" class="headerlink" title="getXqcx"></a>getXqcx</h3><p>获取校区<br><code>http://218.75.197.123:83/app.do?method=getXqcx</code></p>
-<p><strong>返回值</strong><br>返回 json 数组</p>
+<h3 id="getXqcx"><a class="header-anchor" href="#getXqcx">¶</a>getXqcx</h3>
+<p>获取校区<br>
+<code>http://218.75.197.123:83/app.do?method=getXqcx</code></p>
+<p><strong>返回值</strong><br>
+返回 json 数组</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        'xqid': '1',</span><br><span class="line">        'xqmc': '河东校区'</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        'xqid': '2',</span><br><span class="line">        'xqmc': '河西校区'</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<h3 id="getJxlcx"><a href="#getJxlcx" class="headerlink" title="getJxlcx"></a>getJxlcx</h3><p>获取校区教学楼信息<br><code>http://218.75.197.123:83/app.do?method=getJxlcx&amp;xqid=#校区ID#</code></p>
-<p><strong>返回值</strong><br>返回 json 数组</p>
+<h3 id="getJxlcx"><a class="header-anchor" href="#getJxlcx">¶</a>getJxlcx</h3>
+<p>获取校区教学楼信息<br>
+<code>http://218.75.197.123:83/app.do?method=getJxlcx&amp;xqid=#校区ID#</code></p>
+<p><strong>返回值</strong><br>
+返回 json 数组</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        'jzwid': '教学楼 ID',</span><br><span class="line">        'jzwmc': '教学楼名称'</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<h3 id="getKxJscx"><a href="#getKxJscx" class="headerlink" title="getKxJscx"></a>getKxJscx</h3><p>获取空教室<br><code>http://218.75.197.123:83/app.do?method=getKxJscx&amp;time=#查询日期#&amp;idleTime=#见下方说明#&amp;xqid=#校区ID#&amp;jxlid=#教学楼ID#&amp;classroomNumber=_#可容纳人数，见下方说明#</code></p>
+<h3 id="getKxJscx"><a class="header-anchor" href="#getKxJscx">¶</a>getKxJscx</h3>
+<p>获取空教室<br>
+<code>http://218.75.197.123:83/app.do?method=getKxJscx&amp;time=#查询日期#&amp;idleTime=#见下方说明#&amp;xqid=#校区ID#&amp;jxlid=#教学楼ID#&amp;classroomNumber=_#可容纳人数，见下方说明#</code></p>
 <p>xqid(校区 ID)、jxlid(教学楼 ID)、classroomNumber(教室容纳人数)是可选参数</p>
-<p><strong>idleTime取值</strong>  </p>
+<p><strong>idleTime取值</strong></p>
 <blockquote>
-<p>allday：全天<br>am：上午<br>pm：下午<br>night：晚上</p>
+<p>allday：全天<br>
+am：上午<br>
+pm：下午<br>
+night：晚上</p>
 </blockquote>
-<p><strong>classroomNumber</strong>  </p>
+<p><strong>classroomNumber</strong></p>
 <blockquote>
-<p>30：30人以下<br>30-40：30-40人<br>40-50：40-50人<br>60：60人以上</p>
+<p>30：30人以下<br>
+30-40：30-40人<br>
+40-50：40-50人<br>
+60：60人以上</p>
 </blockquote>
-<p><strong>返回值</strong><br>返回 json 对象</p>
+<p><strong>返回值</strong><br>
+返回 json 对象</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    'data': [</span><br><span class="line">        &#123;</span><br><span class="line">            'jsList': [</span><br><span class="line">                &#123;</span><br><span class="line">                    'jsh': '未知',</span><br><span class="line">                    'jsid': '教室 ID',</span><br><span class="line">                    'jsmc': '教室名称',</span><br><span class="line">                    'jzwid': '所在楼ID',</span><br><span class="line">                    'jzwmc': '教学楼名称',</span><br><span class="line">                    'xqmc': '校区名称',</span><br><span class="line">                    'yxzws': 教室容量,</span><br><span class="line">                    'zws': 未知，和yxzws相同</span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            'jxl': '教学楼'</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    'success': 状态,</span><br><span class="line">    'xnxqid': '学年'</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="getUserInfo"><a href="#getUserInfo" class="headerlink" title="getUserInfo"></a>getUserInfo</h3><p>获取帐号信息<br><code>http://218.75.197.123:83/app.do?method=getUserInfo&amp;xh=#学号#</code></p>
+<h3 id="getUserInfo"><a class="header-anchor" href="#getUserInfo">¶</a>getUserInfo</h3>
+<p>获取帐号信息<br>
+<code>http://218.75.197.123:83/app.do?method=getUserInfo&amp;xh=#学号#</code></p>
 <p>ps: 学号可以是其他人的</p>
-<p><strong>返回值</strong><br>返回 json 对象</p>
+<p><strong>返回值</strong><br>
+返回 json 对象</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    'bj': '班级',</span><br><span class="line">    'dh': '电话',</span><br><span class="line">    'dqszj': '未知，与入学年份、年级相同',</span><br><span class="line">    'email': '电子邮箱',</span><br><span class="line">    'fxzy': '辅修专业',</span><br><span class="line">    'ksh': '高考考号',</span><br><span class="line">    'nj': '年级',</span><br><span class="line">    'qq': 'QQ 号',</span><br><span class="line">    'rxnf': '入学年份',</span><br><span class="line">    'usertype': '用户类别，学生为 2',</span><br><span class="line">    'xb': '性别',</span><br><span class="line">    'xh': '学号',</span><br><span class="line">    'xm': '姓名',</span><br><span class="line">    'xz': 未知,</span><br><span class="line">    'yxmc'：'院系名称',</span><br><span class="line">    'zymc'：'专业名称'</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="getXnxq"><a href="#getXnxq" class="headerlink" title="getXnxq"></a>getXnxq</h3><p>获取学年和学期信息<br><code>http://218.75.197.123:83/app.do?method=getXnxq&amp;xh=#学号#</code></p>
-<p><strong>返回值</strong><br>返回 json 数组</p>
+<h3 id="getXnxq"><a class="header-anchor" href="#getXnxq">¶</a>getXnxq</h3>
+<p>获取学年和学期信息<br>
+<code>http://218.75.197.123:83/app.do?method=getXnxq&amp;xh=#学号#</code></p>
+<p><strong>返回值</strong><br>
+返回 json 数组</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        'isdqxq': '是否为当前学期，1 为是，0 为否',</span><br><span class="line">        'xnxq01id': '学年id',</span><br><span class="line">        'xqmc': '学年名称'</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<h3 id="getCjcx"><a href="#getCjcx" class="headerlink" title="getCjcx"></a>getCjcx</h3><p>获取成绩信息<br><code>http://218.75.197.123:83/app.do?method=getCjcx&amp;xh=#学号#&amp;xnxqid=#学期学年ID#</code></p>
+<h3 id="getCjcx"><a class="header-anchor" href="#getCjcx">¶</a>getCjcx</h3>
+<p>获取成绩信息<br>
+<code>http://218.75.197.123:83/app.do?method=getCjcx&amp;xh=#学号#&amp;xnxqid=#学期学年ID#</code></p>
 <p>ps: 此处学号可以是其他人的</p>
-<p><strong>返回值</strong><br>返回 json 对象</p>
+<p><strong>返回值</strong><br>
+返回 json 对象</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    'result': [</span><br><span class="line">        &#123;</span><br><span class="line">            'bz': 未知,</span><br><span class="line">            'cjbsmc': 未知,</span><br><span class="line">            'kclbmc': '课程类别名称',</span><br><span class="line">            'kcmc': '课程名称',</span><br><span class="line">            'kcxzmc': '课程性质名称',</span><br><span class="line">            'kcywmc': 未知,</span><br><span class="line">            'ksxzmc': '考试性质名称',</span><br><span class="line">            'xf': 学分,</span><br><span class="line">            'xm': '姓名',</span><br><span class="line">            'xqmc': '学期名称',</span><br><span class="line">            'zcj': '总成绩'</span><br><span class="line">        &#125;</span><br><span class="line">    ]，</span><br><span class="line">    'success': 状态</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="getKscx"><a href="#getKscx" class="headerlink" title="getKscx"></a>getKscx</h3><p>获取考试信息<br><code>http://218.75.197.123:83/app.do?method=getKscx&amp;xh=#学号#</code></p>
-<p><strong>返回值</strong><br>返回 json 对象</p>
+<h3 id="getKscx"><a class="header-anchor" href="#getKscx">¶</a>getKscx</h3>
+<p>获取考试信息<br>
+<code>http://218.75.197.123:83/app.do?method=getKscx&amp;xh=#学号#</code></p>
+<p><strong>返回值</strong><br>
+返回 json 对象</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    'bj': '班级',</span><br><span class="line">    'bz': 未知,</span><br><span class="line">    'jsmc': '教室名称',</span><br><span class="line">    'kcmc': '课程名称',</span><br><span class="line">    'ksjc': '考试节次',</span><br><span class="line">    'ksmc': '考试名称',</span><br><span class="line">    'ksqssj': '可欧式时间、日期',</span><br><span class="line">    'xm': '姓名'</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="getEarlyWarnInfo"><a href="#getEarlyWarnInfo" class="headerlink" title="getEarlyWarnInfo"></a>getEarlyWarnInfo</h3><p>获取学籍预警信息<br><code>http://218.75.197.123:83/app.do?method=getEarlyWarnInfo&amp;xh=#学号#&amp;history=#见下方说明#</code></p>
-<p><strong>history取值</strong>  </p>
+<h3 id="getEarlyWarnInfo"><a class="header-anchor" href="#getEarlyWarnInfo">¶</a>getEarlyWarnInfo</h3>
+<p>获取学籍预警信息<br>
+<code>http://218.75.197.123:83/app.do?method=getEarlyWarnInfo&amp;xh=#学号#&amp;history=#见下方说明#</code></p>
+<p><strong>history取值</strong></p>
 <blockquote>
-<p>0：当前预警<br>1：历史预警</p>
+<p>0：当前预警<br>
+1：历史预警</p>
 </blockquote>
-<p><strong>返回值</strong><br>条件所限，尚未明晰</p>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><ol>
-<li><p>支持导出课表为 ics 日历文件</p>
+<p><strong>返回值</strong><br>
+条件所限，尚未明晰</p>
+<h2 id="示例"><a class="header-anchor" href="#示例">¶</a>示例</h2>
+<ol>
+<li>
+<p>支持导出课表为 ics 日历文件</p>
 </li>
-<li><p>WEB 展示(不会前端，使用博客为模板写了课表展示，暂未完善)<br><img data-src="https://i.loli.net/2019/09/10/Ns3qxcToGBQblIv.png" alt="Screenshot_20190910_212948.png"></p>
+<li>
+<p>WEB 展示(不会前端，使用博客为模板写了课表展示，暂未完善)
+<img data-src="https://i.loli.net/2019/09/10/Ns3qxcToGBQblIv.png" alt="Screenshot_20190910_212948.png"></p>
 </li>
 </ol>
 
@@ -599,7 +637,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">55 分钟</span>
+    <span title="站点阅读时长">56 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Gemini</a> 强力驱动
   </div> 

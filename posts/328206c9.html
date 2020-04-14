@@ -32,7 +32,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2019/09/22/tDgNBEq7ZkGxnc5.jpg">
 <meta property="article:published_time" content="2019-09-22T13:09:43.000Z">
-<meta property="article:modified_time" content="2020-04-14T08:34:17.874Z">
+<meta property="article:modified_time" content="2020-04-14T09:00:43.026Z">
 <meta property="article:author" content="𝕮𝖍𝖊𝖓">
 <meta property="article:tag" content="HUT">
 <meta name="twitter:card" content="summary">
@@ -232,7 +232,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-14 16:34:17" itemprop="dateModified" datetime="2020-04-14T16:34:17+08:00">2020-04-14</time>
+                <time title="修改时间：2020-04-14 17:00:43" itemprop="dateModified" datetime="2020-04-14T17:00:43+08:00">2020-04-14</time>
               </span>
 
           
@@ -263,7 +263,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>838</span>
+              <span>844</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -282,23 +282,51 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><a href="https://sm.ms/image/tDgNBEq7ZkGxnc5" target="_blank" rel="external nofollow noopener noreferrer"><img data-src="https://i.loli.net/2019/09/22/tDgNBEq7ZkGxnc5.jpg" width="500"></a><br>接口均为从完美校园抓包得出，理论上适用于其它也接入了完美校园的学校。</p>
+        <p><a href="https://sm.ms/image/tDgNBEq7ZkGxnc5" target="_blank" rel="external nofollow noopener noreferrer"><img data-src="https://i.loli.net/2019/09/22/tDgNBEq7ZkGxnc5.jpg" width="500"></a>
+接口均为从完美校园抓包得出，理论上适用于其它也接入了完美校园的学校。</p>
 <a id="more"></a>
-<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p><a href="http://106.15.194.74:99/df?xq=河西&amp;ld=25&amp;qs=117" rel="external nofollow noopener noreferrer" target="_blank">http://106.15.194.74:99/df?xq=河西&amp;ld=25&amp;qs=117</a><br>xq：校区，可选值为 <code>河东</code>、<code>河西</code><br>ld：楼栋<br>qs：寝室号</p>
-<h2 id="getJzinfo"><a href="#getJzinfo" class="headerlink" title="getJzinfo"></a>getJzinfo</h2><p><code>http://h5cloud.17wanxiao.com:8080/CloudPayment/user/getRoom.do?payProId=#支付订单ID#&amp;schoolcode=#学校代码#&amp;optype=#状态码#&amp;areaid=#校区ID#&amp;buildid=#楼栋ID#&amp;unitid=#单元ID#&amp;levelid=#等级ID#&amp;businesstype=#业务类型#</code></p>
-<p>以下查询中不变的值：<br><code>payProId</code> 随机生成一个大于1000的整数即可<br><code>schoolcode</code> 为学校代码，请自行查询<br><code>businesstype=2</code></p>
-<h3 id="获取校区信息"><a href="#获取校区信息" class="headerlink" title="获取校区信息"></a>获取校区信息</h3><blockquote>
-<p>optype=1<br>arieaid=0<br>buildid=0<br>unitid=0<br>levelid=0  </p>
-</blockquote>
-<h3 id="获取楼栋信息"><a href="#获取楼栋信息" class="headerlink" title="获取楼栋信息"></a>获取楼栋信息</h3><blockquote>
-<p>optype=2<br>areaid=#从前面获取到的校区信息中查找#<br>buildid=0<br>unitid=0<br>levelid=0  </p>
-</blockquote>
-<h3 id="获取寝室信息"><a href="#获取寝室信息" class="headerlink" title="获取寝室信息"></a>获取寝室信息</h3><blockquote>
-<p>optype=4<br>areaid=#从前面获取到的校区信息中查找#<br>buildid=#从前面获取到的楼栋信息中查找#<br>unitid=0<br>levelid=-1  </p>
-</blockquote>
-<h2 id="查询电费"><a href="#查询电费" class="headerlink" title="查询电费"></a>查询电费</h2><p><code>http://h5cloud.17wanxiao.com:8080/CloudPayment/user/getRoomState.do?payProId=#订单ID#&amp;schoolcode=#学校ID#&amp;businesstype=#业务类型#&amp;roomverify=#寝室编号#</code></p>
+<h2 id="Demo"><a class="header-anchor" href="#Demo">¶</a>Demo</h2>
+<p><a href="http://106.15.194.74:99/df?xq=%E6%B2%B3%E8%A5%BF&amp;ld=25&amp;qs=117" rel="external nofollow noopener noreferrer" target="_blank">http://106.15.194.74:99/df?xq=河西&amp;ld=25&amp;qs=117</a><br>
+xq：校区，可选值为 <code>河东</code>、<code>河西</code><br>
+ld：楼栋<br>
+qs：寝室号</p>
+<h2 id="getJzinfo"><a class="header-anchor" href="#getJzinfo">¶</a>getJzinfo</h2>
+<p><code>http://h5cloud.17wanxiao.com:8080/CloudPayment/user/getRoom.do?payProId=#支付订单ID#&amp;schoolcode=#学校代码#&amp;optype=#状态码#&amp;areaid=#校区ID#&amp;buildid=#楼栋ID#&amp;unitid=#单元ID#&amp;levelid=#等级ID#&amp;businesstype=#业务类型#</code></p>
+<p>以下查询中不变的值：
+<code>payProId</code> 随机生成一个大于1000的整数即可
+<code>schoolcode</code> 为学校代码，请自行查询
+<code>businesstype=2</code></p>
+<h3 id="获取校区信息"><a class="header-anchor" href="#获取校区信息">¶</a>获取校区信息</h3>
 <blockquote>
-<p>payProId 随机生成一个整数即可<br>schoolcode 为学校代码，请自行查询<br>businesstype=2<br>roomverify #从前面获取到的寝室信息中查找#</p>
+<p>optype=1<br>
+arieaid=0<br>
+buildid=0<br>
+unitid=0<br>
+levelid=0</p>
+</blockquote>
+<h3 id="获取楼栋信息"><a class="header-anchor" href="#获取楼栋信息">¶</a>获取楼栋信息</h3>
+<blockquote>
+<p>optype=2<br>
+areaid=#从前面获取到的校区信息中查找#<br>
+buildid=0<br>
+unitid=0<br>
+levelid=0</p>
+</blockquote>
+<h3 id="获取寝室信息"><a class="header-anchor" href="#获取寝室信息">¶</a>获取寝室信息</h3>
+<blockquote>
+<p>optype=4<br>
+areaid=#从前面获取到的校区信息中查找#<br>
+buildid=#从前面获取到的楼栋信息中查找#<br>
+unitid=0<br>
+levelid=-1</p>
+</blockquote>
+<h2 id="查询电费"><a class="header-anchor" href="#查询电费">¶</a>查询电费</h2>
+<p><code>http://h5cloud.17wanxiao.com:8080/CloudPayment/user/getRoomState.do?payProId=#订单ID#&amp;schoolcode=#学校ID#&amp;businesstype=#业务类型#&amp;roomverify=#寝室编号#</code></p>
+<blockquote>
+<p>payProId 随机生成一个整数即可<br>
+schoolcode 为学校代码，请自行查询<br>
+businesstype=2<br>
+roomverify #从前面获取到的寝室信息中查找#</p>
 </blockquote>
 
     </div>
@@ -544,7 +572,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">55 分钟</span>
+    <span title="站点阅读时长">56 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Gemini</a> 强力驱动
   </div> 
