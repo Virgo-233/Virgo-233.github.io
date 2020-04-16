@@ -8,13 +8,24 @@ date: 2019-10-23 19:16:52
 接口均为抓包得出，理论上适用于其它也接入了此系统的学校。
 <!--more-->
 
+{% note success %}
+
+### 2020-04-16 更新
+
+添加多家学校支持。[学校列表](https://github.com/cxyzzz/HUT_API/blob/master/app/HUT.py#L921)
+
+{% endnote %}
+
 ## Demo
 
 <http://106.15.194.74:99/job.ics>
 
-可选参数(默认为校内宣讲会)
->sf: `宣讲会`, `双选会`  
-tp: `校内`, `校外`  
+可选参数(默认为湖南工业大学校内宣讲会)
+>school: 学校名称首字母缩写，eg: 湖南工业大学->hngydx
+mode: `getcareers`, `getjobfairs`  
+type: `inner`, `outer`  
+
+另外支持就业中心网页的过滤条件。
 
 eg: <http://106.15.194.74:99/job.ics?sf=宣讲会&tp=校外>
 
