@@ -107,13 +107,18 @@ cuxtomerId: 学校 ID ，默认为湖南工业大学。</p>
     <content><![CDATA[<p><a href="https://sm.ms/image/BQtMTU3vR2sScPX" target="_blank" rel="external nofollow noopener noreferrer"><img data-src="https://i.loli.net/2019/10/23/BQtMTU3vR2sScPX.jpg" width="500"></a>
 接口均为抓包得出，理论上适用于其它也接入了此系统的学校。</p>
 <a id="more"></a>
+<div class="note success">
+            <h3 id="2020-04-16-更新"><a class="header-anchor" href="#2020-04-16-更新">¶</a>2020-04-16 更新</h3><p>添加多家学校支持。<a href="https://github.com/cxyzzz/HUT_API/blob/master/app/HUT.py#L921" rel="external nofollow noopener noreferrer" target="_blank">学校列表</a></p>
+          </div>
 <h2 id="Demo"><a class="header-anchor" href="#Demo">¶</a>Demo</h2>
 <p><a href="http://106.15.194.74:99/job.ics" rel="external nofollow noopener noreferrer" target="_blank">http://106.15.194.74:99/job.ics</a></p>
-<p>可选参数(默认为校内宣讲会)</p>
+<p>可选参数(默认为湖南工业大学校内宣讲会)</p>
 <blockquote>
-<p>sf: <code>宣讲会</code>, <code>双选会</code><br>
-tp: <code>校内</code>, <code>校外</code></p>
+<p>school: 学校名称首字母缩写，eg: 湖南工业大学-&gt;hngydx
+mode: <code>getcareers</code>, <code>getjobfairs</code><br>
+type: <code>inner</code>, <code>outer</code></p>
 </blockquote>
+<p>另外支持就业中心网页的过滤条件。</p>
 <p>eg: <a href="http://106.15.194.74:99/job.ics?sf=%E5%AE%A3%E8%AE%B2%E4%BC%9A&amp;tp=%E6%A0%A1%E5%A4%96" rel="external nofollow noopener noreferrer" target="_blank">http://106.15.194.74:99/job.ics?sf=宣讲会&amp;tp=校外</a></p>
 <h2 id="API"><a class="header-anchor" href="#API">¶</a>API</h2>
 <p>带 * 号的为可选参数，请求时可不带此关键字</p>
