@@ -661,9 +661,6 @@ fooView 集成了 应用启动器、文件管理器、图片浏览（编辑）�
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">10 22 * * * bash &#x2F;sdcard&#x2F;ADM&#x2F;Scripts&#x2F;syncone &gt;&#x2F;dev&#x2F;null 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
 <p>除了使用 crontab　外还可以使用其它有定时执行 shell 功能的应用定时执行备份脚本即可，如 Tasker、fooView、Xposed edge 等。</p>
 ]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
       <tags>
         <tag>Android</tag>
       </tags>
@@ -712,9 +709,6 @@ fooView 集成了 应用启动器、文件管理器、图片浏览（编辑）�
 <summary>点击显示 Gist</summary>
 <script src="//gist.github.com/e4f2315dc29b89fd5d7d569c2b4f3ee9.js?file=Pure.sh"></script>
 </details>]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
       <tags>
         <tag>MIUI</tag>
       </tags>
@@ -798,9 +792,6 @@ fooView 集成了 应用启动器、文件管理器、图片浏览（编辑）�
 <li><a href="https://blog.csdn.net/u013322949/article/details/60339735" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/u013322949/article/details/60339735</a></li>
 </ul>
 ]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
       <tags>
         <tag>Windows</tag>
       </tags>
@@ -844,9 +835,6 @@ fooView 集成了 应用启动器、文件管理器、图片浏览（编辑）�
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/system/bin/sh</span></span><br><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/data/data/com.termux/files/usr/lib</span><br><span class="line"><span class="built_in">export</span> PATH=/data/data/com.termux/files/usr/bin:/data/data/com.termux/files/usr/bin/applets</span><br><span class="line">termux-tts-speak <span class="variable">$1</span></span><br></pre></td></tr></table></figure>
 <p>rclone 还有很多功能，我就不一一介绍了，官网上面对每一个命令都有详细点解释，参考官方文档即可。</p>
 ]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
       <tags>
         <tag>Android</tag>
       </tags>
@@ -996,9 +984,6 @@ fastab 还有很多参数，具体可以去 <a href="https://wiki.openwrt.org/do
 hackpascal-Breed：<a href="https://breed.hackpascal.net/" rel="external nofollow noopener noreferrer" target="_blank">作者自建下载服务器</a> &amp;&amp; <a href="https://pan.baidu.com/s/1eRCPsMu" rel="external nofollow noopener noreferrer" target="_blank">百度云</a> 密码：3if1 解压密码：baiduqusi
 <a href="http://www.right.com.cn/forum/thread-161906-1-1.html" rel="external nofollow noopener noreferrer" target="_blank">更新日志</a></p>
 ]]></content>
-      <categories>
-        <category>路由器</category>
-      </categories>
   </entry>
   <entry>
     <title>使用 Mentohust 代替锐捷进行校园网认证</title>
@@ -1054,9 +1039,6 @@ Windows10 2019 LTSC 密钥：<code>M7XTQ-FN8P6-TTKYV-9D4CC-J462D</code></p>
 输入 <code>cscript ospp.vbs /act</code> 激活 office。</li>
 </ul>
 ]]></content>
-      <categories>
-        <category>路由器</category>
-      </categories>
       <tags>
         <tag>Windows</tag>
         <tag>OpenWrt</tag>
