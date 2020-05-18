@@ -983,5 +983,5 @@ vendors:
 
 # Assets
 css: css
-js: //cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@0e83860/source/js
+js: //cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@0174c30/source/js
 images: //cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@55d04ef/source/images
