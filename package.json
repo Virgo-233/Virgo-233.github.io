@@ -9,12 +9,12 @@
     "server": "hexo server"
   },
   "hexo": {
-    "version": "4.2.0"
+    "version": "4.2.1"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
     "global": "^4.4.0",
-    "hexo": "^4.2.0",
+    "hexo": "^4.2.1",
     "hexo-abbrlink": "^2.0.5",
     "hexo-all-minifier": "^0.5.2",
     "hexo-auto-canonical": "^0.1.1",
@@ -28,7 +28,7 @@
     "hexo-generator-baidu-sitemap": "^0.1.6",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-feed": "^2.0.0",
-    "hexo-generator-indexed": "^1.0.1",
+    "hexo-generator-indexed": "^1.2.0",
     "hexo-generator-searchdb": "^1.0.8",
     "hexo-generator-sitemap": "^2.0.0",
     "hexo-generator-tag": "^1.0.0",
