@@ -191,7 +191,7 @@ abbrlink:
   rep: hex    # 进制：dec(default) and hex
 
 auto_dir_categorize:
-	enable: true  # options:true, false; default is true
+	enable: false  # options:true, false; default is true
 	force: false # options:true, false; default is false
 
 symbols_count_time:
