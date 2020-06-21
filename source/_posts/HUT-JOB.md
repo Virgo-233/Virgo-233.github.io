@@ -4,7 +4,7 @@ tags: HUT
 abbrlink: ad3ad898
 date: 2019-10-23 19:16:52
 ---
-<a href="https://sm.ms/image/BQtMTU3vR2sScPX" target="_blank"><img src="https://i.loli.net/2019/10/23/BQtMTU3vR2sScPX.jpg" width="500"/></a>
+<img src="https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.06.21/images/posts/BQtMTU3vR2sScPX.webp" width="500"/>
 接口均为抓包得出，理论上适用于其它也接入了此系统的学校。
 <!--more-->
 
