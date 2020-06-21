@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#eee">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar.png">
+  <link rel="mask-icon" href="/images/avatar.png" color="#eee">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="google-site-verification" content="fpj6YMI0ctKLb9jIF3aZsDwu9z3mZguvrHQCAfXjq94">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lora:300,300italic,400,400italic,700,700italic|Noto Serif SC:300,300italic,400,400italic,700,700italic|Rufina:300,300italic,400,400italic,700,700italic|Libre Baskerville:300,300italic,400,400italic,700,700italic|Roboto:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"cxyzzz.gtihub.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Android_rclone_backup">
+<meta property="og:url" content="https://cxyzzz.gtihub.io/posts/1258516f.html">
+<meta property="og:site_name" content="𝓗𝓸𝓼𝓱𝓲𝔃𝓸𝓻𝓪">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.06.21/images/posts/Yfqraxhwpugl3Uo.webp">
+<meta property="article:published_time" content="2020-02-29T06:42:35.000Z">
+<meta property="article:modified_time" content="2020-02-29T06:42:35.000Z">
+<meta property="article:author" content="𝕮𝖍𝖊𝖓">
+<meta property="article:tag" content="Android">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.06.21/images/posts/Yfqraxhwpugl3Uo.webp">
+
+<link rel="canonical" href="https://cxyzzz.gtihub.io/posts/1258516f.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+  
+
+  <title>Android_rclone_backup | 𝓗𝓸𝓼𝓱𝓲𝔃𝓸𝓻𝓪</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="𝓗𝓸𝓼𝓱𝓲𝔃𝓸𝓻𝓪" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">𝓗𝓸𝓼𝓱𝓲𝔃𝓸𝓻𝓪</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">希望阳光很暖，微风不燥，时光不老，你我都好。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+ 
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cxyzzz.gtihub.io/posts/1258516f.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="𝕮𝖍𝖊𝖓">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="𝓗𝓸𝓼𝓱𝓲𝔃𝓸𝓻𝓪">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Android_rclone_backup
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-29 14:42:35" itemprop="dateCreated datePublished" datetime="2020-02-29T14:42:35+08:00">2020-02-29</time>
+            </span>
+
+          
+            <span id="/posts/1258516f.html" class="post-meta-item leancloud_visitors" data-flag-title="Android_rclone_backup" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/1258516f.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/1258516f.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+   
+<br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <img data-src="https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.06.21/images/posts/Yfqraxhwpugl3Uo.webp" width="500">
+<a id="more"></a>
+<p>之前写了篇<a href="https://hoshizora.tw/posts/" rel="external nofollow noopener noreferrer" target="_blank">在手机上使用　rclone 挂载网盘</a>的教程，文末附带了个备份脚步，最近看　rclone　文档新发现了几个参数，可以优化下之前的脚本，索性新开一篇文章记录以下。</p>
+<h2 id="备份脚本"><a class="header-anchor" href="#备份脚本">¶</a>备份脚本</h2>
+<p>之前的脚本用于备份其实还是可以的，只是要备份的路径是写死的，如果要增加就得修改脚步，也没办法排除某个或某类文件。新版主要增加的就是备份目录的配置，使用另一个文件存储备份目录，并且支持简单的正则过滤。这主要得益于　rclone　的　include(-from)、exclude(-from)、filter(-from)　参数，其功能基本可以从名字看出来，include　是包含，exclude 是不包含，filter 则是两者都有，带　from 则是从文件中读取规则。</p>
+<p>脚本内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/system/bin/env bash</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> -xe</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> pidof -o %PPID -s <span class="string">"syncone"</span>; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">LANG=en_US.UTF-8</span><br><span class="line">TZ=Asia/Shanghai</span><br><span class="line"></span><br><span class="line"><span class="comment"># rclone 执行文件路径，这里用的 termux 的</span></span><br><span class="line"><span class="built_in">export</span> RCLONE=/data/data/com.termux/files/usr/bin/rclone</span><br><span class="line"></span><br><span class="line"><span class="comment"># 本地备份根目录，比如要备份 /sdcard/a 和 /sdcard/b 就填 /sdcard 即可</span></span><br><span class="line"><span class="built_in">export</span> SOURCE=/sdcard</span><br><span class="line"></span><br><span class="line"><span class="comment"># 远程名</span></span><br><span class="line"><span class="built_in">export</span> REMOTE_NAME=love</span><br><span class="line"></span><br><span class="line"><span class="comment"># 远程文件夹</span></span><br><span class="line"><span class="built_in">export</span> REMOTE_DIR=/snapshot</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> RCLONE_UPDATE=<span class="literal">true</span></span><br><span class="line"><span class="built_in">export</span> RCLONE_FAST_LIST=<span class="literal">true</span></span><br><span class="line"><span class="built_in">export</span> RCLONE_CHECKSUM=<span class="literal">true</span></span><br><span class="line"><span class="built_in">export</span> RCLONE_IGNORE_ERRORS=<span class="literal">true</span></span><br><span class="line"><span class="built_in">export</span> RCLONE_TRACK_RENAMES=<span class="literal">true</span></span><br><span class="line"><span class="built_in">export</span> RCLONE_NO_UPDATE_MODTIME=<span class="literal">true</span></span><br><span class="line"><span class="built_in">export</span> RCLONE_TRANSFERS=10</span><br><span class="line"></span><br><span class="line"><span class="comment"># 日志</span></span><br><span class="line"><span class="built_in">export</span> RCLONE_LOG_LEVEL=INFO</span><br><span class="line"><span class="comment">#export RCLONE_SYSLOG=true</span></span><br><span class="line"><span class="built_in">export</span> RCLONE_LOG_FILE=/sdcard/rclone.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># 旧文件存放路径，必须是同一个远程，此处是备份到远程名为 $REMOTE_NAME 的 archive 目录下，并以 年/日期时间 为目录名进行区分，文件名不变。</span></span><br><span class="line"><span class="comment">#export RCLONE_BACKUP_DIR="$REMOTE_NAME:/archive/$(date +%Y)/$(date +%F_%R)"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 与上面功能相同，区别是所有文件路径不变，以文件名加日期时间后缀进行区分</span></span><br><span class="line"><span class="built_in">export</span> RCLONE_BACKUP_DIR=<span class="string">"<span class="variable">$&#123;REMOTE_NAME&#125;</span>:/old_files"</span></span><br><span class="line"><span class="built_in">export</span> RCLONE_SUFFIX=<span class="string">"_<span class="variable">$(date +%Y-%m-%d_%H%M%S)</span>"</span></span><br><span class="line"><span class="built_in">export</span> RCLONE_SUFFIX_KEEP_EXTENSION=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 过滤规则文件</span></span><br><span class="line"><span class="built_in">export</span> RCLONE_FILTER_FROM=/sdcard/ADM/Scripts/rclone-filters.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清空日志</span></span><br><span class="line"><span class="comment">#:&gt;$&#123;RCLONE_LOG_FILE&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 检测网络链接</span></span><br><span class="line"><span class="comment"># 超时时间</span></span><br><span class="line">timeout=5</span><br><span class="line"></span><br><span class="line"><span class="comment"># 目标网站</span></span><br><span class="line">target=www.baidu.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取响应状态码</span></span><br><span class="line">ret_code=`curl -I -s --connect-timeout <span class="variable">$timeout</span> <span class="variable">$target</span> -w %&#123;http_code&#125; | tail -n1`</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$&#123;ret_code&#125;</span>"</span> = <span class="string">"200"</span> ]; <span class="keyword">then</span></span><br><span class="line">    termux-tools termux-tts-speak <span class="string">"网络连接正常,开始备份！"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"网络连接正常,开始备份！"</span></span><br><span class="line"></span><br><span class="line">    <span class="variable">$&#123;RCLONE&#125;</span> sync <span class="variable">$&#123;SOURCE&#125;</span> <span class="variable">$&#123;REMOTE_NAME&#125;</span>:<span class="variable">$&#123;REMOTE_DIR&#125;</span></span><br><span class="line"></span><br><span class="line">    termux-tools termux-tts-speak <span class="string">"rclone 备份完成！"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"备份完成！"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    termux-tools termux-tts-speak <span class="string">"网络连接异常，停止备份！"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"网络连接异常，停止备份！"</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<p>如果没有安装　bash 需要把第一行的　bash 换成　sh，另外　termux-tools 是我封装的　Termux-API 的功能，需要安装　Termux 和 Termux-API，并把　termux-tools 文件放在系统　PATH　中（/system/bin 或 /system/xbin，或则指定文件路径），如果没有可以注释掉。</p>
+<p>termux-tools　文件内容:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/system/xbin/bash</span></span><br><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/data/data/com.termux/files/usr/lib</span><br><span class="line"><span class="built_in">export</span> PATH=/data/data/com.termux/files/usr/bin:/data/data/com.termux/files/usr/bin/applets</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="variable">$1</span> <span class="keyword">in</span></span><br><span class="line">    termux-tts-speak)</span><br><span class="line">        termux-tts-speak <span class="variable">$&#123;@:2&#125;</span></span><br><span class="line">        ;;</span><br><span class="line">    termux-toast)</span><br><span class="line">        termux-toast <span class="variable">$&#123;@:2&#125;</span></span><br><span class="line">        ;;</span><br><span class="line">    termux-wallpaper)</span><br><span class="line">        termux-wallpaper <span class="variable">$&#123;@:2&#125;</span></span><br><span class="line">        ;;</span><br><span class="line"><span class="keyword">esac</span></span><br></pre></td></tr></table></figure>
+<p>过滤规则文件 rclone-filters.txt 内容</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">- *.bak</span></span><br><span class="line"><span class="deletion">- /ADM/.config/EntWare/**</span></span><br><span class="line"></span><br><span class="line"><span class="addition">+ /.fooView/**</span></span><br><span class="line"><span class="addition">+ /ADM/**</span></span><br><span class="line"><span class="addition">+ /baidu/**</span></span><br><span class="line"><span class="addition">+ /MyAndroidTools/**</span></span><br><span class="line"><span class="addition">+ /Pictures/**</span></span><br><span class="line"><span class="addition">+ /ViPER4Android/**</span></span><br><span class="line"><span class="addition">+ /Xposed_Edge_Icon/**</span></span><br><span class="line"><span class="addition">+ /YueDu/**</span></span><br><span class="line"><span class="addition">+ /YueDu3.0/**</span></span><br><span class="line"><span class="addition">+ /习/**</span></span><br><span class="line"></span><br><span class="line"><span class="deletion">- *</span></span><br></pre></td></tr></table></figure>
+<p>每行一个，减号 <code>-</code> 代表排除，加号 <code>+</code> 代表包含，<code>/</code> 为根目录，即脚本中 <code>${SOURCE}</code> 指定的目录，如果使用了包含规则需在最后一行添加 <code>- *</code> , * 匹配所有目录，不包含子目录，** 匹配所有目录包扩子目录。</p>
+<p>规则具体怎么用可以去官网查看　<a href="https://rclone.org/filtering/" rel="external nofollow noopener noreferrer" target="_blank">Rclone Filter</a>。</p>
+<h2 id="定时任务"><a class="header-anchor" href="#定时任务">¶</a>定时任务</h2>
+<p>光有备份脚步还不行，还得有定时任务来定时执行备份任务，毕竟每天手动执行备份也太麻烦了。定时任务我用的 Linux 比较常用的 crontable, Android 默认是没有的，但是可以安装 busybox 使用　busybox　的，而我所用的 ROOT 权限管理软件 Magisk 刚好自带了 busybox　可以直接使用。使用 contable 需要先启动其守护程序 crond，可以利用 Magisk 的功能，在 /data/adb/service.d　目录创建个文件，填入以下内容（也可以放在已安装模块的　<a href="http://service.sh" rel="external nofollow noopener noreferrer" target="_blank">service.sh</a> 文件中）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/system/bin/sh</span></span><br><span class="line"><span class="comment"># Do NOT assume where your module will be located.</span></span><br><span class="line"><span class="comment"># ALWAYS use $MODDIR if you need to know where this script</span></span><br><span class="line"><span class="comment"># and module is placed.</span></span><br><span class="line"><span class="comment"># This will make sure your module will still work</span></span><br><span class="line"><span class="comment"># if Magisk change its mount point in the future</span></span><br><span class="line">MODDIR=<span class="variable">$&#123;0%/*&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> [[ ! -d <span class="string">"/sdcard/Android"</span> ]]</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    sleep 10</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># run crond daemon</span></span><br><span class="line">crond -L /sdcard/crontabs/crond.log -c /sdcard/crontabs</span><br></pre></td></tr></table></figure>
+<p>然后去手机内置存储创建　crontabs 文件夹，在 crontabs　目录创建个 root 文件在里面填写即可。我设置的是每天晚上十点执行一次备份，内容如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">10 22 * * * bash &#x2F;sdcard&#x2F;ADM&#x2F;Scripts&#x2F;syncone &gt;&#x2F;dev&#x2F;null 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
+<p>除了使用 crontab　外还可以使用其它有定时执行 shell 功能的应用定时执行备份脚本即可，如 Tasker、fooView、Xposed edge 等。</p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="post-body">
+  <div class="note primary">
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/posts/2a60e472.html" rel="bookmark">Android 使用 Rclone 挂载网盘</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/posts/40e3c7df.html" rel="bookmark">玩机 • Android（三）——进阶篇</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/posts/fab8c3b3.html" rel="bookmark">玩机 • Android（二）——ROOT 篇</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/posts/9e7b6f05.html" rel="bookmark">玩机 • Android（一）——应用篇</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/posts/66c8d8e0.html" rel="bookmark">使用 RSS 订阅学校校内新闻和通知公告</a></div>
+    </li>
+  </ul>
+  </div>
+  </div>
+ 
+
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@latest/images/wechatpay.png" alt="𝕮𝖍𝖊𝖓 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@latest/images/alipay.png" alt="𝕮𝖍𝖊𝖓 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        <div class="addthis_inline_share_toolbox">
+          <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5dbaa333234d17a3" async="async"></script>
+        </div>
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>𝕮𝖍𝖊𝖓
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://cxyzzz.gtihub.io/posts/1258516f.html" title="Android_rclone_backup">https://cxyzzz.gtihub.io/posts/1258516f.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Android/" rel="tag"><i class="fa fa-tag"></i> Android</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/ad3ad898.html" rel="prev" title="使用日历订阅工大就业中心宣讲会、双选会">
+      <i class="fa fa-chevron-left"></i> 使用日历订阅工大就业中心宣讲会、双选会
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/66c8d8e0.html" rel="next" title="使用 RSS 订阅学校校内新闻和通知公告">
+      使用 RSS 订阅学校校内新闻和通知公告 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#备份脚本"><span class="nav-number">1.</span> <span class="nav-text">备份脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定时任务"><span class="nav-number">2.</span> <span class="nav-text">定时任务</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="𝕮𝖍𝖊𝖓" src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">𝕮𝖍𝖊𝖓</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=Uz8mMDgqDCU6ITQ8EyIifTA8Pg" title="E-Mail → http:&#x2F;&#x2F;mail.qq.com&#x2F;cgi-bin&#x2F;qm_share?t&#x3D;qm_mailme&amp;email&#x3D;Uz8mMDgqDCU6ITQ8EyIifTA8Pg" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/cxyzzz" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cxyzzz" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.hojun.cn/" title="https:&#x2F;&#x2F;www.hojun.cn" rel="noopener" target="_blank">hojun</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://firstkaixin.github.io/" title="https:&#x2F;&#x2F;firstkaixin.github.io" rel="noopener" target="_blank">Mrkaixin</a>
+        </li>
+    </ul>
+  </div>
+ 
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">𝕮𝖍𝖊𝖓</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">61k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">56 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Gemini</a> 强力驱动
+  </div> 
+
+
+        
+<div class="busuanzi-count">
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user-secret"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  <script src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@19.7.19a/js/activate-power-mode.js"></script>
+  <script>
+  POWERMODE.colorful = true; // 火花各种颜色
+  POWERMODE.shake = false; // 关闭打字屏幕颤抖效果
+  document.body.addEventListener('input', POWERMODE);
+  </script>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="//cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@0174c30/source/js/utils.js"></script>
+
+<script src="//cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@0174c30/source/js/motion.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@0174c30/source/js/schemes/pisces.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@0174c30/source/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+  <script data-pjax>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@0174c30/source/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'W0aszG0X0SsIHQvIWYSrC969-gzGzoHsz',
+      appKey     : 'ozjSCfjt66qIMInckgP8YzkB',
+      placeholder: "Just go go (建议填写邮箱，有回复后将会通过邮件通知)",
+      avatar     : 'retro',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+ 
+
+    </div>
+<script>(function(w,d, s, id) {w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.src = 'https://cdn.webpushr.com/app.min.js';fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));webpushr('init','BEg8OE6x7RYTwtfwoYrlYAm7_-0tCQ3ZCx3J3jrG6nUhN6xEX8clsDvIx7gHU2lPqCYBvi9kTsjYRFclg2NdnfM');</script></body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@19.7.19a/js/love.js"></script>
+
+<!--Google Analytics 代理-->
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@19.7.19a/js/googleanalytics_proxy.min.js"></script>
