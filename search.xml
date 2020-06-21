@@ -107,9 +107,9 @@ cuxtomerId: 学校 ID ，默认为湖南工业大学。</p>
     <content><![CDATA[<img data-src="https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.06.21/images/posts/BQtMTU3vR2sScPX.webp" width="500">
 接口均为抓包得出，理论上适用于其它也接入了此系统的学校。
 <a id="more"></a>
-<div class="note success">
-            <h3 id="2020-04-16-更新"><a class="header-anchor" href="#2020-04-16-更新">¶</a>2020-04-16 更新</h3><p>添加多家学校支持。<a href="https://github.com/cxyzzz/HUT_API/blob/master/app/HUT.py#L921" rel="external nofollow noopener noreferrer" target="_blank">学校列表</a></p>
-          </div>
+<div class="note success"><h3 id="2020-04-16-更新"><a class="header-anchor" href="#2020-04-16-更新">¶</a>2020-04-16 更新</h3>
+<p>添加多家学校支持。<a href="https://github.com/cxyzzz/HUT_API/blob/master/app/HUT.py#L921" rel="external nofollow noopener noreferrer" target="_blank">学校列表</a></p>
+</div>
 <h2 id="Demo"><a class="header-anchor" href="#Demo">¶</a>Demo</h2>
 <p><a href="http://106.15.194.74:99/job.ics" rel="external nofollow noopener noreferrer" target="_blank">http://106.15.194.74:99/job.ics</a></p>
 <p>可选参数(默认为湖南工业大学校内宣讲会)</p>
@@ -691,9 +691,19 @@ fooView 集成了 应用启动器、文件管理器、图片浏览（编辑）�
 <a id="more"></a>
 <details>
 <summary>点击显示更新信息</summary>
-<div class="note success">
-            <h3 id="2019-3-14-更新"><a class="header-anchor" href="#2019-3-14-更新">¶</a>2019.3.14 更新</h3><ol><li>当官方规则 API 返回空数据时跳过添加官方规则</li><li>添加显示单个订阅规则调试（可能有误差）以及添加进度</li><li>使用 <a href="https://github.com/YUX-IO/ffp" rel="external nofollow noopener noreferrer" target="_blank">YUX-IO/ffp</a> 的 demo 服务 <a href="https://ffp.yux.io/" rel="external nofollow noopener noreferrer" target="_blank">https://ffp.yux.io/</a> 代理下载规则，加速规则下载。（代理无法使用时会回退使用原地址）</li><li>增加自动替换、防覆盖功能（防覆盖需要 chattr 命令支持，magisk 用户可以将 <code>/sbin/.magisk/busybox/chattr</code> 链接到 <code>/system/xbin/chattr</code>）</li><li>添加 github gist 地址。</li></ol><details><summary>点击显示 Gist</summary><script src="//gist.github.com/f720d18d00cb8f46206d4b4f109c5b7f.js?file=ad.py"></script></details>
-          </div>
+<div class="note success"><h3 id="2019-3-14-更新"><a class="header-anchor" href="#2019-3-14-更新">¶</a>2019.3.14 更新</h3>
+<ol>
+<li>当官方规则 API 返回空数据时跳过添加官方规则</li>
+<li>添加显示单个订阅规则调试（可能有误差）以及添加进度</li>
+<li>使用 <a href="https://github.com/YUX-IO/ffp" rel="external nofollow noopener noreferrer" target="_blank">YUX-IO/ffp</a> 的 demo 服务 <a href="https://ffp.yux.io/" rel="external nofollow noopener noreferrer" target="_blank">https://ffp.yux.io/</a> 代理下载规则，加速规则下载。（代理无法使用时会回退使用原地址）</li>
+<li>增加自动替换、防覆盖功能（防覆盖需要 chattr 命令支持，magisk 用户可以将 <code>/sbin/.magisk/busybox/chattr</code> 链接到 <code>/system/xbin/chattr</code>）</li>
+<li>添加 github gist 地址。</li>
+</ol>
+<details>
+<summary>点击显示 Gist</summary>
+<script src="//gist.github.com/f720d18d00cb8f46206d4b4f109c5b7f.js?file=ad.py"></script>
+</details>
+</div>
 </details>
 <p>一直以来我都是把自带浏览器删除用 via 替换的，但 MIUI 在某个版本升级后如果卸载了自带浏览器会导致快应用闪退，刚好 MIUI 浏览器更新了简洁模式界面还不错，就决定用回自带浏览器了。</p>
 <p>当然即便是启用简洁模式也还是有很多不好的地方，比如菜单栏的广告、搜索栏热点推荐、无法自定义搜索引擎等等。习惯性去数据目录看看，发现了对应的配置文件，既然是需要从本地读取那就好办了，直接把文件内容清空去掉读写权限，设置不可更该属性就好。</p>
@@ -803,13 +813,31 @@ fooView 集成了 应用启动器、文件管理器、图片浏览（编辑）�
 <a id="more"></a>
 <details>
 <summary>点击显示更新信息</summary>
-<div class="note success">
-            <h3 id="2019-08-09-更新"><a class="header-anchor" href="#2019-08-09-更新">¶</a>2019.08.09 更新</h3><p>版本 v1.7.b</p><ol><li>添加网络检测开关，默认启用，可在<code>.global.param</code>文件中添加<code>NETCHK=0</code>关闭</li><li>修复当某一 remote 启用绑定到 sdcard 时在其后面的所有 remote 默认启用绑定到 sdcard 的 bug</li></ol><h3 id="2019-08-08-更新"><a class="header-anchor" href="#2019-08-08-更新">¶</a>2019.08.08 更新</h3><p>版本 v1.7a</p><ol><li>修复了 custom_param 不生效的问题</li><li>添加了更多可自定义的默认参数</li><li>可以在<code>.*.param</code>中添加<code>HTTP=0</code>,<code>FTP=0</code>禁用 HTTP 和 FTP</li><li>更改启用绑定到 sdcard 的方式，在<code>.*.param</code>文件中添加<code>BINDSD=1</code>启用，以前版本的添加 .bindsd 文件失效</li><li>更改<code>BINDPOINT=</code>为<code>SDBINDPOINT=</code>，默认为/sdcard/Cloud/$REMOTE,要更改可在<code>.*.param</code>文件中添加<code>SDBINDPOINT=xx</code>,xx为要绑定的 /sdcard 下的目录名（直接填目录名，不需要路径）</li></ol><h3 id="2019-08-02-更新"><a class="header-anchor" href="#2019-08-02-更新">¶</a>2019.08.02 更新</h3><p>作者更新了两个版本，v1.5 支持绑定到 /sdcard/cloud/ 了，在配置目录创建 <code>.bindsd</code> 文件启用，另外加入了网络检测，检测地址为 <a href="http://google.com" rel="external nofollow noopener noreferrer" target="_blank">google.com</a> ，需自行解决网络问题。v1.6 (当前版本) <code>.*.parame</code> 配置文件中增加了<code>ADD_PARAMS</code>和<code>REPLACE_PARAMS</code>用于添加和替换 rclone 挂载参数； 添加了一个 <code>.blobal.param</code> 配置文件用于修改全局参数，README 中只写了 <code>NETCHK_ADDR</code>和<code>BINDPOINT</code>用于修改网络检测地址和挂载点，还可以添加其他的值，但目前并不是很完善，部分默认参数无法修改。</p>
-          </div>
+<div class="note success"><h3 id="2019-08-09-更新"><a class="header-anchor" href="#2019-08-09-更新">¶</a>2019.08.09 更新</h3>
+<p>版本 v1.7.b</p>
+<ol>
+<li>添加网络检测开关，默认启用，可在<code>.global.param</code>文件中添加<code>NETCHK=0</code>关闭</li>
+<li>修复当某一 remote 启用绑定到 sdcard 时在其后面的所有 remote 默认启用绑定到 sdcard 的 bug</li>
+</ol>
+<h3 id="2019-08-08-更新"><a class="header-anchor" href="#2019-08-08-更新">¶</a>2019.08.08 更新</h3>
+<p>版本 v1.7a</p>
+<ol>
+<li>修复了 custom_param 不生效的问题</li>
+<li>添加了更多可自定义的默认参数</li>
+<li>可以在<code>.*.param</code>中添加<code>HTTP=0</code>,<code>FTP=0</code>禁用 HTTP 和 FTP</li>
+<li>更改启用绑定到 sdcard 的方式，在<code>.*.param</code>文件中添加<code>BINDSD=1</code>启用，以前版本的添加 .bindsd 文件失效</li>
+<li>更改<code>BINDPOINT=</code>为<code>SDBINDPOINT=</code>，默认为/sdcard/Cloud/$REMOTE,要更改可在<code>.*.param</code>文件中添加<code>SDBINDPOINT=xx</code>,xx为要绑定的 /sdcard 下的目录名（直接填目录名，不需要路径）</li>
+</ol>
+<h3 id="2019-08-02-更新"><a class="header-anchor" href="#2019-08-02-更新">¶</a>2019.08.02 更新</h3>
+<p>作者更新了两个版本，v1.5 支持绑定到 /sdcard/cloud/ 了，在配置目录创建 <code>.bindsd</code> 文件启用，另外加入了网络检测，检测地址为 <a href="http://google.com" rel="external nofollow noopener noreferrer" target="_blank">google.com</a> ，需自行解决网络问题。v1.6 (当前版本) <code>.*.parame</code> 配置文件中增加了<code>ADD_PARAMS</code>和<code>REPLACE_PARAMS</code>用于添加和替换 rclone 挂载参数； 添加了一个 <code>.blobal.param</code> 配置文件用于修改全局参数，README 中只写了 <code>NETCHK_ADDR</code>和<code>BINDPOINT</code>用于修改网络检测地址和挂载点，还可以添加其他的值，但目前并不是很完善，部分默认参数无法修改。</p>
+</div>
 </details>
-<div class="note info">
-            <h3 id="提示"><a class="header-anchor" href="#提示">¶</a>提示</h3><ol><li>使用模块前建议先仔细阅读模块说明（README），这个模块并不是装上就能用的。</li><li>所有 param 文件中最后必须空一行，不然无法识别最后一行的内容。</li></ol>
-          </div>
+<div class="note info"><h3 id="提示"><a class="header-anchor" href="#提示">¶</a>提示</h3>
+<ol>
+<li>使用模块前建议先仔细阅读模块说明（README），这个模块并不是装上就能用的。</li>
+<li>所有 param 文件中最后必须空一行，不然无法识别最后一行的内容。</li>
+</ol>
+</div>
 <p>先来两张效果图：</p>
 <details>
 <summary>点击显示图片</summary>
@@ -842,9 +870,9 @@ fooView 集成了 应用启动器、文件管理器、图片浏览（编辑）�
   <entry>
     <title>Pisen云座充</title>
     <url>/posts/13b1ea83.html</url>
-    <content><![CDATA[<div class="note success">
-            <h4 id="2018-6-19-更新：openwrt-固件"><a class="header-anchor" href="#2018-6-19-更新：openwrt-固件">¶</a>2018/6/19 更新：openwrt 固件</h4><p>链接: <a href="https://pan.baidu.com/s/1MqWci4ElhyytjqgCj9GnFw" rel="external nofollow noopener noreferrer" target="_blank">https://pan.baidu.com/s/1MqWci4ElhyytjqgCj9GnFw</a> 密码: <code>7ckw</code></p>
-          </div>
+    <content><![CDATA[<div class="note success"><h4 id="2018-6-19-更新：openwrt-固件"><a class="header-anchor" href="#2018-6-19-更新：openwrt-固件">¶</a>2018/6/19 更新：openwrt 固件</h4>
+<p>链接: <a href="https://pan.baidu.com/s/1MqWci4ElhyytjqgCj9GnFw" rel="external nofollow noopener noreferrer" target="_blank">https://pan.baidu.com/s/1MqWci4ElhyytjqgCj9GnFw</a> 密码: <code>7ckw</code></p>
+</div>
 <a id="more"></a>
 <p>去年在基安看见的一个<a href="http://www.right.com.cn/forum/forum.php?mod=viewthread&amp;tid=209145&amp;fromguid=hot&amp;extra=&amp;mobile=2" rel="external nofollow noopener noreferrer" target="_blank">帖子</a>，品胜云座充的拆机板，看了下可以刷 open-wrt 以及 Tp-link WR703n 的包还有 usb 接口就入手了三块板子。到手后就全刷了 u-boot 刷了个 open-wrt 后就放抽屉里吃灰了。后面翻出来几次装了 mentohust 能登录学校的锐捷后就又吃灰了。 最近因为在弄主路由 k2 的内网穿透，接触到了 opkg 包管理器，突然想到了吃灰的云座充。回到寝室就刷了 wr703n 的 LEDE。接着就是弄 usb 挂载以及存储空间的扩展。</p>
 <p>ps: LEDE 默认不开启无线网卡，可使用网线连电脑，访问 192.168.1.1 打开无线网卡。若要桥接则要打开 DHCP ，只作 Ap 可不设置，默认静态 ip。</p>
@@ -1050,9 +1078,9 @@ Windows10 2019 LTSC 密钥：<code>M7XTQ-FN8P6-TTKYV-9D4CC-J462D</code></p>
     <url>/posts/cfb7bd2a.html</url>
     <content><![CDATA[<p><img data-src="https://i.loli.net/2019/06/08/5cfb5d6d5fab581544.jpg" alt="BaiduDesk"></p>
 <a id="more"></a>
-<div class="note info">
-            <p>BaiduPCS-Go 已被百度关注，原作者也准备停止维护了（<a href="https://github.com/iikira/BaiduPCS-Go/issues/643" rel="external nofollow noopener noreferrer" target="_blank">[作者] BaiduPCS-Go 已进入最后的维护阶段，有些话想对你们说 </a>）。目前使用下面方法仍可高速下载，并且不黑号。<a href="https://i.loli.net/2019/02/25/5c73bf0556fdd.png" rel="external nofollow noopener noreferrer" target="_blank"><img data-src="https://i.loli.net/2019/02/25/5c73bf0556fdd.png" alt="Screenshot_20190225_180815.png"></a> 图中链接：<a href="http://pcs.baidu.com/rest/2.0/pcs/file?app_id=265486&amp;method=list&amp;path=%2F" rel="external nofollow noopener noreferrer" target="_blank">http://pcs.baidu.com/rest/2.0/pcs/file?app_id=265486&amp;method=list&amp;path=%2F</a>快捷脚本见文末</p>
-          </div>
+<div class="note info"><p>BaiduPCS-Go 已被百度关注，原作者也准备停止维护了（<a href="https://github.com/iikira/BaiduPCS-Go/issues/643" rel="external nofollow noopener noreferrer" target="_blank">[作者] BaiduPCS-Go 已进入最后的维护阶段，有些话想对你们说 </a>）。目前使用下面方法仍可高速下载，并且不黑号。<a href="https://i.loli.net/2019/02/25/5c73bf0556fdd.png" rel="external nofollow noopener noreferrer" target="_blank"><img data-src="https://i.loli.net/2019/02/25/5c73bf0556fdd.png" alt="Screenshot_20190225_180815.png"></a> 图中链接：<a href="http://pcs.baidu.com/rest/2.0/pcs/file?app_id=265486&amp;method=list&amp;path=%2F" rel="external nofollow noopener noreferrer" target="_blank">http://pcs.baidu.com/rest/2.0/pcs/file?app_id=265486&amp;method=list&amp;path=%2F</a>
+快捷脚本见文末</p>
+</div>
 <p>在酷安看见 <a href="https://github.com/iikira/BaiduPCS-Go" rel="external nofollow noopener noreferrer" target="_blank">BaiduPCS-Go</a> (一个命令行界面的百度网盘客户端）,当时只是在手机上体验了下就删掉了。不久前弄了个工控板，第一次接触这个，以为能实现 路由器+NAS+小主机 结果 CPU 不支持虚拟化，虽然也能使用虚拟机，但只能使用 32 位系统，性能损失太大。就只装了一个 OpenWrt。这样配置就有点太奢侈了，95% 以上的性能都处于闲置状态，至少对于校园宽带环境的我来说太奢侈。对群晖的功能有点眼馋，所以想着能不能在 OpenWrt 上实现部分群晖的功能。比如远程下载，私有云存储等。经过一番折腾使用 Frp+BaiduPCS-Go+smaba 也算勉强实现了。</p>
 <ul>
 <li>Frp：一款开源的内网穿透工具，选它的主要原因是配置简单，有很多免费分享的服务器。</li>
