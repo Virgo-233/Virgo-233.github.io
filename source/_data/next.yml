@@ -646,7 +646,7 @@ rating:
 
 # AddThis Share. See: https://www.addthis.com
 # Go to https://www.addthis.com/dashboard to customize your tools.
-add_this_id:
+add_this_id: ra-5dbaa333234d17a3
 
 # ---------------------------------------------------------------
 # Statistics and Analytics
@@ -857,7 +857,7 @@ canvas_ribbon:
 # Remember to use the https protocol of CDN files when you enable https on your site.
 vendors:
   # Internal path prefix.
-  _internal: lib
+  internal: jsdelivr
 
   # Internal version: 3.1.0
   # anime: //cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js
