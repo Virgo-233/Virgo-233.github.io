@@ -34,7 +34,7 @@
 <link rel="canonical" href="https://cxyzzz.gtihub.io/archives/2019/10/">
 
 
-<script id="page-configurations">
+<script data-pjax id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -413,6 +413,9 @@
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
+  <div class="addthis_inline_share_toolbox">
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5dbaa333234d17a3" async="async"></script>
+  </div>
 
         
 <div class="busuanzi-count">
@@ -456,12 +459,12 @@
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-<script src="/js/utils.js"></script>
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-next@8.0.0-rc.3/source/js/utils.js"></script>
 
-<script src="/js/motion.js"></script>
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-next@8.0.0-rc.3/source/js/motion.js"></script>
 
 
-<script src="/js/next-boot.js"></script>
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-next@8.0.0-rc.3/source/js/next-boot.js"></script>
 
   <script>
 var pjax = new Pjax({
@@ -482,33 +485,7 @@ var pjax = new Pjax({
 });
 
 document.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], #pjax script'));
   NexT.boot.refresh();
   // Define Motion Sequence & Bootstrap Motion.
   if (CONFIG.motion.enable) {
@@ -538,7 +515,7 @@ document.addEventListener('pjax:success', () => {
 
 
   
-<script src="/js/local-search.js"></script>
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-next@8.0.0-rc.3/source/js/local-search.js"></script>
 
 
 
