@@ -36,7 +36,7 @@
     "hexo-renderer-stylus": "^1.1.0",
     "hexo-server": "^1.0.0",
     "hexo-symbols-count-time": "^0.7.1",
-    "hexo-web-push-notification": "^0.2.2",
+    "hexo-web-push-notification": "^0.2.3",
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-footnote": "^3.0.2",
     "markdown-it-ins": "^3.0.0",
