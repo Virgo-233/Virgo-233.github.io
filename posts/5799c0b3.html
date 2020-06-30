@@ -69,30 +69,32 @@
   <style>
   body { margin-top: 2rem; }
 
-  .use-motion .brand,
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before, .use-motion .logo-line-after {
+  .use-motion .logo-line {
     transform: scaleX(1);
   }
 
   .search-pop-overlay, .sidebar-nav { display: none; }
   .sidebar-panel { display: block; }
   </style>
-  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
 
 <link rel="alternate" href="/atom.xml" title="𝓗𝓸𝓼𝓱𝓲𝔃𝓸𝓻𝓪" type="application/atom+xml">
@@ -116,9 +118,9 @@
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <i class="logo-line-before"></i>
+      <i class="logo-line"></i>
       <h1 class="site-title">𝓗𝓸𝓼𝓱𝓲𝔃𝓸𝓻𝓪</h1>
-      <i class="logo-line-after"></i>
+      <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">希望阳光很暖，微风不燥，时光不老，你我都好。</p>
   </div>
@@ -200,9 +202,9 @@
   </div>
 
   <aside class="sidebar">
-    <div class="sidebar-inner">
 
-      <ul class="sidebar-nav motion-element">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
         </li>
@@ -212,12 +214,12 @@
       </ul>
 
       <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
+      <section class="post-toc-wrap sidebar-panel">
           <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#斐讯-k2t"><span class="nav-number">1.</span> <span class="nav-text">斐讯 k2t</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#刷入-breed-方法"><span class="nav-number">1.1.</span> <span class="nav-text">刷入 breed 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#官改固件"><span class="nav-number">1.2.</span> <span class="nav-text">官改固件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Openwrt-LEDE"><span class="nav-number">1.3.</span> <span class="nav-text">Openwrt&#x2F;LEDE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gargoyle-石像鬼"><span class="nav-number">1.4.</span> <span class="nav-text">Gargoyle(石像鬼)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#斐讯K2-PSG1218-64M"><span class="nav-number">2.</span> <span class="nav-text">斐讯K2(PSG1218-64M)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#品胜云座充-ar9331-pinsen"><span class="nav-number">3.</span> <span class="nav-text">品胜云座充(ar9331-pinsen)</span></a></li></ol></div>
-      </div>
+      </section>
       <!--/noindex-->
 
-      <div class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="𝕮𝖍𝖊𝖓" src="/images/avatar.webp">
   <p class="site-author-name" itemprop="name">𝕮𝖍𝖊𝖓</p>
@@ -273,7 +275,7 @@
     </ul>
   </div>
 
-      </div>
+      </section>
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
@@ -287,6 +289,10 @@
     <span>0%</span>
   </div>
   <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
 
       <div class="main-inner">
@@ -472,17 +478,17 @@ hackpascal-Breed：<a href="https://breed.hackpascal.net/" rel="external nofollo
 
         <div class="reward-container">
   <div></div>
-  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+  <button onclick="document.getElementById('post-reward').classList.toggle('active');">
     赞赏
   </button>
-  <div id="qr" style="display: none;">
+  <div id="post-reward">
       
-      <div style="display: inline-block;">
-        <img src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@latest/images/wechatpay.png" alt="𝕮𝖍𝖊𝖓 微信支付">
-        <p>微信支付</p>
+      <div>
+        <img src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@latest/images/wechatpay.png" alt="𝕮𝖍𝖊𝖓 微信">
+        <p>微信</p>
       </div>
       
-      <div style="display: inline-block;">
+      <div>
         <img src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@latest/images/alipay.png" alt="𝕮𝖍𝖊𝖓 支付宝">
         <p>支付宝</p>
       </div>
@@ -652,9 +658,6 @@ var pjax = new Pjax({
     '.languages',
     '#pjax'
   ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
   analytics: false,
   cacheBust: false,
   scrollTo : !CONFIG.bookmark.enable
@@ -670,6 +673,13 @@ document.addEventListener('pjax:success', () => {
       .add(NexT.motion.middleWares.subMenu)
       .add(NexT.motion.middleWares.postList)
       .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  if (hasTOC) {
+    document.querySelector('.sidebar-nav-toc').click();
+  } else {
+    document.querySelector('.sidebar-nav-overview').click();
   }
   NexT.utils.updateSidebarPosition();
 });
