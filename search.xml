@@ -3,7 +3,7 @@
   <entry>
     <title>使用 RSS 订阅学校校内新闻和通知公告</title>
     <url>/posts/66c8d8e0.html</url>
-    <content><![CDATA[<p><img data-src="https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.06.21/images/posts/Hkvmo8VnIyGM5zP.webp" alt="rss-40674_1280.png"></p>
+    <content><![CDATA[<p><img data-src="https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.07.08/images/posts/Hkvmo8VnIyGM5zP.webp" alt="rss-40674_1280.png"></p>
 <a id="more"></a>
 <p>由于疫情影响学校要求每天到完美校园支付宝小程序上打卡。打卡完成后弹出了个校园新闻栏，点进去看了下正是学校官网校内行为栏的内容。二话不说马上打开了抓包软件，还是同样的味道，只在登录时进行了代理检测，登录后就可以随便弄了。看了下发送的数据包，数据是直接获取的，并没有任何鉴权措施。正好我很久以前就想弄 RSS 订阅学校官网的动态的，就利用完美校园的接口写算了。</p>
 <h2 id="Demo"><a class="header-anchor" href="#Demo">¶</a>Demo</h2>
@@ -104,7 +104,7 @@ cuxtomerId: 学校 ID ，默认为湖南工业大学。</p>
   <entry>
     <title>使用日历订阅工大就业中心宣讲会、双选会</title>
     <url>/posts/ad3ad898.html</url>
-    <content><![CDATA[<img data-src="https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.06.21/images/posts/BQtMTU3vR2sScPX.webp" width="500">
+    <content><![CDATA[<img data-src="https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.07.08/images/posts/BQtMTU3vR2sScPX.webp" width="500">
 接口均为抓包得出，理论上适用于其它也接入了此系统的学校。
 <a id="more"></a>
 <div class="note success"><h3 id="2020-04-16-更新"><a class="header-anchor" href="#2020-04-16-更新">¶</a>2020-04-16 更新</h3>
@@ -217,7 +217,7 @@ count: 同宣讲会<br>
   <entry>
     <title>湖南工业大学电费查询</title>
     <url>/posts/328206c9.html</url>
-    <content><![CDATA[<img data-src="https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.06.21/images/posts/tDgNBEq7ZkGxnc5.webp" width="500">
+    <content><![CDATA[<img data-src="https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.07.08/images/posts/tDgNBEq7ZkGxnc5.webp" width="500">
 接口均为从完美校园抓包得出，理论上适用于其它也接入了完美校园的学校。
 <a id="more"></a>
 ## Demo
@@ -640,7 +640,7 @@ fooView 集成了 应用启动器、文件管理器、图片浏览（编辑）�
   <entry>
     <title>Android_rclone_backup</title>
     <url>/posts/1258516f.html</url>
-    <content><![CDATA[<img data-src="https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.06.21/images/posts/Yfqraxhwpugl3Uo.webp" width="500">
+    <content><![CDATA[<img data-src="https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.07.08/images/posts/Yfqraxhwpugl3Uo.webp" width="500">
 <a id="more"></a>
 <p>之前写了篇<a href="https://hoshizora.tw/posts/" rel="external nofollow noopener noreferrer" target="_blank">在手机上使用　rclone 挂载网盘</a>的教程，文末附带了个备份脚步，最近看　rclone　文档新发现了几个参数，可以优化下之前的脚本，索性新开一篇文章记录以下。</p>
 <h2 id="备份脚本"><a class="header-anchor" href="#备份脚本">¶</a>备份脚本</h2>
@@ -728,7 +728,7 @@ fooView 集成了 应用启动器、文件管理器、图片浏览（编辑）�
     <url>/posts/d5ae7f1b.html</url>
     <content><![CDATA[<p>Visual Studio Code (简称 VS Code/VSC)是一款免费开源的代码编辑器，支持几乎所有的主流开发语言，有语法高亮、智能代码补全、自定义热键、符号自动补全、代码片段、代码对比 Diff、GIT 等特性，支持插件扩展。软件支持 Windows、Mac 以及 Linux。</p>
 <p>官网：<a href="https://code.visualstudio.com/" rel="external nofollow noopener noreferrer" target="_blank">https://code.visualstudio.com/</a>
-<img data-src="https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.06.21/images/posts/5cfb5b61c8e8413483.webp" alt="vscode"></p>
+<img data-src="https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.07.08/images/posts/5cfb5b61c8e8413483.webp" alt="vscode"></p>
 <a id="more"></a>
 <h2 id="环境准备"><a class="header-anchor" href="#环境准备">¶</a>环境准备</h2>
 <p>VS Code 可在官网下载，其只是一个编辑器并不是 IDE，不含编译器因而需要我们自己安装编译器。
@@ -809,7 +809,7 @@ fooView 集成了 应用启动器、文件管理器、图片浏览（编辑）�
   <entry>
     <title>Android 使用 Rclone 挂载网盘</title>
     <url>/posts/2a60e472.html</url>
-    <content><![CDATA[<img data-src="https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.06.21/images/posts/HiShoot_20190902_152747.webp" width="500">
+    <content><![CDATA[<img data-src="https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.07.08/images/posts/HiShoot_20190902_152747.webp" width="500">
 <a id="more"></a>
 <details>
 <summary>点击显示更新信息</summary>
