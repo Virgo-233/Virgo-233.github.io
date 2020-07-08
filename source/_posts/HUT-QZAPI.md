@@ -8,6 +8,7 @@ tags: HUT
 HUT 强智教务系统 API
 
 地址 <https://github.com/cxyzzz/HUT_QIANZHI_API>
+
 参考 <https://github.com/TLingC/QZAPI>
 <!-- more -->
 
