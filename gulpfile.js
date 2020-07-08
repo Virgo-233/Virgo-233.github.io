@@ -36,7 +36,11 @@ gulp.task('minify-css', function () {
         .src(`${root}/${pattern}.css`)
         .pipe(
             cleanCSS({
-                compatibility: 'ie8'
+                advanced: true,//类型：Boolean 默认：true [是否开启高级优化（合并选择器等）]
+                compatibility: 'ie7',//保留ie7及以下兼容写法 类型：String 默认：''or'*' [启用兼容模式； 'ie7'：IE7兼容模式，'ie8'：IE8兼容模式，'*'：IE9+兼容模式]
+                keepBreaks: true,//类型：Boolean 默认：false [是否保留换行]
+                keepSpecialComments: '*'
+                //保留所有特殊前缀 当你用autoprefixer生成的浏览器前缀，如果不加这个参数，有可能将会删除你的部分前缀            
             })
         )
         .pipe(gulp.dest('./public'))
@@ -46,7 +50,7 @@ gulp.task('minify-css', function () {
 gulp.task('minify-js', function () {
     return gulp
         // 匹配所有 .js结尾的文件
-        .src(`${root}/${pattern}.js`)
+        .src([`${root}/${pattern}.js`, `!${root}/${pattern}.min.js`])
         .pipe(
             babel({
                 presets: ['@babel/preset-env']
@@ -64,7 +68,7 @@ gulp.task('minify-images', function () {
         .pipe(
             imagemin(
                 [
-                    imagemin.gifsicle({ optimizationLevel: 3 }),
+                    imagemin.gifsicle({ interlaced: true, optimizationLevel: 5 }),
                     imagemin.mozjpeg({ progressive: true }),
                     imagemin.optipng({ optimizationLevel: 7 }),
                     imagemin.svgo()
@@ -75,4 +79,4 @@ gulp.task('minify-images', function () {
         .pipe(gulp.dest('./public/images'))
 })
 
-gulp.task('default', gulp.series('minify-images', 'minify-css', 'minify-js'))
+gulp.task('default', gulp.series(gulp.parallel('minify-html', 'minify-images', 'minify-css', 'minify-js')))
