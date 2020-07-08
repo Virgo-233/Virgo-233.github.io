@@ -236,3 +236,9 @@ markdown:
     permalinkSymbol: '¶'
     case: 0
     separator: ''
+
+lazyload:
+  enable: true
+  onlypost: false # optional 
+  loadingImg: 'images/Bean Eater-1s-200px.svg'
+  isSPA: false # optional 
