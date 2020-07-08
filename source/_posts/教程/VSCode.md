@@ -7,7 +7,7 @@ tags: Windows
 Visual Studio Code (简称 VS Code/VSC)是一款免费开源的代码编辑器，支持几乎所有的主流开发语言，有语法高亮、智能代码补全、自定义热键、符号自动补全、代码片段、代码对比 Diff、GIT 等特性，支持插件扩展。软件支持 Windows、Mac 以及 Linux。
 
 官网：<https://code.visualstudio.com/>
-![vscode](https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.06.21/images/posts/5cfb5b61c8e8413483.webp)
+![vscode](https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.07.08/images/posts/5cfb5b61c8e8413483.webp)
 <!-- more -->
 
 ## 环境准备

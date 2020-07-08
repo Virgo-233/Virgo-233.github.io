@@ -4,7 +4,7 @@ tags: HUT
 abbrlink: 328206c9
 date: 2019-09-22 21:09:43
 ---
-<img src="https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.06.21/images/posts/tDgNBEq7ZkGxnc5.webp" width="500" >
+<img src="https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.07.08/images/posts/tDgNBEq7ZkGxnc5.webp" width="500" >
 接口均为从完美校园抓包得出，理论上适用于其它也接入了完美校园的学校。
 <!-- more -->
 ## Demo

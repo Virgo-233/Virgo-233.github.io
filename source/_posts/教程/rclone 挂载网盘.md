@@ -4,7 +4,7 @@ abbrlink: 2a60e472
 tags: Android
 date: 2019-07-16 22:22:05
 ---
-<img src="https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.06.21/images/posts/HiShoot_20190902_152747.webp" width="500" />
+<img src="https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.07.08/images/posts/HiShoot_20190902_152747.webp" width="500" />
 <!-- more -->
 
 <details>

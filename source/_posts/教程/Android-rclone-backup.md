@@ -4,7 +4,7 @@ tags: Android
 abbrlink: 1258516f
 date: 2020-02-29 14:42:35
 ---
-<img src="https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.06.21/images/posts/Yfqraxhwpugl3Uo.webp" width="500" />
+<img src="https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.07.08/images/posts/Yfqraxhwpugl3Uo.webp" width="500" />
 <!-- more -->
 
 之前写了篇[在手机上使用　rclone 挂载网盘](https://hoshizora.tw/posts/)的教程，文末附带了个备份脚步，最近看　rclone　文档新发现了几个参数，可以优化下之前的脚本，索性新开一篇文章记录以下。
