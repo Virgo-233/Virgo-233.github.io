@@ -800,7 +800,7 @@ mermaid:
 # Use Animate.css to animate everything.
 # For more information: https://animate.style
 motion:
-  enable: true
+  enable: false
   async: true
   transition:
     # All available transition variants: https://theme-next.js.org/animate/
@@ -957,5 +957,5 @@ vendors:
 
 # Assets
 css: css
-js: js
-images: https://cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@31298d0/source/images
+js: https://cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@latest/source/js
+images: https://cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@latest/source/images
