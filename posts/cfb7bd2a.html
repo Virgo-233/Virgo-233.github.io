@@ -1,4 +1,538 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#eee"><meta name="generator" content="Hexo 4.2.1"><link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.webp"><link rel="icon" type="image/png" sizes="32x32" href="/images/avatar_32x32.webp"><link rel="icon" type="image/png" sizes="16x16" href="/images/avatar_16x16.webp"><link rel="mask-icon" href="/images/avatar.webp" color="#eee"><link rel="manifest" href="/manifest.json"><meta name="google-site-verification" content="fpj6YMI0ctKLb9jIF3aZsDwu9z3mZguvrHQCAfXjq94"><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="//fonts.loli.net/css?family=Lora:300,300italic,400,400italic,700,700italic|Noto Serif SC:300,300italic,400,400italic,700,700italic|Rufina:300,300italic,400,400italic,700,700italic|Libre Baskerville:300,300italic,400,400italic,700,700italic|Roboto:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext"><link rel="stylesheet" href="/lib/font-awesome/css/all.min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css"><script class="hexo-configurations">var NexT=window.NexT||{},CONFIG={hostname:"cxyzzz.gtihub.io",root:"/",scheme:"Gemini",version:"8.0.0-rc.4",exturl:!1,sidebar:{position:"left",display:"post",padding:18,offset:12},copycode:!0,bookmark:{enable:!1,color:"#222",save:"auto"},fancybox:!0,mediumzoom:!1,lazyload:!0,pangu:!1,comments:{style:"tabs",active:"valine",storage:!0,lazyload:!0,nav:null,activeClass:"valine"},algolia:{hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}},localsearch:{enable:!0,trigger:"auto",top_n_per_article:1,unescape:!1,preload:!1},motion:{enable:!1,async:!0,transition:{post_block:"fadeIn",post_header:"fadeInDown",post_body:"fadeInDown",coll_header:"fadeInLeft",sidebar:"fadeInUp"}},path:"search.xml"}</script><meta property="og:type" content="article"><meta property="og:title" content="路由器使用百度云远程下载"><meta property="og:url" content="https://cxyzzz.gtihub.io/posts/cfb7bd2a.html"><meta property="og:site_name" content="𝓗𝓸𝓼𝓱𝓲𝔃𝓸𝓻𝓪"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://i.loli.net/2019/06/08/5cfb5d6d5fab581544.jpg"><meta property="og:image" content="https://i.loli.net/2019/02/25/5c73bf0556fdd.png"><meta property="og:image" content="https://i.loli.net/2019/06/08/5cfb5d704fd6651176.jpg"><meta property="og:image" content="https://i.loli.net/2019/06/08/5cfb5d73e805571236.jpg"><meta property="og:image" content="https://i.loli.net/2019/06/08/5cfb5d744ee9883146.jpg"><meta property="article:published_time" content="2018-06-13T11:38:46.000Z"><meta property="article:modified_time" content="2018-06-13T11:38:46.000Z"><meta property="article:author" content="𝕮𝖍𝖊𝖓"><meta property="article:tag" content="OpenWrt"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://i.loli.net/2019/06/08/5cfb5d6d5fab581544.jpg"><link rel="canonical" href="https://cxyzzz.gtihub.io/posts/cfb7bd2a.html"><script data-pjax class="page-configurations">CONFIG.page={sidebar:"",isHome:!1,isPost:!0,lang:"zh-CN"}</script><title>路由器使用百度云远程下载 | 𝓗𝓸𝓼𝓱𝓲𝔃𝓸𝓻𝓪</title><script async src="https://www.googletagmanager.com/gtag/js?id=UA-118566890-1"></script><script data-pjax>if(CONFIG.hostname===location.hostname){function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-118566890-1")}</script><noscript><style>body{margin-top:2rem}.use-motion .collection-header,.use-motion .comments,.use-motion .menu-item,.use-motion .pagination,.use-motion .post-block,.use-motion .post-body,.use-motion .post-header,.use-motion .sidebar{visibility:visible}.use-motion .footer,.use-motion .header,.use-motion .site-brand-container .toggle{opacity:initial}.use-motion .custom-logo-image,.use-motion .site-subtitle,.use-motion .site-title{opacity:initial;top:initial}.use-motion .logo-line{transform:scaleX(1)}.search-pop-overlay,.sidebar-nav{display:none}.sidebar-panel{display:block}</style></noscript><link rel="alternate" href="/atom.xml" title="𝓗𝓸𝓼𝓱𝓲𝔃𝓸𝓻𝓪" type="application/atom+xml"></head><body itemscope itemtype="http://schema.org/WebPage"><div class="container"><div class="headband"></div><main class="main"><header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-container"><div class="site-nav-toggle"><div class="toggle" aria-label="切换导航栏"><span class="toggle-line toggle-line-first"></span><span class="toggle-line toggle-line-middle"></span><span class="toggle-line toggle-line-last"></span></div></div><div class="site-meta"><a href="/" class="brand" rel="start"><i class="logo-line"></i><h1 class="site-title">𝓗𝓸𝓼𝓱𝓲𝔃𝓸𝓻𝓪</h1><i class="logo-line"></i></a><p class="site-subtitle" itemprop="description">希望阳光很暖，微风不燥，时光不老，你我都好。</p></div><div class="site-nav-right"><div class="toggle popup-trigger"><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class="site-nav"><ul id="menu" class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i> 首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i> 标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i> 分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i> 归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i> 关于</a></li><li class="menu-item menu-item-search"><a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i> 搜索</a></li></ul></nav><div class="search-pop-overlay"><div class="popup search-popup"><div class="search-header"><span class="search-icon"><i class="fa fa-search"></i></span><div class="search-input-container"> <input autocomplete="off" autocapitalize="off" placeholder="搜索..." spellcheck="false" type="search" class="search-input"></div><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span></div><div id="search-result"><div id="no-result"><i class="fa fa-spinner fa-pulse fa-5x"></i></div></div></div></div></div><div class="toggle sidebar-toggle"><span class="toggle-line toggle-line-first"></span><span class="toggle-line toggle-line-middle"></span><span class="toggle-line toggle-line-last"></span></div><aside class="sidebar"><div class="sidebar-inner sidebar-overview-active"><ul class="sidebar-nav"><li class="sidebar-nav-toc"> 文章目录</li><li class="sidebar-nav-overview"> 站点概览</li></ul><section class="post-toc-wrap sidebar-panel"></section><section class="site-overview-wrap sidebar-panel"><div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person"> <img class="site-author-image" itemprop="image" alt="𝕮𝖍𝖊𝖓" src="/images/avatar.webp"><p class="site-author-name" itemprop="name">𝕮𝖍𝖊𝖓</p><div class="site-description" itemprop="description"></div></div><div class="site-state-wrap animated"><nav class="site-state"><div class="site-state-item site-state-posts"> <a href="/archives/"><span class="site-state-item-count">18</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"> <a href="/categories/"><span class="site-state-item-count">2</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"> <a href="/tags/"><span class="site-state-item-count">7</span> <span class="site-state-item-name">标签</span></a></div></nav></div><div class="links-of-author animated"><span class="links-of-author-item"><a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=Uz8mMDgqDCU6ITQ8EyIifTA8Pg" title="E-Mail → http:&#x2F;&#x2F;mail.qq.com&#x2F;cgi-bin&#x2F;qm_share?t&#x3D;qm_mailme&amp;email&#x3D;Uz8mMDgqDCU6ITQ8EyIifTA8Pg" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-envelope fa-fw"></i> E-Mail</a></span><span class="links-of-author-item"><a href="https://github.com/cxyzzz" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cxyzzz" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i> GitHub</a></span><span class="links-of-author-item"><a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i> RSS</a></span></div><div class="links-of-blogroll animated"><div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i> Links</div><ul class="links-of-blogroll-list"><li class="links-of-blogroll-item"> <a href="https://www.hojun.cn/" title="https:&#x2F;&#x2F;www.hojun.cn" rel="noopener" target="_blank">hojun</a></li><li class="links-of-blogroll-item"> <a href="https://firstkaixin.github.io/" title="https:&#x2F;&#x2F;firstkaixin.github.io" rel="noopener" target="_blank">Mrkaixin</a></li></ul></div></section></div></aside><div id="sidebar-dimmer"></div></header><div class="back-to-top"><i class="fa fa-arrow-up"></i> <span>0%</span></div><div class="reading-progress-bar"></div><noscript><div id="noscript-warning">Theme NexT works best with JavaScript enabled</div></noscript><div class="main-inner"><div class="content post posts-expand"><article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN"><link itemprop="mainEntityOfPage" href="https://cxyzzz.gtihub.io/posts/cfb7bd2a.html"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="image" content="/images/avatar.webp"><meta itemprop="name" content="𝕮𝖍𝖊𝖓"><meta itemprop="description" content></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="𝓗𝓸𝓼𝓱𝓲𝔃𝓸𝓻𝓪"></span><header class="post-header"><h1 class="post-title" itemprop="name headline"> 路由器使用百度云远程下载</h1><div class="post-meta"><span class="post-meta-item"><span class="post-meta-item-icon"><i class="far fa-calendar"></i></span> <span class="post-meta-item-text">发表于</span> <time title="创建时间：2018-06-13 19:38:46" itemprop="dateCreated datePublished" datetime="2018-06-13T19:38:46+08:00">2018-06-13</time></span><span class="post-meta-item"><span class="post-meta-item-icon"><i class="far fa-folder"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E8%B7%AF%E7%94%B1%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">路由器</span></a></span></span><span id="/posts/cfb7bd2a.html" class="post-meta-item leancloud_visitors" data-flag-title="路由器使用百度云远程下载" title="阅读次数"><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span> <span class="post-meta-item-text">阅读次数：</span><span class="leancloud-visitors-count"></span></span><span class="post-meta-item"><span class="post-meta-item-icon"><i class="far fa-comment"></i></span> <span class="post-meta-item-text">Valine：</span><a title="valine" href="/posts/cfb7bd2a.html#valine-comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/posts/cfb7bd2a.html" itemprop="commentCount"></span></a></span><br><span class="post-meta-item" title="本文字数"><span class="post-meta-item-icon"><i class="far fa-file-word"></i></span> <span class="post-meta-item-text">本文字数：</span> <span>2k</span></span><span class="post-meta-item" title="阅读时长"><span class="post-meta-item-icon"><i class="far fa-clock"></i></span> <span class="post-meta-item-text">阅读时长 &asymp;</span> <span>2 分钟</span></span></div></header><div class="post-body" itemprop="articleBody"><p><img data-src="https://i.loli.net/2019/06/08/5cfb5d6d5fab581544.jpg" alt="BaiduDesk"></p><a id="more"></a><div class="note info"><p>BaiduPCS-Go 已被百度关注，原作者也准备停止维护了（<a href="https://github.com/iikira/BaiduPCS-Go/issues/643" rel="external nofollow noopener noreferrer" target="_blank">[作者] BaiduPCS-Go 已进入最后的维护阶段，有些话想对你们说</a> ）。目前使用下面方法仍可高速下载，并且不黑号。<a href="https://i.loli.net/2019/02/25/5c73bf0556fdd.png" rel="external nofollow noopener noreferrer" target="_blank"><img data-src="https://i.loli.net/2019/02/25/5c73bf0556fdd.png" alt="Screenshot_20190225_180815.png"></a> 图中链接：<a href="http://pcs.baidu.com/rest/2.0/pcs/file?app_id=265486&amp;method=list&amp;path=%2F" rel="external nofollow noopener noreferrer" target="_blank">http://pcs.baidu.com/rest/2.0/pcs/file?app_id=265486&amp;method=list&amp;path=%2F</a> 快捷脚本见文末</p></div><p>在酷安看见 <a href="https://github.com/iikira/BaiduPCS-Go" rel="external nofollow noopener noreferrer" target="_blank">BaiduPCS-Go</a> (一个命令行界面的百度网盘客户端）,当时只是在手机上体验了下就删掉了。不久前弄了个工控板，第一次接触这个，以为能实现 路由器+NAS+小主机 结果 CPU 不支持虚拟化，虽然也能使用虚拟机，但只能使用 32 位系统，性能损失太大。就只装了一个 OpenWrt。这样配置就有点太奢侈了，95% 以上的性能都处于闲置状态，至少对于校园宽带环境的我来说太奢侈。对群晖的功能有点眼馋，所以想着能不能在 OpenWrt 上实现部分群晖的功能。比如远程下载，私有云存储等。经过一番折腾使用 Frp+BaiduPCS-Go+smaba 也算勉强实现了。</p><ul><li>Frp：一款开源的内网穿透工具，选它的主要原因是配置简单，有很多免费分享的服务器。</li><li>BaiduPCS-Go：仿 Linux shell 文件处理命令的百度网盘命令行客户端.今天的主角就是它了。</li><li>smaba： 用来进行文件共享。也可使用其他同类软件。</li></ul><p>BaiduPCS-Go 使用方法很简单，作者提供了编译好的二进制文件，直接去 <a href="https://github.com/iikira/BaiduPCS-Go/releases" rel="external nofollow noopener noreferrer" target="_blank">realease</a> 页面下载对应架构文件就行。下载后解压，将 BaiduPCS-Go 复制到任意文件夹下即可。使用时须进行登录。</p><ul><li><p>常规登录百度帐号 支持在线验证绑定的手机号或邮箱,命令： <code>BaiduPCS-Go login</code></p></li><li><p>使用百度 BDUSS 来登录百度帐号 <a href="https://github.com/iikira/BaiduPCS-Go/wiki/%E5%85%B3%E4%BA%8E-%E8%8E%B7%E5%8F%96%E7%99%BE%E5%BA%A6-BDUSS" rel="external nofollow noopener noreferrer" target="_blank">关于 获取百度 BDUSS</a> ，命令： <code>BaiduPCS-Go login -bduss=&lt;BDUSS&gt;</code></p></li></ul><p>可使用 <code>BaiduPCS-Go -h</code> 查看帮助。 目前 BaiduPCS-Go 支持 多线程下载，上传，离线下载等功能，这里我只介绍下下载，更多使用方法可以查看项目 Readme 文档。</p><p>使用 ssh 连接路由器，切换到存放 BaiduPCS-Go 的目录，我为了方便使用将文件重命名为 B ，如果是手动下载上传到路由器的还得注意文件权限，如果运行时出现 permission dead 就是无权限，可运行 <code>chmod 0777 ./B</code> 也可在 winscp 里更改。首次运行需要登录才能使用，登录后可先输入 <code>h</code> 查看帮助 <img data-src="https://i.loli.net/2019/06/08/5cfb5d704fd6651176.jpg" alt="ssh"> 其他的一些文件处理命令与 linux 一样，如 mv 是移动，cp 是复制，ls 列出当前目录等等。 下载文件或目录 <code>BaiduPCS-Go download &lt;网盘文件或目录的路径1&gt; &lt;文件或目录2&gt; &lt;文件或目录3&gt; ... BaiduPCS-Go d &lt;网盘文件或目录的路径1&gt; &lt;文件或目录2&gt; &lt;文件或目录3&gt; ...</code></p><p>可选参数</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">--<span class="built_in">test</span>          测试下载, 此操作不会保存文件到本地</span><br><span class="line">--ow            overwrite, 覆盖已存在的文件</span><br><span class="line">--status        输出所有线程的工作状态</span><br><span class="line">--save          将下载的文件直接保存到当前工作目录</span><br><span class="line">--saveto value  将下载的文件直接保存到指定的目录</span><br><span class="line">-x              为文件加上执行权限, (windows系统无效)</span><br><span class="line">--share         以分享文件的方式获取下载链接来下载</span><br><span class="line">--locate        以获取直链的方式来下载</span><br><span class="line">-p value        指定下载线程数</span><br></pre></td></tr></table></figure><p>支持多个文件或目录的下载. 下载的文件默认保存到 程序所在目录 的 download/ 目录, 支持设置指定目录, 重名的文件会自动跳过! 使用 <code>./B config set -savedir /mnt/sdb1</code>可设置下载目录。这样就可以下载了。我用的是默认的 100 线程，下载速度还可以，如果闲速度不满意可适当提高线程数.</p><details><summary>点击显示图片</summary><p><img data-src="https://i.loli.net/2019/06/08/5cfb5d73e805571236.jpg" alt="BaiduPCS-Go"></p></details><p>当然高线程也会吃更多配置。 下载完可直接使用 smaba 共享，使用 fooview 进行播放。</p><details><summary>点击显示图片</summary><p><img data-src="https://i.loli.net/2019/06/08/5cfb5d744ee9883146.jpg" alt="foooview"></p></details><p>搭配 frp 将 smaba ，ssh 穿透到外网即可实现远程下载。</p><div class="note danger"><p>注意：将路由器 ssh 及 smaba 暴露到外网有一定风险</p></div><p>快捷脚本：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#/system/bin/sh</span></span><br><span class="line">BaiduPCS-Go config <span class="built_in">set</span> -appid=266719 &amp;&gt;/dev/null</span><br><span class="line">BaiduPCS-Go cp <span class="variable">$1</span> /apps/baidu_shurufa &amp;&gt;/dev/null</span><br><span class="line">BaiduPCS-Go config <span class="built_in">set</span> -appid=265486 &amp;&gt;/dev/null</span><br><span class="line">BaiduPCS-Go d /apps/baidu_shurufa/*</span><br><span class="line">BaiduPCS-Go rm /adds/baidu_shurufa/* &amp;&gt;/dev/null</span><br><span class="line">BaiduPCS-Go config <span class="built_in">set</span> -appid=266719 &amp;&gt;/dev/null</span><br></pre></td></tr></table></figure></div><div class="popular-posts-header">相关文章</div><ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><a href="/posts/343b8a35.html" rel="bookmark">KMS</a></div></li><li class="popular-posts-item"><div class="popular-posts-title"><a href="/posts/13b1ea83.html" rel="bookmark">Pisen云座充</a></div></li><li class="popular-posts-item"><div class="popular-posts-title"><a href="/posts/2443be7d.html" rel="bookmark">使用 Mentohust 代替锐捷进行校园网认证</a></div></li></ul><div class="reward-container"><div></div> <button onclick='document.getElementById("post-reward").classList.toggle("active")'> 赞赏</button><div id="post-reward"><div> <img src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@latest/images/wechatpay.png" alt="𝕮𝖍𝖊𝖓 微信"><p>微信</p></div><div> <img src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@latest/images/alipay.png" alt="𝕮𝖍𝖊𝖓 支付宝"><p>支付宝</p></div></div></div><div><ul class="post-copyright"><li class="post-copyright-author"> <strong>本文作者：</strong> 𝕮𝖍𝖊𝖓</li><li class="post-copyright-link"> <strong>本文链接：</strong> <a href="https://cxyzzz.gtihub.io/posts/cfb7bd2a.html" title="路由器使用百度云远程下载">https://cxyzzz.gtihub.io/posts/cfb7bd2a.html</a></li><li class="post-copyright-license"> <strong>版权声明：</strong> 本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul></div><footer class="post-footer"><div class="post-tags"><a href="/tags/OpenWrt/" rel="tag"><i class="fa fa-tag"></i> OpenWrt</a></div><div class="post-nav"><div class="post-nav-item"><a href="/posts/343b8a35.html" rel="prev" title="KMS"><i class="fa fa-chevron-left"></i> KMS</a></div><div class="post-nav-item"> <a href="/posts/ffffffff.html" rel="next" title="HUT-Email 登录及部分 EDU 邮箱可用福利">HUT-Email 登录及部分 EDU 邮箱可用福利<i class="fa fa-chevron-right"></i></a></div></div></footer></article></div><div class="comments" id="valine-comments"></div><script>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#eee">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.webp">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar_32x32.webp">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar_16x16.webp">
+  <link rel="mask-icon" href="/images/avatar.webp" color="#eee">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="google-site-verification" content="fpj6YMI0ctKLb9jIF3aZsDwu9z3mZguvrHQCAfXjq94">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lora:300,300italic,400,400italic,700,700italic|Noto Serif SC:300,300italic,400,400italic,700,700italic|Rufina:300,300italic,400,400italic,700,700italic|Libre Baskerville:300,300italic,400,400italic,700,700italic|Roboto:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"cxyzzz.gtihub.io","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="路由器使用百度云远程下载">
+<meta property="og:url" content="https://cxyzzz.gtihub.io/posts/cfb7bd2a.html">
+<meta property="og:site_name" content="𝓗𝓸𝓼𝓱𝓲𝔃𝓸𝓻𝓪">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2019/06/08/5cfb5d6d5fab581544.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/02/25/5c73bf0556fdd.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/08/5cfb5d704fd6651176.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/06/08/5cfb5d73e805571236.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/06/08/5cfb5d744ee9883146.jpg">
+<meta property="article:published_time" content="2018-06-13T11:38:46.000Z">
+<meta property="article:modified_time" content="2018-06-13T11:38:46.000Z">
+<meta property="article:author" content="𝕮𝖍𝖊𝖓">
+<meta property="article:tag" content="OpenWrt">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2019/06/08/5cfb5d6d5fab581544.jpg">
+
+<link rel="canonical" href="https://cxyzzz.gtihub.io/posts/cfb7bd2a.html">
+
+
+<script data-pjax class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>路由器使用百度云远程下载 | 𝓗𝓸𝓼𝓱𝓲𝔃𝓸𝓻𝓪</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118566890-1"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-118566890-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="𝓗𝓸𝓼𝓱𝓲𝔃𝓸𝓻𝓪" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">𝓗𝓸𝓼𝓱𝓲𝔃𝓸𝓻𝓪</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">希望阳光很暖，微风不燥，时光不老，你我都好。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="𝕮𝖍𝖊𝖓" src="/images/avatar.webp">
+  <p class="site-author-name" itemprop="name">𝕮𝖍𝖊𝖓</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=Uz8mMDgqDCU6ITQ8EyIifTA8Pg" title="E-Mail → http:&#x2F;&#x2F;mail.qq.com&#x2F;cgi-bin&#x2F;qm_share?t&#x3D;qm_mailme&amp;email&#x3D;Uz8mMDgqDCU6ITQ8EyIifTA8Pg" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/cxyzzz" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cxyzzz" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.hojun.cn/" title="https:&#x2F;&#x2F;www.hojun.cn" rel="noopener" target="_blank">hojun</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://firstkaixin.github.io/" title="https:&#x2F;&#x2F;firstkaixin.github.io" rel="noopener" target="_blank">Mrkaixin</a>
+        </li>
+    </ul>
+  </div>
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cxyzzz.gtihub.io/posts/cfb7bd2a.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.webp">
+      <meta itemprop="name" content="𝕮𝖍𝖊𝖓">
+      <meta itemprop="description" content>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="𝓗𝓸𝓼𝓱𝓲𝔃𝓸𝓻𝓪">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          路由器使用百度云远程下载
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-06-13 19:38:46" itemprop="dateCreated datePublished" datetime="2018-06-13T19:38:46+08:00">2018-06-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%B7%AF%E7%94%B1%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">路由器</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/posts/cfb7bd2a.html" class="post-meta-item leancloud_visitors" data-flag-title="路由器使用百度云远程下载" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/cfb7bd2a.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/cfb7bd2a.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><img data-src="https://i.loli.net/2019/06/08/5cfb5d6d5fab581544.jpg" alt="BaiduDesk"></p>
+<a id="more"></a>
+<div class="note info"><p>BaiduPCS-Go 已被百度关注，原作者也准备停止维护了（<a href="https://github.com/iikira/BaiduPCS-Go/issues/643" rel="external nofollow noopener noreferrer" target="_blank">[作者] BaiduPCS-Go 已进入最后的维护阶段，有些话想对你们说 </a>）。目前使用下面方法仍可高速下载，并且不黑号。<a href="https://i.loli.net/2019/02/25/5c73bf0556fdd.png" rel="external nofollow noopener noreferrer" target="_blank"><img data-src="https://i.loli.net/2019/02/25/5c73bf0556fdd.png" alt="Screenshot_20190225_180815.png"></a> 图中链接：<a href="http://pcs.baidu.com/rest/2.0/pcs/file?app_id=265486&amp;method=list&amp;path=%2F" rel="external nofollow noopener noreferrer" target="_blank">http://pcs.baidu.com/rest/2.0/pcs/file?app_id=265486&amp;method=list&amp;path=%2F</a>
+快捷脚本见文末</p>
+</div>
+<p>在酷安看见 <a href="https://github.com/iikira/BaiduPCS-Go" rel="external nofollow noopener noreferrer" target="_blank">BaiduPCS-Go</a> (一个命令行界面的百度网盘客户端）,当时只是在手机上体验了下就删掉了。不久前弄了个工控板，第一次接触这个，以为能实现 路由器+NAS+小主机 结果 CPU 不支持虚拟化，虽然也能使用虚拟机，但只能使用 32 位系统，性能损失太大。就只装了一个 OpenWrt。这样配置就有点太奢侈了，95% 以上的性能都处于闲置状态，至少对于校园宽带环境的我来说太奢侈。对群晖的功能有点眼馋，所以想着能不能在 OpenWrt 上实现部分群晖的功能。比如远程下载，私有云存储等。经过一番折腾使用 Frp+BaiduPCS-Go+smaba 也算勉强实现了。</p>
+<ul>
+<li>Frp：一款开源的内网穿透工具，选它的主要原因是配置简单，有很多免费分享的服务器。</li>
+<li>BaiduPCS-Go：仿 Linux shell 文件处理命令的百度网盘命令行客户端.今天的主角就是它了。</li>
+<li>smaba： 用来进行文件共享。也可使用其他同类软件。</li>
+</ul>
+<p>BaiduPCS-Go 使用方法很简单，作者提供了编译好的二进制文件，直接去 <a href="https://github.com/iikira/BaiduPCS-Go/releases" rel="external nofollow noopener noreferrer" target="_blank">realease</a> 页面下载对应架构文件就行。下载后解压，将 BaiduPCS-Go 复制到任意文件夹下即可。使用时须进行登录。</p>
+<ul>
+<li>
+<p>常规登录百度帐号
+支持在线验证绑定的手机号或邮箱,命令：
+<code>BaiduPCS-Go login</code></p>
+</li>
+<li>
+<p>使用百度 BDUSS 来登录百度帐号
+<a href="https://github.com/iikira/BaiduPCS-Go/wiki/%E5%85%B3%E4%BA%8E-%E8%8E%B7%E5%8F%96%E7%99%BE%E5%BA%A6-BDUSS" rel="external nofollow noopener noreferrer" target="_blank">关于 获取百度 BDUSS</a> ，命令：
+<code>BaiduPCS-Go login -bduss=&lt;BDUSS&gt;</code></p>
+</li>
+</ul>
+<p>可使用 <code>BaiduPCS-Go -h</code> 查看帮助。
+目前 BaiduPCS-Go 支持 多线程下载，上传，离线下载等功能，这里我只介绍下下载，更多使用方法可以查看项目 Readme 文档。</p>
+<p>使用 ssh 连接路由器，切换到存放 BaiduPCS-Go 的目录，我为了方便使用将文件重命名为 B ，如果是手动下载上传到路由器的还得注意文件权限，如果运行时出现 permission dead 就是无权限，可运行 <code>chmod 0777 ./B</code> 也可在 winscp 里更改。首次运行需要登录才能使用，登录后可先输入 <code>h</code> 查看帮助
+<img data-src="https://i.loli.net/2019/06/08/5cfb5d704fd6651176.jpg" alt="ssh">
+其他的一些文件处理命令与 linux 一样，如 mv 是移动，cp 是复制，ls 列出当前目录等等。
+下载文件或目录
+<code>BaiduPCS-Go download &lt;网盘文件或目录的路径1&gt; &lt;文件或目录2&gt; &lt;文件或目录3&gt; ... BaiduPCS-Go d &lt;网盘文件或目录的路径1&gt; &lt;文件或目录2&gt; &lt;文件或目录3&gt; ...</code></p>
+<p>可选参数</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">--<span class="built_in">test</span>          测试下载, 此操作不会保存文件到本地</span><br><span class="line">--ow            overwrite, 覆盖已存在的文件</span><br><span class="line">--status        输出所有线程的工作状态</span><br><span class="line">--save          将下载的文件直接保存到当前工作目录</span><br><span class="line">--saveto value  将下载的文件直接保存到指定的目录</span><br><span class="line">-x              为文件加上执行权限, (windows系统无效)</span><br><span class="line">--share         以分享文件的方式获取下载链接来下载</span><br><span class="line">--locate        以获取直链的方式来下载</span><br><span class="line">-p value        指定下载线程数</span><br></pre></td></tr></table></figure>
+<p>支持多个文件或目录的下载.
+下载的文件默认保存到 程序所在目录 的 download/ 目录, 支持设置指定目录, 重名的文件会自动跳过!
+使用 <code>./B config set -savedir /mnt/sdb1</code>可设置下载目录。这样就可以下载了。我用的是默认的 100 线程，下载速度还可以，如果闲速度不满意可适当提高线程数.</p>
+<details>
+<summary>点击显示图片</summary>
+<p><img data-src="https://i.loli.net/2019/06/08/5cfb5d73e805571236.jpg" alt="BaiduPCS-Go"></p>
+</details>
+<p>当然高线程也会吃更多配置。
+下载完可直接使用 smaba 共享，使用 fooview 进行播放。</p>
+<details>
+<summary>点击显示图片</summary>
+<p><img data-src="https://i.loli.net/2019/06/08/5cfb5d744ee9883146.jpg" alt="foooview"></p>
+</details>
+<p>搭配 frp 将 smaba ，ssh 穿透到外网即可实现远程下载。</p>
+<div class="note danger"><p>注意：将路由器 ssh 及 smaba 暴露到外网有一定风险</p></div>
+<p>快捷脚本：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#/system/bin/sh</span></span><br><span class="line">BaiduPCS-Go config <span class="built_in">set</span> -appid=266719 &amp;&gt;/dev/null</span><br><span class="line">BaiduPCS-Go cp <span class="variable">$1</span> /apps/baidu_shurufa &amp;&gt;/dev/null</span><br><span class="line">BaiduPCS-Go config <span class="built_in">set</span> -appid=265486 &amp;&gt;/dev/null</span><br><span class="line">BaiduPCS-Go d /apps/baidu_shurufa/*</span><br><span class="line">BaiduPCS-Go rm /adds/baidu_shurufa/* &amp;&gt;/dev/null</span><br><span class="line">BaiduPCS-Go config <span class="built_in">set</span> -appid=266719 &amp;&gt;/dev/null</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/posts/343b8a35.html" rel="bookmark">KMS</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/posts/13b1ea83.html" rel="bookmark">Pisen云座充</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/posts/2443be7d.html" rel="bookmark">使用 Mentohust 代替锐捷进行校园网认证</a></div>
+    </li>
+  </ul>
+
+        <div class="reward-container">
+  <div></div>
+  <button onclick="document.getElementById('post-reward').classList.toggle('active');">
+    赞赏
+  </button>
+  <div id="post-reward">
+      
+      <div>
+        <img src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@latest/images/wechatpay.png" alt="𝕮𝖍𝖊𝖓 微信">
+        <p>微信</p>
+      </div>
+      
+      <div>
+        <img src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@latest/images/alipay.png" alt="𝕮𝖍𝖊𝖓 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>𝕮𝖍𝖊𝖓
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://cxyzzz.gtihub.io/posts/cfb7bd2a.html" title="路由器使用百度云远程下载">https://cxyzzz.gtihub.io/posts/cfb7bd2a.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/OpenWrt/" rel="tag"><i class="fa fa-tag"></i> OpenWrt</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/343b8a35.html" rel="prev" title="KMS">
+      <i class="fa fa-chevron-left"></i> KMS
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/ffffffff.html" rel="next" title="HUT-Email 登录及部分 EDU 邮箱可用福利">
+      HUT-Email 登录及部分 EDU 邮箱可用福利 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+    <div class="comments" id="valine-comments"></div>
+
+<script>
   window.addEventListener('tabs:register', () => {
     let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
@@ -18,7 +552,88 @@
       localStorage.setItem('comments_active', commentClass);
     });
   }
-</script></div></main><footer class="footer"><div class="footer-inner"><div class="copyright"> &copy; <span itemprop="copyrightYear">2020</span><span class="with-love"><i class="fa fa-heart"></i></span> <span class="author" itemprop="copyrightHolder">𝕮𝖍𝖊𝖓</span> <span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-chart-area"></i></span> <span title="站点总字数">61k</span> <span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-coffee"></i></span> <span title="站点阅读时长">56 分钟</span></div><div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Gemini</a> 强力驱动</div><div class="addthis_inline_share_toolbox"><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5dbaa333234d17a3" async="async"></script></div><div class="busuanzi-count"><script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span class="post-meta-item" id="busuanzi_container_site_uv" style="display:none"><span class="post-meta-item-icon"><i class="fa fa-user-secret"></i></span><span class="site-uv" title="总访客量"><span id="busuanzi_value_site_uv"></span></span></span> <span class="post-meta-divider">|</span><span class="post-meta-item" id="busuanzi_container_site_pv" style="display:none"><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span><span class="site-pv" title="总访问量"><span id="busuanzi_value_site_pv"></span></span></span></div></div></footer></div><script src="/lib/anime.min.js"></script><script src="//cdn.jsdelivr.net/gh/next-theme/pjax@0/pjax.min.js"></script><script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script><script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script><script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-next@8.0.0-rc.4/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-next@8.0.0-rc.4/source/js/next-boot.js"></script><script>
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">𝕮𝖍𝖊𝖓</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">61k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">56 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+  <div class="addthis_inline_share_toolbox">
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5dbaa333234d17a3" async="async"></script>
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user-secret"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/next-theme/pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-next@8.0.0-rc.4/source/js/utils.js"></script>
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-next@8.0.0-rc.4/source/js/next-boot.js"></script>
+
+  <script>
 var pjax = new Pjax({
   selectors: [
     'head title',
@@ -53,7 +668,45 @@ document.addEventListener('pjax:success', () => {
   }
   NexT.utils.updateSidebarPosition();
 });
-</script><script data-pjax>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script><script src="//cdn.jsdelivr.net/npm/hexo-theme-next@8.0.0-rc.4/source/js/local-search.js"></script><div class="pjax"><script>
+</script>
+
+
+  
+  <script data-pjax>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-next@8.0.0-rc.4/source/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="pjax">
+  
+
+  
+
+
+<script>
 NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
     new Valine(Object.assign({
@@ -63,4 +716,8 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     ));
   }, window.Valine);
 });
-</script></div><script>!function(e,s,n,p){e.webpushr=e.webpushr||function(){(e.webpushr.q=e.webpushr.q||[]).push(arguments)};var r,t=s.getElementsByTagName(n)[0];(r=s.createElement(n)).id="webpushr-jssdk",r.src="https://cdn.webpushr.com/app.min.js",t.parentNode.appendChild(r)}(window,document,"script"),webpushr("init","BEg8OE6x7RYTwtfwoYrlYAm7_-0tCQ3ZCx3J3jrG6nUhN6xEX8clsDvIx7gHU2lPqCYBvi9kTsjYRFclg2NdnfM")</script></body></html>
+</script>
+
+    </div>
+<script>(function(w,d, s, id) {w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.src = 'https://cdn.webpushr.com/app.min.js';fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));webpushr('init','BEg8OE6x7RYTwtfwoYrlYAm7_-0tCQ3ZCx3J3jrG6nUhN6xEX8clsDvIx7gHU2lPqCYBvi9kTsjYRFclg2NdnfM');</script></body>
+</html>
