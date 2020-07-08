@@ -976,6 +976,6 @@ vendors:
   canvas_ribbon:
 
 # Assets
-css: https://cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@master/source/css
-js: https://cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@master/source/js
-images: https://cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@master/source/images
+css: https://cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@latest/source/css
+js: https://cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@latest/source/js
+images: https://cdn.jsdelivr.net/gh/cxyzzz/hexo-theme-next@latest/source/images
