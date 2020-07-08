@@ -12,11 +12,12 @@ branches:
         - hexo_source # 只监测hexo_source分支
 
 install:
-    - yarn global add hexo-cli # 安装hexo及插件
+    - yarn global add hexo-cli gulp # 安装hexo及插件
     - yarn
 script:
     - hexo clean # 清除
     - hexo g # 生成
+    - gulp default # gulp 压缩
 
 after_script:
     - git clone https://${GH_REF} .deploy_git

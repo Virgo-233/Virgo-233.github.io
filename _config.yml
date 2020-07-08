@@ -145,11 +145,18 @@ js_concator:
   bundle_path: '/js/bundle.js'
   use_versioned_bundle: false
   front: false
+  silent: false
 
 html_minifier:
   enable: false
   ignore_error: false
-  exclude: 
+  silent: false
+  exclude:
+
+css_minifier:
+  enable: true
+  exclude:
+    - '*.min.css'
 
 image_minifier:
   enable: true
@@ -158,20 +165,16 @@ image_minifier:
   optimizationLevel: 5
   pngquant: true
   progressive: false
+  silent: false
 
 js_minifier:
   enable: true
   mangle: true
-  output: 
-  compress:
+  silent: false
   exclude:
     - '*.min.js'
 
-css_minifier:
-  enable: true
-  exclude:
-    - '*.min.css'
- 
+
 baidu_url_submit:
   count: 20 # 提交最新的链接
   host: blog.timelless.xyz # 在百度站长平台中注册的域名
