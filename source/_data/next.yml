@@ -41,7 +41,7 @@ favicon:
   small: /images/avatar_16x16.webp
   medium: /images/avatar_32x32.webp
   apple_touch_icon: /images/avatar.webp
-  safari_pinned_tab: /images/avatar.png
+  safari_pinned_tab: /images/avatar.webp
   android_manifest: /manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 
