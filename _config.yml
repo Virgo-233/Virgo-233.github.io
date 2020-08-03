@@ -206,7 +206,7 @@ symbols_count_time:
 
 # Security
 encrypt: # hexo-blog-encrypt
-  enable: true
+  enable: false
 
 webPushNotification:
   webpushrKey: "5SACw99e10PCmyyv5bQLNY4MqkR5ZkeLTONPufy3JM4"
