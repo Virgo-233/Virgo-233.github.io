@@ -32,62 +32,6 @@ custom_file_path:
 
 show_post_end_message: false
 
-# ---------------------------------------------------------------
-# Site Information Settings
-# See: https://theme-next.js.org/docs/getting-started/
-# ---------------------------------------------------------------
-
-favicon:
-  small: /images/avatar_16x16.webp
-  medium: /images/avatar_32x32.webp
-  apple_touch_icon: /images/avatar.webp
-  safari_pinned_tab: /images/avatar.webp
-  android_manifest: /manifest.json
-  #ms_browserconfig: /images/browserconfig.xml
-
-# Show multilingual switcher in footer.
-language_switcher: false
-
-footer:
-  # Specify the date when the site was setup. If not defined, current year will be used.
-  #since: 2015
-
-  # Icon between year and copyright info.
-  icon:
-    # Icon name in Font Awesome. See: https://fontawesome.com/icons
-    name: fa fa-heart
-    # If you want to animate the icon, set it to true.
-    animated: true
-    # Change the color of icon, using Hex Code.
-    color: "#ffbbd6"
-
-  # If not defined, `author` from Hexo `_config.yml` will be used.
-  copyright:
-
-  # Powered by Hexo & NexT
-  powered: true
-
-  # Beian ICP and gongan information for Chinese users. See: http://www.beian.miit.gov.cn, http://www.beian.gov.cn
-  beian:
-    enable: false
-    icp:
-    # The digit in the num of gongan beian.
-    gongan_id:
-    # The full num of gongan beian.
-    gongan_num:
-    # The icon for gongan beian. See: http://www.beian.gov.cn/portal/download
-    gongan_icon_url:
-
-# Creative Commons 4.0 International License.
-# See: https://creativecommons.org/share-your-work/licensing-types-examples
-# Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
-# You can set a language value if you prefer a translated version of CC license, e.g. deed.zh
-# CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org
-creative_commons:
-  license: by-nc-sa
-  sidebar: false
-  post: true
-  language: deed.zh
 
 # ---------------------------------------------------------------
 # Scheme Settings
@@ -102,6 +46,32 @@ scheme: Gemini
 # Dark Mode
 darkmode: false
 
+
+# ---------------------------------------------------------------
+# Site Information Settings
+# ---------------------------------------------------------------
+
+favicon:
+  small: /images/avatar_16x16.webp
+  medium: /images/avatar_32x32.webp
+  apple_touch_icon: /images/avatar.webp
+  safari_pinned_tab: /images/avatar.webp
+  android_manifest: /manifest.json
+  #ms_browserconfig: /images/browserconfig.xml
+
+# Custom Logo (Warning: Do not support scheme Mist)
+custom_logo: #/uploads/custom-logo.jpg
+
+# Creative Commons 4.0 International License.
+# See: https://creativecommons.org/share-your-work/licensing-types-examples
+# Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
+# You can set a language value if you prefer a translated version of CC license, e.g. deed.zh
+# CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org
+creative_commons:
+  license: by-nc-sa
+  sidebar: false
+  post: true
+  language:
 
 # ---------------------------------------------------------------
 # Menu Settings
@@ -227,6 +197,45 @@ chat:
 
 
 # ---------------------------------------------------------------
+# Footer Settings
+# See: https://theme-next.js.org/docs/theme-settings/footer
+# ---------------------------------------------------------------
+
+# Show multilingual switcher in footer.
+language_switcher: false
+
+footer:
+  # Specify the date when the site was setup. If not defined, current year will be used.
+  #since: 2015
+
+  # Icon between year and copyright info.
+  icon:
+    # Icon name in Font Awesome. See: https://fontawesome.com/icons
+    name: fa fa-heart
+    # If you want to animate the icon, set it to true.
+    animated: true
+    # Change the color of icon, using Hex Code.
+    color: "#ffbbd6"
+
+  # If not defined, `author` from Hexo `_config.yml` will be used.
+  copyright:
+
+  # Powered by Hexo & NexT
+  powered: true
+
+  # Beian ICP and gongan information for Chinese users. See: http://www.beian.miit.gov.cn, http://www.beian.gov.cn
+  beian:
+    enable: false
+    icp:
+    # The digit in the num of gongan beian.
+    gongan_id:
+    # The full num of gongan beian.
+    gongan_num:
+    # The icon for gongan beian. See: http://www.beian.gov.cn/portal/download
+    gongan_icon_url:
+
+
+# ---------------------------------------------------------------
 # Post Settings
 # See: https://theme-next.js.org/docs/theme-settings/posts
 # ---------------------------------------------------------------
@@ -251,7 +260,6 @@ post_meta:
 # Dependencies: https://github.com/next-theme/hexo-word-counter
 symbols_count_time:
   separated_meta: true
-  item_text_post: true
   item_text_total: false
 
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
@@ -323,7 +331,8 @@ calendar:
   calendar_id: <required> # Your Google account E-Mail
   api_key: <required>
   orderBy: startTime
-  offsetMax: 24 # Time Range
+  showLocation: false
+  offsetMax: 72 # Time Range
   offsetMin: 4 # Time Range
   showDeleted: false
   singleEvents: true
@@ -332,7 +341,7 @@ calendar:
 
 # ---------------------------------------------------------------
 # Misc Theme Settings
-# See: https://theme-next.js.org/docs/theme-settings/
+# See: https://theme-next.js.org/docs/theme-settings/miscellaneous
 # ---------------------------------------------------------------
 
 # Set the text alignment in posts / pages.
@@ -346,9 +355,6 @@ mobile_layout_economy: false
 
 # Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
 android_chrome_color: "#eee"
-
-# Custom Logo (Do not support scheme Mist)
-custom_logo: #/uploads/custom-logo.jpg
 
 codeblock:
   # Code Highlight theme
@@ -398,7 +404,6 @@ github_banner:
 
 # ---------------------------------------------------------------
 # Font Settings
-# See: https://theme-next.js.org/docs/theme-settings/#Fonts-Customization
 # ---------------------------------------------------------------
 # Find fonts on Google Fonts (https://fonts.google.com)
 # All fonts set here will have the following styles:
@@ -488,22 +493,22 @@ baidu_push: true
 # Third Party Plugins & Services Settings
 # See: https://theme-next.js.org/docs/third-party-services/
 # More plugins: https://github.com/next-theme/awesome-next
-# You may need to install dependencies or set CDN URLs in `vendors`
+# You may need to install the corresponding dependency packages
 # ---------------------------------------------------------------
 
 # Math Formulas Render Support
+# Warning: Please install / uninstall the relevant renderer according to the documentation.
+# See: https://theme-next.js.org/docs/third-party-services/math-equations
 # Server-side plugin: https://github.com/next-theme/hexo-filter-mathjax
 math:
   # Default (true) will load mathjax / katex script on demand.
   # That is it only render those page which has `mathjax: true` in Front-matter.
   # If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.
   per_page: true
-
-  # hexo-renderer-pandoc (or hexo-renderer-kramed) required for full MathJax support.
+  
   mathjax:
     enable: false
 
-  # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin) required for full Katex support.
   katex:
     enable: false
     # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
@@ -616,13 +621,13 @@ valine:
   avatar: retro # Gravatar style
   meta: [nick, mail, link] # Custom comment header
   pageSize: 10 # Pagination size
-  language: # Language, available values: en, zh-cn
+  lang: # Language, available values: en, zh-cn
   visitor: true # Article reading statistic
   comment_count: true # If false, comment count will only be displayed in post page, not in home page
   recordIP: false # Whether to record the commenter IP
   serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)
   enableQQ: true # Whether to enable the Nickname box to automatically get QQ Nickname and QQ Avatar
-  requiredFields: ['nick','mail'] # Set required fields: ['nick'] | ['nick','mail']
+  requiredFields: [nick, mail] # Set required fields: [nick] | [nick, mail]
   #post_meta_order: 0
 
 # LiveRe comments system
@@ -654,8 +659,8 @@ gitalk:
 # To get your ID visit https://widgetpack.com
 rating:
   enable: false
-  id: # <app_id>
-  color: fc6423
+  id:    # <app_id>
+  color: "#fc6423"
 
 # AddThis Share. See: https://www.addthis.com
 # Go to https://www.addthis.com/dashboard to customize your tools.
@@ -730,10 +735,6 @@ algolia_search:
   enable: false
   hits:
     per_page: 10
-  labels:
-    input_placeholder: Search for Posts
-    hits_empty: "We didn't find any results for the search: ${query}"
-    hits_stats: "${hits} results found in ${time} ms"
 
 # Local Search
 # Dependencies: https://github.com/next-theme/hexo-generator-searchdb
@@ -854,14 +855,15 @@ canvas_ribbon:
 #! ==============================================================
 #! DO NOT EDIT THE FOLLOWING SETTINGS
 #! UNLESS YOU KNOW WHAT YOU ARE DOING
-#! See: https://theme-next.js.org/docs/advanced-settings
+#! See: https://theme-next.js.org/docs/advanced-settings/vendors
 #! ==============================================================
 
-# It's recommended to use the same version as internal ones to avoid potential problems.
-# Remember to use the https protocol of CDN files when you enable https on your site.
+# It's recommended to use the same version as in `_vendors.yml` to avoid potential problems.
+# Remember to use the https protocol of CDN links when you enable https on your site.
 vendors:
   # The CDN provider of NexT internal scripts.
-  # Available values: local, jsdelivr, unpkg
+  # Available values: local | jsdelivr | unpkg
+  # Warning: If you are using the latest master branch of NexT, please set `internal: local`
   internal: local
   # The default CDN provider of third-party plugins.
   # Available values: local | jsdelivr | unpkg | cdnjs
@@ -922,6 +924,10 @@ vendors:
   # Gitalk
   gitalk_js:
   gitalk_css:
+
+  # Firebase
+  firebase_app:
+  firebase_firestore:
 
   # Algolia Search
   algolia_search:
