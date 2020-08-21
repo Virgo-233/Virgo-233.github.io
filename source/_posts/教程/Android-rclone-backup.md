@@ -7,11 +7,25 @@ date: 2020-02-29 14:42:35
 <img src="https://cdn.jsdelivr.net/gh/cxyzzz/CDN@20.07.08/images/posts/Yfqraxhwpugl3Uo.webp" width="500" />
 <!-- more -->
 
-之前写了篇[在手机上使用　rclone 挂载网盘](https://hoshizora.tw/posts/)的教程，文末附带了个备份脚步，最近看　rclone　文档新发现了几个参数，可以优化下之前的脚本，索性新开一篇文章记录以下。
+<details>
+<summary>点击显示更新信息</summary>
+{% note success %}
+### 2020.08.21 更新
+1. 设置 CHECKERS 为 16，TRANSFERS 为默认值（4）
+2. 更改 rclone 运行 CPU 优先级和 IO 优先级（nice: 19, ionice: 7）
+3. 添加 Github Gist
+{% gist 64546e524ae0de3111685926ed955785 syncone %}
+
+<details>
+<summary>
+{% endnote %}
+</details>
+
+之前写了篇[在手机上使用 rclone 挂载网盘](https://cxyzzz.github.io/posts/2a60e472.html)的教程，文末附带了个备份脚步，最近看 rclone 文档新发现了几个参数，可以优化下之前的脚本，索性新开一篇文章记录以下。
 
 ## 备份脚本
 
-之前的脚本用于备份其实还是可以的，只是要备份的路径是写死的，如果要增加就得修改脚步，也没办法排除某个或某类文件。新版主要增加的就是备份目录的配置，使用另一个文件存储备份目录，并且支持简单的正则过滤。这主要得益于　rclone　的　include(-from)、exclude(-from)、filter(-from)　参数，其功能基本可以从名字看出来，include　是包含，exclude 是不包含，filter 则是两者都有，带　from 则是从文件中读取规则。
+之前的脚本用于备份其实还是可以的，只是要备份的路径是写死的，如果要增加就得修改脚步，也没办法排除某个或某类文件。新版主要增加的就是备份目录的配置，使用另一个文件存储备份目录，并且支持简单的正则过滤。这主要得益于 rclone 的 include(-from)、exclude(-from)、filter(-from) 参数，其功能基本可以从名字看出来，include　是包含，exclude 是不包含，filter 则是两者都有，带 from 则是从文件中读取规则。
 
 脚本内容：
 
