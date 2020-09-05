@@ -73,6 +73,7 @@ creative_commons:
   post: true
   language:
 
+
 # ---------------------------------------------------------------
 # Menu Settings
 # ---------------------------------------------------------------
@@ -501,11 +502,11 @@ baidu_push: true
 # See: https://theme-next.js.org/docs/third-party-services/math-equations
 # Server-side plugin: https://github.com/next-theme/hexo-filter-mathjax
 math:
-  # Default (true) will load mathjax / katex script on demand.
+  # Default (false) will load mathjax / katex script on demand.
   # That is it only render those page which has `mathjax: true` in Front-matter.
-  # If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.
-  per_page: true
-  
+  # If you set it to true, it will load mathjax / katex srcipt EVERY PAGE.
+  every_page: false
+
   mathjax:
     enable: false
 
@@ -588,7 +589,6 @@ disqus:
   enable: false
   shortname:
   count: true
-  #post_meta_order: 0
 
 # DisqusJS
 # Alternative Disqus - Render comment component using Disqus API.
@@ -609,7 +609,6 @@ changyan:
   enable: false
   appid:
   appkey:
-  #post_meta_order: 0
 
 # Valine
 # For more information: https://valine.js.org, https://github.com/xCss/Valine
@@ -628,7 +627,6 @@ valine:
   serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)
   enableQQ: true # Whether to enable the Nickname box to automatically get QQ Nickname and QQ Avatar
   requiredFields: [nick, mail] # Set required fields: [nick] | [nick, mail]
-  #post_meta_order: 0
 
 # LiveRe comments system
 # You can get your uid from https://livere.com/insight/myCode (General web site)
